@@ -1,0 +1,1243 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>
+
+</title><link href="../DataTables/jquery.dataTables.min.css" rel="stylesheet"><link href="../css/bootstrap.min.css" rel="stylesheet"><link href="../css/bootstrap-theme.min.css" rel="stylesheet"><link href="../css/bootstrap-responsive.min.css" rel="stylesheet"><link href="../bootstrap-chosen-master/bootstrap-chosen.css" rel="stylesheet">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../chosen/chosen.jquery.js"></script>
+    <script type="text/javascript">
+        window.document.addEventListener('message', function (e) {
+            const message = JSON.parse(e.data);
+            //alert(message);
+            document.getElementById("ctl00_head2_Case_Name").innerText = message.name;
+            document.getElementById("ctl00_head2_Case_Phone").innerText = message.phone;
+            document.getElementById("ctl00_head2_Case_Gender").innerText = message.gender;
+            document.getElementById("ctl00_head2_Case_memberid").innerText = message.memberid;
+            document.getElementById("ctl00_head2_Case_ID").innerText = message.caseid;
+            document.getElementById("div_date").innerText = message.str_NowDate;
+        })
+        function cs(form) {
+            re = /[\$&%<>\+,\/:\'\";=\?\\]/g;
+            if (re.test(form.value)) {
+                form.value = form.value.replace(re, '');
+            }
+        };
+
+        function txt(form) {
+            re = /[\$&%<>\\/\'\"]/g;
+            if (re.test(form.value)) {
+                form.value = form.value.replace(re, '');
+            }
+        };
+
+        function int(form) {
+            re = /[^\d]/g;
+            if (re.test(form.value)) {
+                form.value = form.value.replace(re, '');
+            }
+        };
+    </script>
+</head>
+<body style="">
+    <form name="aspnetForm" method="post" action="./0090010003.aspx?seqno=0" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJOTQzMjI0Mjg3D2QWAmYPZBYCAgQPZBYEAgEPZBYGAgEPFgIeCWlubmVyaHRtbAXBKDx1bCBjbGFzcz0nbmF2IG5hdmJhci1uYXYnPjxsaSBjbGFzcz0nZHJvcGRvd24nPjxhIGlkPScwMDEwMDEwMDAwJyBjbGFzcz0nZHJvcGRvd24tdG9nZ2xlJyBkYXRhLXRvZ2dsZT0nZHJvcGRvd24nIGFyaWEtaGFzcG9wdXA9J3RydWUnIHJvbGU9J2J1dHRvbicgYXJpYS1leHBhbmRlZD0nZmFsc2UnPjxzcGFuIGNsYXNzPSdnbHlwaGljb24gZ2x5cGhpY29uLWJvb2snPjwvc3Bhbj4mbmJzcDvnlLPoq4vkvZzmpa0mbmJzcDs8c3BhbiBjbGFzcz0nY2FyZXQnPjwvc3Bhbj48L2E+PHVsIGNsYXNzPSdkcm9wZG93bi1tZW51JyByb2xlPSdtZW51JyBhcmlhLWxhYmVsbGVkYnk9JzAwMTAwMTAwMDAnPjxsaSByb2xlPSdwcmVzZW50YXRpb24nPjxhIHJvbGU9J21lbnVpdGVtJyBocmVmPScuLi8wMTAwMDEwMDAwLzAxMDAwMTAwMDAuYXNweD9zZXFubz0wJz7plbfmnJ/nhafpoafmnI3li5nnlLPoq4vmm7g8L2E+PC9saT48bGkgcm9sZT0ncHJlc2VudGF0aW9uJz48YSByb2xlPSdtZW51aXRlbScgaHJlZj0nLi4vMDEwMDAxMDAwMC8wMTAwMDEwMDA2LmFzcHg/c2Vxbm89MCc+6ZW354Wn5pyN5YuZ6ZyA5rGC6L2J5LuL5ZauPC9hPjwvbGk+PGxpIHJvbGU9J3ByZXNlbnRhdGlvbic+PGEgcm9sZT0nbWVudWl0ZW0nIGhyZWY9Jy4uLzAwODAwMTAwMDAvMDA4MDAxMDAwNC5hc3B4P3NlcW5vPTAnPuWxheWutueFp+mhp+acjeWLmee1kOahiOihqDwvYT48L2xpPjxsaSByb2xlPSdwcmVzZW50YXRpb24nPjxhIHJvbGU9J21lbnVpdGVtJyBocmVmPScuLi8wMTAwMDEwMDAwLzAxMDAwMTAwMDEuYXNweD9zZXFubz0wJz7lgIvmoYjos4fmlpnmn6XoqaI8L2E+PC9saT48L3VsPjwvbGk+PGxpIGNsYXNzPSdkcm9wZG93bic+PGEgaWQ9JzAwMjAwMTAwMDAnIGNsYXNzPSdkcm9wZG93bi10b2dnbGUnIGRhdGEtdG9nZ2xlPSdkcm9wZG93bicgYXJpYS1oYXNwb3B1cD0ndHJ1ZScgcm9sZT0nYnV0dG9uJyBhcmlhLWV4cGFuZGVkPSdmYWxzZSc+PHNwYW4gY2xhc3M9J2dseXBoaWNvbiBnbHlwaGljb24tY29tbWVudCc+PC9zcGFuPiZuYnNwO+ipleS8sOihqCZuYnNwOzxzcGFuIGNsYXNzPSdjYXJldCc+PC9zcGFuPjwvYT48dWwgY2xhc3M9J2Ryb3Bkb3duLW1lbnUnIHJvbGU9J21lbnUnIGFyaWEtbGFiZWxsZWRieT0nMDAyMDAxMDAwMCc+PGxpIHJvbGU9J3ByZXNlbnRhdGlvbic+PGEgcm9sZT0nbWVudWl0ZW0nIGhyZWY9Jy4uLzAwOTAwMTAwMDEvMDA5MDAxMDAwMS5hc3B4P3NlcW5vPTAnPuWAi+ahiOaXpeW4uOeUn+a0u+ipleS8sOmHj+ihqO+8iOW3tOawj+mHj+ihqO+8iTwvYT48L2xpPjxsaSByb2xlPSdwcmVzZW50YXRpb24nPjxhIHJvbGU9J21lbnVpdGVtJyBocmVmPScuLi8wMDkwMDEwMDAxLzAwOTAwMTAwMDIuYXNweD9zZXFubz0wJz7lt6XlhbfmgKfml6XluLjnlJ/mtLvph4/ooagoSUFETCk8L2E+PC9saT48bGkgcm9sZT0ncHJlc2VudGF0aW9uJz48YSByb2xlPSdtZW51aXRlbScgaHJlZj0nLi4vMDA5MDAxMDAwMS8wMDkwMDEwMDAzLmFzcHg/c2Vxbm89MCc+U1BNU1Hoqo3nn6Xlip/og73ph4/ooag8L2E+PC9saT48bGkgcm9sZT0ncHJlc2VudGF0aW9uJz48YSByb2xlPSdtZW51aXRlbScgaHJlZj0nLi4vMDA5MDAxMDAwMC8wMDkwMDEwMDA0LmFzcHg/c2Vxbm89MCc+6KiY5oa25YGl5qqiKEFELTgg5qW15pep5pyf5aSx5pm655eH56+p5qqi6YeP6KGoKeevqeaqoumHj+ihqDwvYT48L2xpPjxsaSByb2xlPSdwcmVzZW50YXRpb24nPjxhIHJvbGU9J21lbnVpdGVtJyBocmVmPScuLi8wMDkwMDEwMDAwLzAwOTAwMTAwMDUuYXNweD9zZXFubz0wJz7moYPlnJLluILmlL/lupzooZvnlJ/lsYDogIHkurrlv4PnkIblgaXlurfoqZXkvLDooagoR0RTLTE1KSA8L2E+PC9saT48bGkgcm9sZT0ncHJlc2VudGF0aW9uJz48YSByb2xlPSdtZW51aXRlbScgaHJlZj0nLi4vMDA5MDAxMDAwMC8wMDkwMDEwMDA2LmFzcHg/c2Vxbm89MCc+6ZW354Wn57ac5ZCI6KmV5Lyw6YeP6KGoIDwvYT48L2xpPjxsaSByb2xlPSdwcmVzZW50YXRpb24nPjxhIHJvbGU9J21lbnVpdGVtJyBocmVmPScuLi8wMDkwMDEwMDAwLzAwOTAwMTAwMDcuYXNweD9zZXFubz0wJz7lrprmnJ/lrrYv6Zu76Kiq6KiY6YyE6KGoPC9hPjwvbGk+PC91bD48L2xpPjxsaSBjbGFzcz0nZHJvcGRvd24nPjxhIGlkPScwMDcwMDEwMDAwJyBjbGFzcz0nZHJvcGRvd24tdG9nZ2xlJyBkYXRhLXRvZ2dsZT0nZHJvcGRvd24nIGFyaWEtaGFzcG9wdXA9J3RydWUnIHJvbGU9J2J1dHRvbicgYXJpYS1leHBhbmRlZD0nZmFsc2UnPjxzcGFuIGNsYXNzPSdnbHlwaGljb24gZ2x5cGhpY29uLVJlcG9ydCc+PC9zcGFuPiZuYnNwO+WgseihqCZuYnNwOzxzcGFuIGNsYXNzPSdjYXJldCc+PC9zcGFuPjwvYT48dWwgY2xhc3M9J2Ryb3Bkb3duLW1lbnUnIHJvbGU9J21lbnUnIGFyaWEtbGFiZWxsZWRieT0nMDA3MDAxMDAwMCc+PGxpIHJvbGU9J3ByZXNlbnRhdGlvbic+PGEgcm9sZT0nbWVudWl0ZW0nIGhyZWY9Jy4uL1JlcG9ydF8wMDQuYXNweCc+44CQ6KGb56aP6YOo44CR5pyN5YuZ57SA6YyE5YiX6KGoPC9hPjwvbGk+PGxpIHJvbGU9J3ByZXNlbnRhdGlvbic+PGEgcm9sZT0nbWVudWl0ZW0nIGhyZWY9Jy4uLzAwOTAwMTAwMDAvMDA5MDAxMDAwOS5hc3B4P3NlcW5vPTAnPue1seioiDwvYT48L2xpPjwvdWw+PC9saT48bGkgY2xhc3M9J2Ryb3Bkb3duJz48YSBpZD0nMDA4MDAxMDAwMCcgY2xhc3M9J2Ryb3Bkb3duLXRvZ2dsZScgZGF0YS10b2dnbGU9J2Ryb3Bkb3duJyBhcmlhLWhhc3BvcHVwPSd0cnVlJyByb2xlPSdidXR0b24nIGFyaWEtZXhwYW5kZWQ9J2ZhbHNlJz48c3BhbiBjbGFzcz0nZ2x5cGhpY29uIGdseXBoaWNvbi1ib29rJz48L3NwYW4+Jm5ic3A76KGb5pWZ566h55CGJm5ic3A7PHNwYW4gY2xhc3M9J2NhcmV0Jz48L3NwYW4+PC9hPjx1bCBjbGFzcz0nZHJvcGRvd24tbWVudScgcm9sZT0nbWVudScgYXJpYS1sYWJlbGxlZGJ5PScwMDgwMDEwMDAwJz48bGkgcm9sZT0ncHJlc2VudGF0aW9uJz48YSByb2xlPSdtZW51aXRlbScgaHJlZj0nLi4vMDAxMDAxMDAwMS5hc3B4Jz7ooZvmlZnmn6XoqaI8L2E+PC9saT48bGkgcm9sZT0ncHJlc2VudGF0aW9uJz48YSByb2xlPSdtZW51aXRlbScgaHJlZj0nLi4vMDAxMDAxMDAwMy5hc3B4Jz7orbfnkIbmjIflsI48L2E+PC9saT48bGkgcm9sZT0ncHJlc2VudGF0aW9uJz48YSByb2xlPSdtZW51aXRlbScgaHJlZj0nLi4vMDAxMDAxMDAwNC5hc3B4Jz7phqvnmYLmlrDnn6U8L2E+PC9saT48bGkgcm9sZT0ncHJlc2VudGF0aW9uJz48YSByb2xlPSdtZW51aXRlbScgaHJlZj0nLi4vMDAxMDAxMDAwNS5hc3B4Jz7nt5rkuIroq67oqaI8L2E+PC9saT48L3VsPjwvbGk+PGxpIGNsYXNzPSdkcm9wZG93bic+PGEgaWQ9JzAxMDAwMTAwMDAnIGNsYXNzPSdkcm9wZG93bi10b2dnbGUnIGRhdGEtdG9nZ2xlPSdkcm9wZG93bicgYXJpYS1oYXNwb3B1cD0ndHJ1ZScgcm9sZT0nYnV0dG9uJyBhcmlhLWV4cGFuZGVkPSdmYWxzZSc+PHNwYW4gY2xhc3M9J2dseXBoaWNvbiBnbHlwaGljb24tdGVsJz48L3NwYW4+Jm5ic3A76YCa6KiK6YyE57O757WxJm5ic3A7PHNwYW4gY2xhc3M9J2NhcmV0Jz48L3NwYW4+PC9hPjx1bCBjbGFzcz0nZHJvcGRvd24tbWVudScgcm9sZT0nbWVudScgYXJpYS1sYWJlbGxlZGJ5PScwMTAwMDEwMDAwJz48bGkgcm9sZT0ncHJlc2VudGF0aW9uJz48YSByb2xlPSdtZW51aXRlbScgaHJlZj0nLi4vMDAyMDAxMDAwMS5hc3B4Jz7kurrlk6HpgJroqIrpjIQ8L2E+PC9saT48L3VsPjwvbGk+PGxpIGNsYXNzPSdkcm9wZG93bic+PGEgaWQ9JzAxMTAwMTAwMDAnIGNsYXNzPSdkcm9wZG93bi10b2dnbGUnIGRhdGEtdG9nZ2xlPSdkcm9wZG93bicgYXJpYS1oYXNwb3B1cD0ndHJ1ZScgcm9sZT0nYnV0dG9uJyBhcmlhLWV4cGFuZGVkPSdmYWxzZSc+PHNwYW4gY2xhc3M9J2dseXBoaWNvbiBnbHlwaGljb24tVXNlcic+PC9zcGFuPiZuYnNwO+ezu+e1seWPg+aVuOe2reittyZuYnNwOzxzcGFuIGNsYXNzPSdjYXJldCc+PC9zcGFuPjwvYT48dWwgY2xhc3M9J2Ryb3Bkb3duLW1lbnUnIHJvbGU9J21lbnUnIGFyaWEtbGFiZWxsZWRieT0nMDExMDAxMDAwMCc+PGxpIHJvbGU9J3ByZXNlbnRhdGlvbic+PGEgcm9sZT0nbWVudWl0ZW0nIGhyZWY9Jy4uLzAwNjAwMTAwMDEuYXNweCc+6KeS6Imy566h55CGPC9hPjwvbGk+PGxpIHJvbGU9J3ByZXNlbnRhdGlvbic+PGEgcm9sZT0nbWVudWl0ZW0nIGhyZWY9Jy4uLzAwNjAwMTAwMDQuYXNweCc+5Lq65ZOh6LOH5paZ566h55CGPC9hPjwvbGk+PC91bD48L2xpPjxsaSBjbGFzcz0nZHJvcGRvd24nPjxhIGlkPScwMTIwMDEwMDAwJyBjbGFzcz0nZHJvcGRvd24tdG9nZ2xlJyBkYXRhLXRvZ2dsZT0nZHJvcGRvd24nIGFyaWEtaGFzcG9wdXA9J3RydWUnIHJvbGU9J2J1dHRvbicgYXJpYS1leHBhbmRlZD0nZmFsc2UnPjxzcGFuIGNsYXNzPSdnbHlwaGljb24gZ2x5cGhpY29uLWxpc3QtYWx0Jz48L3NwYW4+Jm5ic3A76KGo5Zau57O757Wx57at6K23Jm5ic3A7PHNwYW4gY2xhc3M9J2NhcmV0Jz48L3NwYW4+PC9hPjx1bCBjbGFzcz0nZHJvcGRvd24tbWVudScgcm9sZT0nbWVudScgYXJpYS1sYWJlbGxlZGJ5PScwMTIwMDEwMDAwJz48bGkgcm9sZT0ncHJlc2VudGF0aW9uJz48YSByb2xlPSdtZW51aXRlbScgaHJlZj0nLi4vMDA1MDAxMDAwMS5hc3B4Jz7nt6jovK/ooajllq7lhaflrrk8L2E+PC9saT48bGkgcm9sZT0ncHJlc2VudGF0aW9uJz48YSByb2xlPSdtZW51aXRlbScgaHJlZj0nLi4vMDA1MDAxMDAwNC5hc3B4Jz7loavlr6vooajllq48L2E+PC9saT48L3VsPjwvbGk+PGxpIGNsYXNzPSdkcm9wZG93bic+PGEgaWQ9JzAxMzAwMTAwMDAnIGNsYXNzPSdkcm9wZG93bi10b2dnbGUnIGRhdGEtdG9nZ2xlPSdkcm9wZG93bicgYXJpYS1oYXNwb3B1cD0ndHJ1ZScgcm9sZT0nYnV0dG9uJyBhcmlhLWV4cGFuZGVkPSdmYWxzZSc+PHNwYW4gY2xhc3M9J2dseXBoaWNvbiBnbHlwaGljb24tY29tbWVudCc+PC9zcGFuPiZuYnNwO+eFp+acg+ezu+e1sSZuYnNwOzxzcGFuIGNsYXNzPSdjYXJldCc+PC9zcGFuPjwvYT48dWwgY2xhc3M9J2Ryb3Bkb3duLW1lbnUnIHJvbGU9J21lbnUnIGFyaWEtbGFiZWxsZWRieT0nMDEzMDAxMDAwMCc+PGxpIHJvbGU9J3ByZXNlbnRhdGlvbic+PGEgcm9sZT0nbWVudWl0ZW0nIGhyZWY9Jy4uLzAwNjAwMTAwMzUuYXNweCc+54Wn5pyD5L2c5qWtPC9hPjwvbGk+PC91bD5kAgMPFgIfAAVoPHNwYW4gY2xhc3M9J2dseXBoaWNvbiBnbHlwaGljb24tdXNlcic+PC9zcGFuPiZuYnNwO+eZu+WFpeS6uuWToe+8mjEyMzQmbmJzcDs8c3BhbiBjbGFzcz0nY2FyZXQnPjwvc3Bhbj5kAgUPFgIfAAWpBDxsaSByb2xlPSdwcmVzZW50YXRpb24nPjxhIHJvbGU9J21lbnVpdGVtJz4mbmJzcDvmiYDlsazlhazlj7jvvJoxMjM0Jm5ic3A7Jm5ic3A7PC9hPjwvbGk+PGxpIHJvbGU9J3ByZXNlbnRhdGlvbic+PGEgcm9sZT0nbWVudWl0ZW0nPiZuYnNwO+aJgOWxrOmDqOmWgO+8mjEyMzQmbmJzcDsmbmJzcDs8L2E+PC9saT48bGkgcm9sZT0ncHJlc2VudGF0aW9uJz48YSByb2xlPSdtZW51aXRlbSc+Jm5ic3A75Lq65ZOh57eo6Jmf77yaMTIzNCZuYnNwOyZuYnNwOzwvYT48L2xpPjxsaSByb2xlPSdwcmVzZW50YXRpb24nPjxhIHJvbGU9J21lbnVpdGVtJz4mbmJzcDvkurrlk6Hlp5PlkI3vvJoxMjM0Jm5ic3A7Jm5ic3A7PC9hPjwvbGk+PGxpIHJvbGU9J3ByZXNlbnRhdGlvbic+PGEgcm9sZT0nbWVudWl0ZW0nPiZuYnNwO+S6uuWToeasiumZkO+8mueFp+euoeWwiOWToSZuYnNwOyZuYnNwOzwvYT48L2xpPjxsaSByb2xlPSdwcmVzZW50YXRpb24nPjxhIHJvbGU9J21lbnVpdGVtJz4mbmJzcDvpm7vlrZDkv6HnrrHvvJrmnInpm7vlrZDkv6HnrrEmbmJzcDsmbmJzcDs8L2E+PC9saT5kAgUPZBYEZg8PFgIeBFRleHQFGOWwmuacquW7uueri+mWi+ahiOizh+aWmWRkAgEPDxYCHwEFGOWwmuacquW7uueri+mWi+ahiOizh+aWmWRkZCBYu0F/VHvihVb1yQSdbyhXL8uJTxfKUgQyzNy6bI/I">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=IKTeicrncPsH0Yo83ctI9oODYLew48MqqgKSIPRLZt56XB-ydyLCXULgbGiyB6S8OW6j7avLYXoesJnVsl4yLQBhv4Q-fKUPyIASDYnepUg1&amp;t=636284370552661246" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=15XUFqSYQvXxrVdmP-yD82g23xosfIUBt8rtFi1sgQAREydMZwA6HfX2E9anlUQBUC_EDda-B7_x0_FuOV5SjRbVyqCM60t_0-tWaQb49IGtj8y4eNicBwP8jmVTnq78BSydpJ1L_AvXPRFJQpr1_QkG1JhRy6YDvdC-vvFtf6sd9H4HeLVzigHx-8SNTs1p0&amp;t=ffffffffcce8aaf2" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax 用戶端架構無法載入。');
+//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=pk4yeVPr8k1xQXKfg_eVMLZg9toc5mbRkrn4iAbmCrIou_vbBYwY4AbXKtJ6dITdUgqb5I1hLa9rttxQLxEfsO1WXxH6zTPZRJpJR3LmhCVxKiD87-c8NmuAgqBTCYVbSXZvcbk3xghGpxfJIVvrilRvauS7ZrAkyP4kCzw6yXTmAfCX5zjNha6qF1p1JpsC0&amp;t=ffffffffcce8aaf2" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=ARXXMCV-gTBfYZTiqH7nnup_ShLzteeT7irFpcPssEMSO0ivM1W13kQERxRPJE0uc3igt94h27y39iMvw5gdYFmdjsmhkNY_P1sopsLRFVL4QWcguEKutKDJUC0a1ODzL68ceHBFshN64y_rCPBj9pyuo7eHB8YFOrug7yFTDR2wb8_FoSOoXdPGFjcQRARL0&amp;t=ffffffffcce8aaf2" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="83451B07">
+</div>
+
+
+
+        <table style="width: 100%;">
+
+        </table>
+
+
+    <link href="../css/jquery.datetimepicker.min.css" rel="stylesheet">
+    <link href="../DataTables/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="../bootstrap-chosen-master/bootstrap-chosen.css" rel="stylesheet">
+    <script src="js/jquery-1.4.1.min.js" type="text/javascript"></script>
+    <script src="../js/jquery.datetimepicker.full.min.js"></script>
+    <script src="../chosen/chosen.jquery.js"></script>
+    <script src="../js/jquery.validate.min.js"></script>
+    <script src="../DataTables/jquery.dataTables.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(init);
+
+        function init() {
+
+            var now = new Date();
+
+            var str_NowDate = (now.getFullYear()) + "/" + (now.getMonth() + 1) + "/" + now.getDate();
+            $("#div_date").html(str_NowDate);
+
+        }
+    </script>
+    <script type="text/javascript">
+        var seqno = '0';
+        var new_mno = 'DALN181117021824471';
+        var Agent_Mail = '1';
+        var flag1, flag2, flag3, flag4, flag5, flag6, flag7, flag8, flag9, flag10, TotAns = 0;
+        var x =0;
+        //====================================================
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+            Load();
+            Service_List();  //帶入【服務分類 】資訊
+            Owner_List();   //帶入【廠商 】資訊
+            Hospital_List();  //帶入【醫療院所 】資訊
+            Cust_Table();  //顯示【客戶地址】名單
+            if (seqno != '0') {
+                Load_MNo();
+            } else {
+                bindTable();  //顯示【新增多筆資訊（瀏覽）】名單
+                Labor_Table();  //顯示【新增雇主及外勞】名單
+            }
+        });
+
+        //================ 讀取資訊 ===============
+        function Load() {
+                document.getElementById("form_ID").innerHTML = new_mno; //【創造母單編號】
+                document.getElementById('Btn_Update').style.display = "none";  //隱藏修改按鈕
+                document.getElementById('table_cancel').style.display = 'none';  //隱藏【取消需求單】
+                $.ajax({
+                    url: '0090010003.aspx/Load',
+                    type: 'POST',
+                    contentType: 'application/json; charset=UTF-8',
+                    dataType: "json",
+                    success: function (doc) {
+                        var obj = JSON.parse('{"data":' + doc.d + '}');
+                        document.getElementById("str_name").innerHTML = obj.data[0].Agent_Name.trim();
+                        document.getElementById("str_team").innerHTML = obj.data[0].Agent_Team.trim();
+                        document.getElementById("ContactName").value = obj.data[0].Agent_Name.trim();
+                        document.getElementById("Agent_Phone_2").value = obj.data[0].Agent_Phone_2;
+                        document.getElementById("Agent_Phone_3").value = obj.data[0].Agent_Phone_3;
+                        document.getElementById("Agent_Co_TEL").value = obj.data[0].Agent_Co_TEL;
+                    }
+                });
+        }
+
+        //================ 帶入【服務分類 】資訊 ===============
+        function Service_List() {
+            $.ajax({
+                url: '0090010003.aspx/Service_List',
+                type: 'POST',
+                contentType: 'application/json; charset=UTF-8',
+                dataType: "json",
+                success: function (doc) {
+                    var json = JSON.parse(doc.d);
+                    var $select_elem = $("#DropService");
+                    $select_elem.chosen("destroy")
+                    $.each(json, function (idx, obj) {
+                        $select_elem.append("<option value='" + obj.Service + "'>" + obj.Service + "</option>");
+                    });
+                    $select_elem.chosen(
+                    {
+                        width: "100%",
+                        search_contains: true
+                    });
+                    $('.chosen-single').css({ 'background-color': '#ffffbb' });
+                }
+            });
+        }
+
+        function ServiceChanged() {
+            document.getElementById('tab_Location').style.display = "none";  //隱藏地址
+
+            var s = document.getElementById("DropService");
+            var str_value = s.options[s.selectedIndex].value;
+            $.ajax({
+                url: '0090010003.aspx/ServiceName_List',
+                type: 'POST',
+                data: JSON.stringify({ service: str_value }),
+                contentType: 'application/json; charset=UTF-8',
+                dataType: "json",
+                success: function (doc) {
+                    var json = JSON.parse(doc.d);
+                    var $select_elem = $("#DropServiceName");
+                    $select_elem.chosen("destroy");
+                    $select_elem.empty();
+                    $select_elem.append("<option value=''>" + "請選擇服務內容…" + "</option>");
+                    $.each(json, function (idx, obj) {
+                        $select_elem.append("<option value='" + obj.Service_ID + "'>" + obj.ServiceName + "</option>");
+                    });
+                    $select_elem.chosen({
+                        width: "100%",
+                        search_contains: true
+                    });
+                    $('.chosen-single').css({ 'background-color': '#ffffbb' });
+                }
+            });
+
+            if (str_value == "醫療") {
+                document.getElementById('Hospital_Table_1').style.display = "";  //顯示醫療院所、就醫類型
+                style("HospitalName", "");
+                style("HospitalClass", "");
+            }
+            else {
+                document.getElementById('Hospital_Table_1').style.display = "none";  //隱藏醫療院所、就醫類型
+            }
+        }
+
+        function ServiceNameChanged() {
+            document.getElementById('button_01').style.display = "none";  //客戶地址
+            document.getElementById('button_02').style.display = "none";  //單位地址
+            document.getElementById("txt_Location").innerHTML = "";
+            document.getElementById("hid_PostCode").value = "";
+            var str_index = document.getElementById("DropServiceName").selectedIndex;
+            var v = document.getElementById("DropServiceName").options[str_index].value;
+            $.ajax({
+                url: '0090010003.aspx/ServiceName_Flag',
+                type: 'POST',
+                data: JSON.stringify({ Service_ID: v }),
+                contentType: 'application/json; charset=UTF-8',
+                dataType: "json",
+                success: function (doc) {
+                    var json = JSON.parse(doc.d.toString());
+                    if (json.status == "A") {
+                        document.getElementById('button_02').style.display = "";  //單位地址
+                    } else if (json.status == "B") {
+                        v = "39";
+                        document.getElementById('button_02').style.display = "";  //單位地址
+                    } else if (json.status == "C") {
+                        document.getElementById('button_01').style.display = "";  //客戶地址
+                    }
+                    Location(v);
+                    document.getElementById('tab_Location').style.display = "";  //顯示地址
+                }
+            });
+        }
+
+        //================ 帶入【廠商】資訊 ===============
+        function Owner_List() {
+            $.ajax({
+                url: '0090010003.aspx/Owner_List',
+                type: 'POST',
+                contentType: 'application/json; charset=UTF-8',
+                dataType: "json",
+                success: function (doc) {
+                    var json = JSON.parse(doc.d);
+                    var $select_elem = $("#DropOwner");
+                    $select_elem.empty();
+                    $select_elem.append("<option value=''>" + "顯示全部廠商…" + "</option>");
+                    $.each(json, function (idx, obj) {
+                        $select_elem.append("<option value='" + obj.Cust_ID + "'>" + "（" + obj.Cust_ID + "）" + obj.Cust_FullName + "</option>");
+                    });
+                    $select_elem.chosen({
+                        width: "50%",
+                        search_contains: true
+                    });
+                }
+            });
+        }
+
+        //================ 帶入【客戶地址】資訊 ===============
+        function Cust_Table() {
+            $("#Cust_Table").dataTable({
+                "oLanguage": {
+                    "sLengthMenu": "顯示 _MENU_ 筆記錄",
+                    "sZeroRecords": "無符合資料",
+                    "sInfo": "顯示第 _START_ 至 _END_ 項結果，共 _TOTAL_ 項",
+                    "sInfoFiltered": "(從 _MAX_ 項結果過濾)",
+                    "sInfoPostFix": "",
+                    "sSearch": "搜索:",
+                    "sUrl": "",
+                    "oPaginate": {
+                        "sFirst": "首頁",
+                        "sPrevious": "上頁",
+                        "sNext": "下頁",
+                        "sLast": "尾頁"
+                    }
+                },
+                "aLengthMenu": [[10, 25, 50, 100], [10, 25, 50, 100]],
+                "iDisplayLength": 100,
+                "bSortClasses": false,
+                "bStateSave": false,
+                "bPaginate": true,
+                "bAutoWidth": false,
+                "bProcessing": true,
+                "bServerSide": true,
+                "bDestroy": true,
+                "sAjaxSource": "../WebService.asmx/Cust_System",
+                "sServerMethod": "POST",
+                "contentType": "application/json; charset=UTF-8",
+                "sPaginationType": "full_numbers",
+                "bDeferRender": true,
+                "fnServerParams": function (aoData) {
+                    aoData.push(
+                        { "name": "iParticipant", "value": $("#participant").val() },
+                        { "name": "Cust_ID", "value": "" }
+                        );
+                },
+                "fnServerData": function (sSource, aoData, fnCallback) {
+                    $.ajax({
+                        "dataType": 'json',
+                        "contentType": 'application/json; charset=UTF-8',
+                        "type": "GET",
+                        "url": sSource,
+                        "data": aoData,
+                        "success":
+                            function (msg) {
+                                var json = jQuery.parseJSON(msg.d);
+                                fnCallback(json);
+                                $("#Cust_System").show();
+                            }
+                    });
+                }
+            });
+        }
+
+        function DropOwnerChanged() {
+            Labor_Table();
+        }
+        //================ 帶入【醫療院所 】資訊 ===============
+        function Hospital_List() {
+            $.ajax({
+                url: '0090010003.aspx/Hospital_List',
+                type: 'POST',
+                contentType: 'application/json; charset=UTF-8',
+                dataType: "json",
+                success: function (doc) {
+                    var listItems = "";
+                    var obj = JSON.parse('{"data":' + doc.d + '}');
+                    for (var i = 0; i < obj.data.length; i++) {
+                        listItems += "<option value='" + obj.data[i].HospitalName + "'>" + obj.data[i].HospitalName + "</option>";
+                    }
+                    $('#HospitalName').append(listItems);
+                }
+            });
+        }
+
+        //============= 顯示【新增多筆資訊（瀏覽）】名單 =============
+        function bindTable() {
+            $("#Div_Loading").modal();
+            $.ajax({
+                url: '0090010003.aspx/GetCNoList',
+                type: 'POST',
+                contentType: 'application/json; charset=UTF-8',
+                dataType: "json",       //如果要回傳值，請設成 json
+                success: function (doc) {
+                    var table = $('#data').DataTable({
+                        destroy: true,
+                        data: eval(doc.d), "oLanguage": {
+                            "sLengthMenu": "顯示 _MENU_ 筆記錄",
+                            "sZeroRecords": "無符合資料",
+                            "sInfo": "顯示第 _START_ 至 _END_ 項結果，共 _TOTAL_ 項",
+                            "sInfoFiltered": "(從 _MAX_ 項結果過濾)",
+                            "sInfoPostFix": "",
+                            "sSearch": "搜索:",
+                            "sUrl": "",
+                            "oPaginate": {
+                                "sFirst": "首頁",
+                                "sPrevious": "上頁",
+                                "sNext": "下頁",
+                                "sLast": "尾頁"
+                            }
+                        },
+                        "columnDefs": [{
+                            "targets": -1,
+                            "data": null,
+                            "searchable": false,
+                            "paging": false,
+                            "ordering": false,
+                            "info": false
+                        }],
+                        columns: [
+                            { data: "Cust_FullName" },
+                            { data: "Labor_CName" },
+                            { data: "Labor_ID" },
+                            { data: "Labor_PID" },
+                            { data: "Labor_RID" },
+                            { data: "Labor_EID" },
+                            { data: "Labor_Phone" },
+                            { data: "Labor_Country" },
+                            { data: "Labor_Valid" },
+                            {
+                                data: "SYS_ID", render: function (data, type, row, meta) {
+                                    return "<button id='delete' type='button' class='btn btn-danger btn-lg' ><span class='glyphicon glyphicon-remove'></span>&nbsp;取消</button>"
+                                }
+                            }
+                        ]
+                    });
+                    //=========================================
+                    $('#data tbody').unbind('click').
+                    on('click', '#delete', function () {
+                        var table = $('#data').DataTable();
+                        var SYS_ID = table.row($(this).parents('tr')).data().SYS_ID;
+                        Labor_Delete(SYS_ID);
+                    });
+
+                    $("#Div_Loading").modal('hide');
+                }, error: function () {
+                    $("#Div_Loading").modal('hide');
+                }
+            });
+        }
+
+        //=============== 顯示【新增雇主及外勞】名單 ===============
+        function Labor_Table() {
+            $("#Labor_Table").dataTable({
+                "oLanguage": {
+                    "sLengthMenu": "顯示 _MENU_ 筆記錄",
+                    "sZeroRecords": "無符合資料",
+                    "sInfo": "顯示第 _START_ 至 _END_ 項結果，共 _TOTAL_ 項",
+                    "sInfoFiltered": "(從 _MAX_ 項結果過濾)",
+                    "sInfoPostFix": "",
+                    "sSearch": "搜索:",
+                    "sUrl": "",
+                    "oPaginate": {
+                        "sFirst": "首頁",
+                        "sPrevious": "上頁",
+                        "sNext": "下頁",
+                        "sLast": "尾頁"
+                    }
+                },
+                "aLengthMenu": [[10, 25, 50, 100], [10, 25, 50, 100]],
+                "iDisplayLength": 100,
+                "bSortClasses": false,
+                "bStateSave": false,
+                "bPaginate": true,
+                "bAutoWidth": false,
+                "bProcessing": true,
+                "bServerSide": true,
+                "bDestroy": true,
+                "sAjaxSource": "../WebService.asmx/Labor_System",
+                "sServerMethod": "POST",
+                "contentType": "application/json; charset=UTF-8",
+                "sPaginationType": "full_numbers",
+                "bDeferRender": true,
+                "fnServerParams": function (aoData) {
+                    aoData.push(
+                        { "name": "iParticipant", "value": $("#participant").val() },
+                        { "name": "Cust_ID", "value": document.getElementById("DropOwner").value },
+                        { "name": "Flag", "value": "A" }
+                        );
+                },
+                "fnServerData": function (sSource, aoData, fnCallback) {
+                    $.ajax({
+                        "dataType": 'json',
+                        "contentType": 'application/json; charset=UTF-8',
+                        "type": "GET",
+                        "url": sSource,
+                        "data": aoData,
+                        "success":
+                            function (msg) {
+                                //var json = JSON.parse(msg.d);
+                                var json = jQuery.parseJSON(msg.d);
+                                fnCallback(json);
+                                $("#Labor_Table").show();
+                            }
+                    });
+                }
+            });
+        }
+
+        //=============== 帶入【新增雇主及外勞】資訊 ===============
+        function Labor_add(SYSID, Flag) {
+            var MNo = new_mno;
+            $.ajax({
+                url: '0090010003.aspx/Labor_Value',
+                type: 'POST',
+                data: JSON.stringify({ SYSID: SYSID, Flag: Flag }),
+                contentType: 'application/json; charset=UTF-8',
+                dataType: "json",
+                success: function (doc) {
+                    var json = JSON.parse(doc.d.toString());
+                    if (json.status != "null") {
+                        var text = '{"data":' + doc.d + '}';
+                        var obj = JSON.parse(text);
+                        document.getElementById("txt_Cust_FullName").innerHTML = obj.data[0].Cust_FullName;
+                        document.getElementById("txt_Labor_Team").innerHTML = obj.data[0].Labor_Team;
+                        document.getElementById("txt_Labor_Name").innerHTML = obj.data[0].Labor_CName;
+                        document.getElementById("txt_Labor_Country").innerHTML = obj.data[0].Labor_Country;
+                        document.getElementById("txt_Labor_ID").innerHTML = obj.data[0].Labor_ID;
+                        document.getElementById("txt_Labor_PID").innerHTML = obj.data[0].Labor_PID;
+                        document.getElementById("txt_Labor_RID").innerHTML = obj.data[0].Labor_RID;
+                        document.getElementById("txt_Labor_EID").innerHTML = obj.data[0].Labor_EID;
+                        document.getElementById("txt_Labor_Phone").innerHTML = obj.data[0].Labor_Phone;
+                        document.getElementById("txt_Labor_Address").innerHTML = obj.data[0].Labor_Address;
+                        document.getElementById("Labor_Address2").innerHTML = obj.data[0].Labor_Address2;
+                        document.getElementById("txt_Labor_Valid").innerHTML = obj.data[0].Labor_Valid;
+                        document.getElementById("txt_Labor_Language").innerHTML = obj.data[0].Language;
+
+                        //=============== 帶入【已選擇的雇主或外勞（瀏覽）】資訊 ===============
+                        $.ajax({
+                            url: '0090010003.aspx/Btn_Add_Click',
+                            type: 'POST',
+                            data: JSON.stringify({ Cust_ID: obj.data[0].Cust_ID, Labor_ID: obj.data[0].Labor_ID }),
+                            contentType: 'application/json; charset=UTF-8',
+                            dataType: "json",
+                            success: function (doc) {
+                                var json = JSON.parse(doc.d.toString());
+                                alert(json.status);
+                            }
+                        });
+                        bindTable();
+                        //=============== 帶入【已選擇的雇主或外勞（瀏覽）】資訊 ===============
+                    }
+                }
+            });
+        }
+
+        //================ 刪除【新增多筆資訊 】資訊 ===============
+        function Labor_Delete(SYS_ID) {
+            $.ajax({
+                url: '0090010003.aspx/Labor_Delete',
+                type: 'POST',
+                data: JSON.stringify({ SYS_ID: SYS_ID }),
+                contentType: 'application/json; charset=UTF-8',
+                dataType: "json",       //如果要回傳值，請設成 json
+                success: function () {
+                }
+            });
+            bindTable();
+        }
+
+        //================ 【Flag = 0 新增需求單】 ===============
+        //================ 【Flag = 1 修改需求單】 ===============
+        function Btn_New_Click(Flag) {
+            /*document.getElementById("Btn_New").disabled = true;
+            $("#Div_Loading").modal();
+            if (Agent_Mail == '0') {
+                alert('【您為新進人員或是沒有E-MAIL資料所以無法新增需求單，請尋求管理人員協助新增，謝謝】');
+                document.getElementById("Btn_New").disabled = false;
+                $("#Div_Loading").modal('hide');
+                return;
+            }
+            */
+            var form_ID = document.getElementById("form_ID").innerHTML;
+            var form_ID_2 = "";
+            var Case_ID = "";
+            var DropService = document.getElementById("DropService").value;
+            var Q1 = document.getElementById("Q1").checked;
+            var Q2 = document.getElementById("Q2").checked;
+            var Q3 = document.getElementById("Q3").checked;
+            var Q4 = document.getElementById("Q4").checked;
+            var Q5 = document.getElementById("Q5").checked;
+            var Q6 = document.getElementById("Q6").checked;
+            var Q7 = document.getElementById("Q7").checked;
+            var Q8 = document.getElementById("Q8").checked;
+            var Q9 = document.getElementById("Q9").checked;
+            var Q10 = document.getElementById("Q10").checked;
+            var TotChk = document.getElementById("TotChk").innerHTML;
+            var degree = document.getElementById("degree").innerHTML;
+            var Date = document.getElementById("div_date").innerHTML;
+
+
+            var Name = document.getElementById("ctl00_head2_Case_Name").innerHTML;
+            var Phone = document.getElementById("ctl00_head2_Case_Phone").innerHTML;
+            var Gender =  document.getElementById("ctl00_head2_Case_Gender").innerHTML;
+            var memberid = document.getElementById("ctl00_head2_Case_memberid").innerHTML;
+            var Case_ID = document.getElementById("ctl00_head2_Case_ID").innerHTML;
+
+                                    window.postMessage(JSON.stringify({
+                                      formidnumber: 'h3',
+                                      name: Name,
+                                      phone: Phone,
+                                      male: Gender,
+                                      identity: memberid,
+
+                                      form_ID: form_ID,
+                                      Case_ID: Case_ID,
+                                      DropService: DropService,
+                                      Question1_Score: Q1,
+                                      Question2_Score: Q2,
+                                      Question3_Score: Q3,
+                                      Question4_Score: Q4,
+                                      Question5_Score: Q5,
+                                      Question6_Score: Q6,
+                                      Question7_Score: Q7,
+                                      Question8_Score: Q8,
+                                      Question9_Score: Q9,
+                                      Question10_Score: Q10,
+                                      TotChk: TotChk,
+                                      degree: degree,
+                                      Fill_Date: Date
+                                    }));
+                                    return false;
+
+            /*$.ajax({
+                url: '0090010003.aspx/Check_Form',
+                type: 'POST',
+                data: JSON.stringify({
+
+                    form_ID: form_ID,
+                    Case_ID: Case_ID,
+                    DropService: DropService,
+                    Q1: Q1,
+                    Q2: Q2,
+                    Q3: Q3,
+                    Q4: Q4,
+                    Q5: Q5,
+                    Q6: Q6,
+                    Q7: Q7,
+                    Q8: Q8,
+                    Q9: Q9,
+                    Q10: Q10,
+                    TotChk: TotChk,
+                    degree: degree,
+                    Date: Date
+
+                }),
+                contentType: 'application/json; charset=UTF-8',
+                dataType: "json",
+                success: function (doc) {
+                    var json = JSON.parse(doc.d.toString());
+                    if (json.status == "new") {
+                        alert('填單完成');
+                        window.location.href = "/0090010000/0090010003.aspx?seqno=0";
+                    }
+                    else if (json.status == "update") {
+                        alert('修改完成');
+                        window.location.href = "/0030010000/0030010002.aspx";
+                    }
+                    else {
+                        alert(json.status);
+                    }
+                    $("#Div_Loading").modal('hide');
+                    document.getElementById("Btn_New").disabled = false;
+                }
+            });*/
+        };
+
+        //=========================================
+        function Load_MNo() {
+            $("#Div_Loading").modal();
+            $.ajax({
+                url: '0090010003.aspx/Load_MNo',
+                type: 'POST',
+                data: JSON.stringify({ MNo: new_mno }),
+                contentType: 'application/json; charset=UTF-8',
+                dataType: "json",       //如果要回傳值，請設成 json
+                success: function (doc) {
+                    var text = '{"data":' + doc.d + '}';
+                    var obj = JSON.parse(text);
+                    if (obj.data[0].MNo == "NULL") {
+                        alert("查無【" + new_mno + "】母單編號");
+                        window.location.href = "/0030010000/0030010002.aspx";
+                        return;
+                    } else if (obj.data[0].MNo == "NO") {
+                        //================ 判斷是否為該部門的單 =======================
+                        alert('您沒有訪問此頁面的權限，此需求單非您部門的需求單。');
+                        window.location.href = "/0030010000/0030010002.aspx";
+                        return;
+                        //================ 判斷是否為該部門的單 =======================
+                    }
+                    document.getElementById("str_name").innerHTML = obj.data[0].Create_Name;
+                    document.getElementById("str_team").innerHTML = obj.data[0].Create_Team;
+                    style('DropService', obj.data[0].Service);
+                    ServiceChanged();
+                    document.getElementById("txt_Cust_FullName").innerHTML = obj.data[0].Cust_FullName;
+                    document.getElementById("txt_Labor_Team").innerHTML = obj.data[0].Labor_Team;
+                    document.getElementById("txt_Labor_Name").innerHTML = obj.data[0].Labor_CName;
+                    document.getElementById("txt_Labor_Country").innerHTML = obj.data[0].Labor_Country;
+                    document.getElementById("txt_Labor_Language").innerHTML = obj.data[0].Labor_Language;
+                    document.getElementById("txt_Labor_ID").innerHTML = obj.data[0].Labor_ID;
+                    document.getElementById("txt_Labor_PID").innerHTML = obj.data[0].Labor_PID;
+                    document.getElementById("txt_Labor_RID").innerHTML = obj.data[0].Labor_RID;
+                    document.getElementById("txt_Labor_EID").innerHTML = obj.data[0].Labor_EID;
+                    document.getElementById("txt_Labor_Phone").innerHTML = obj.data[0].Labor_Phone;
+                    document.getElementById("txt_Labor_Address").innerHTML = obj.data[0].Labor_Address;
+                    document.getElementById("txt_Labor_Valid").innerHTML = obj.data[0].Labor_Valid;
+                    document.getElementById("Labor_Address2").innerHTML = obj.data[0].Labor_Address2;
+                    //=====================================================
+
+                    document.getElementById("txt_Location").innerHTML = obj.data[0].Location;
+                    document.getElementById("LocationStart").value = obj.data[0].LocationStart;
+                    document.getElementById("LocationEnd").value = obj.data[0].LocationEnd;
+                    document.getElementById("ContactName").value = obj.data[0].ContactName;
+                    document.getElementById("Agent_Phone_2").value = obj.data[0].ContactPhone2;
+                    document.getElementById("Agent_Phone_3").value = obj.data[0].ContactPhone3;
+                    document.getElementById("Agent_Co_TEL").value = obj.data[0].Contact_Co_TEL;
+                    document.getElementById("HospitalClass").value = obj.data[0].HospitalClass;
+                    document.getElementById("txt_CarSeat").value = obj.data[0].CarSeat;
+                    document.getElementById("Question").value = obj.data[0].Question;
+                    document.getElementById("datetimepicker01").value = obj.data[0].Time_01.replace(/-/g, '/').substr(0, 10) + ' ' + obj.data[0].Time_01.substr(11, 5);
+                    document.getElementById("datetimepicker02").value = obj.data[0].Time_02.replace(/-/g, '/').substr(0, 10) + ' ' + obj.data[0].Time_02.substr(11, 5);
+                }
+            });
+            document.getElementById('button_01').style.display = "none";  //客戶地址
+            document.getElementById('button_02').style.display = "none";  //單位地址
+            document.getElementById('tab_Location').style.display = "";  //顯示地址
+            $("#Div_Loading").modal('hide');
+        }
+
+        //================ 【取消需求單】 ===============
+        function Btn_Cancel_Click() {
+            $("#Div_Loading").modal();
+            var txt_cancel = document.getElementById("txt_cancel").value;
+            $.ajax({
+                url: '0090010003.aspx/Btn_Cancel_Click',
+                type: 'POST',
+                data: JSON.stringify({ txt_cancel: txt_cancel }),
+                contentType: 'application/json; charset=UTF-8',
+                dataType: "json",       //如果要回傳值，請設成 json
+                success: function (doc) {
+                    var json = JSON.parse(doc.d.toString());
+                    if (json.status == "success") {
+                        alert('需求單【' + json.mno + '】已取消');
+                        window.location.href = "/0030010000/0030010002.aspx";
+                    }
+                    else {
+                        alert(json.status);
+                    }
+                }
+            });
+            $("#Div_Loading").modal('hide');
+        };
+
+        //================== 【返回】 =================
+        function Btn_Back_Click() {
+            window.location.href = "/0030010000/0030010002.aspx";
+        };
+
+        //============= 顯示【地址】名單 =============
+        function Location(Type) {
+            $.ajax({
+                url: '0090010003.aspx/Location_List',
+                type: 'POST',
+                data: JSON.stringify({ Type: Type }),
+                contentType: 'application/json; charset=UTF-8',
+                dataType: "json",       //如果要回傳值，請設成 json
+                success: function (doc) {
+                    var table = $('#Location_Table').DataTable({
+                        destroy: true,
+                        data: eval(doc.d), "oLanguage": {
+                            "sLengthMenu": "顯示 _MENU_ 筆記錄",
+                            "sZeroRecords": "無符合資料",
+                            "sInfo": "顯示第 _START_ 至 _END_ 項結果，共 _TOTAL_ 項",
+                            "sInfoFiltered": "(從 _MAX_ 項結果過濾)",
+                            "sInfoPostFix": "",
+                            "sSearch": "搜索:",
+                            "sUrl": "",
+                            "oPaginate": {
+                                "sFirst": "首頁",
+                                "sPrevious": "上頁",
+                                "sNext": "下頁",
+                                "sLast": "尾頁"
+                            }
+                        },
+                        "aLengthMenu": [[10, 25, 50, 100], [10, 25, 50, 100]],
+                        "iDisplayLength": 50,
+                        "columnDefs": [{
+                            "targets": -1,
+                            "data": null,
+                            "searchable": false,
+                            "paging": false,
+                            "ordering": false,
+                            "info": false
+                        }],
+                        columns: [
+                            { data: "Postcode" },
+                            { data: "Location" },
+                            { data: "Name" },
+                            { data: "Address" },
+                            { data: "TEL" },
+                            {
+                                data: "SYS_ID", render: function (data, type, row, meta) {
+                                    return "<button id='edit' type='button' class='btn btn-success btn-lg' data-dismiss='modal'>" +
+                                        "<span class='glyphicon glyphicon-ok'></span>&nbsp;&nbsp;選擇</button>"
+                                }
+                            }
+                        ]
+                    });
+                    //================================================
+                    $('#Location_Table tbody').unbind('click').
+                    on('click', '#edit', function () {
+                        var table = $('#Location_Table').DataTable();
+                        var SYS_ID = table.row($(this).parents('tr')).data().SYS_ID;
+                        Add_Location(SYS_ID, "0");
+                    });
+                }
+            });
+        }
+
+        function Add_Location(ID, Flag) {
+            $.ajax({
+                url: '0090010003.aspx/Add_Location',
+                type: 'POST',
+                data: JSON.stringify({ ID: ID, Flag: Flag }),
+                contentType: 'application/json; charset=UTF-8',
+                dataType: "json",       //如果要回傳值，請設成 json
+                success: function (doc) {
+                    var text = '{"data":' + doc.d + '}';
+                    var obj = JSON.parse(text);
+                    document.getElementById("txt_Location").innerHTML = "名稱：【" + obj.data[0].Name + " - " + obj.data[0].Location +
+                        "】地址：【" + obj.data[0].Postcode + "】【" + obj.data[0].Address + "】";
+                    document.getElementById("hid_PostCode").value = obj.data[0].Postcode;
+                }
+            });
+        }
+
+        //================【下拉選單】 CSS 修改 ================
+        function style(Name, value) {
+            var $select_elem = $("#" + Name);
+            $select_elem.chosen("destroy")
+            document.getElementById(Name).value = value;
+            $select_elem.chosen({
+                width: "100%",
+                search_contains: true
+            });
+            $('.chosen-single').css({ 'background-color': '#ffffbb' });
+        }
+
+        //================================================
+
+
+        //function QuestionCheckedCount(Ans) {
+
+        //   var ANS = document.getElementById(Ans).innerHTML;
+        //    if (ANS.checked ==true) {
+        //        x = x+1;
+        //        document.getElementById("TotChk").innerHTML = x;
+         //   }
+
+        //}
+
+        function QuestionCheckedCount(QQ) {
+
+            if (document.getElementById(QQ).checked) {
+                x = x + 1;
+            }
+            else {
+                x = x - 1;
+            }
+                document.getElementById("TotChk").innerHTML = x;
+        }
+
+        function radio_degree(option, flag) {
+            if (option == 0) {
+                document.getElementById(flag).innerHTML = "心智功能完好";
+            }
+            else if (option == 1) {
+                document.getElementById(flag).innerHTML = "輕度智力缺損";
+            }
+            else if (option == 2) {
+                document.getElementById(flag).innerHTML = "中度智力缺損";
+            }
+            else {
+                document.getElementById(flag).innerHTML = "嚴重智力缺損";
+            }
+            document.getElementById(flag).style.display = 'none';
+        }
+        //=====================================================2018/02/02從這裡開始 建一個按鈕觸發上面那個function
+        //================================================
+    </script>
+    <style type="text/css">
+        body {
+            font-family: "Microsoft JhengHei",Helvetica,Arial,Verdana,sflag-serif;
+            font-size: 16px;
+        }
+
+        thead th {
+            background-color: #666666;
+            color: white;
+        }
+
+        tr td:first-child,
+        tr th:first-child {
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+        }
+
+        tr td:last-child,
+        tr th:last-child {
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        #Location_Table td:nth-child(6), #Location_Table td:nth-child(5), #Location_Table td:nth-child(4),
+        #Location_Table td:nth-child(3), #Location_Table td:nth-child(2), #Location_Table td:nth-child(1),
+        #Cust_Table td:nth-child(7), #Cust_Table td:nth-child(6), #Cust_Table td:nth-child(5),
+        #Cust_Table td:nth-child(4), #Cust_Table td:nth-child(3), #Cust_Table td:nth-child(2), #Cust_Table td:nth-child(1),
+        #Labor_Table td:nth-child(12), #Labor_Table td:nth-child(11), #Labor_Table td:nth-child(10), #Labor_Table td:nth-child(9),
+        #Labor_Table td:nth-child(8), #Labor_Table td:nth-child(7), #Labor_Table td:nth-child(6), #Labor_Table td:nth-child(5),
+        #Labor_Table td:nth-child(4), #Labor_Table td:nth-child(3), #Labor_Table td:nth-child(2), #Labor_Table td:nth-child(1),
+        #data td:nth-child(10), #data td:nth-child(9), #data td:nth-child(8), #data td:nth-child(7), #data td:nth-child(6), #data td:nth-child(5),
+        #data td:nth-child(4), #data td:nth-child(3), #data td:nth-child(2), #data td:nth-child(1), #data th:nth-child(5) {
+            text-align: center;
+        }
+
+        .auto-style1 {
+            width: 100% ;
+        }
+    </style>
+
+    <!--==================================================================================-->
+    <div style="width: 900px; margin:0px auto; ">
+        <h2><strong>SPMSQ認知功能量表</strong></h2>
+
+        <table class="table table-bordered table-striped">
+                    <tbody><tr>
+                        <td style="text-align: center; background-color:#CCDDFF" width="20%">
+                            <span><strong>居服編號 </strong></span>
+                        </td>
+                        <td style="text-align: center; vertical-align:middle; width:20%">
+                            <span id="ctl00_head2_Case_ID">尚未建立開案資料</span>
+                        </td>
+                        <td style="text-align: center; background-color:#CCDDFF; vertical-align:middle; width:20%">
+                            <span><strong>個案姓名 </strong></span>
+                        </td>
+                        <td style="text-align: center; vertical-align:middle; width:20%">
+                            <span id="ctl00_head2_Case_Name">尚未建立開案資料</span>
+                        </td>
+                        <td style="text-align: center ; vertical-align:middle; background-color:#CCDDFF" width="20%">
+                            <strong>量表表號</strong>
+                        </td>
+                        <td style="text-align: center" width="30%">
+                            <label id="form_ID">DALN181117021824471</label>
+                        </td>
+                </tr>
+                    </tbody></table>
+                <table class="table table-bordered table-striped">
+                    <tbody><tr>
+                        <td style="text-align: center; background-color:#CCDDFF;vertical-align:middle; width:20%">
+                            <span><strong>身分證 </strong></span>
+                        </td>
+                        <td style="text-align: center; vertical-align:middle; width:20%">
+                            <span id="ctl00_head2_Case_memberid">尚未建立開案資料</span>
+                        </td>
+                        <td style="text-align: center; background-color:#CCDDFF;vertical-align:middle; width:20%">
+                            <span><strong>性別 </strong></span>
+                        </td>
+                        <td style="text-align: center; vertical-align:middle; width:20%">
+                            <span id="ctl00_head2_Case_Gender">尚未建立開案資料</span>
+                        </td>
+                        <td style="text-align: center; background-color:#CCDDFF; vertical-align:middle; width:20%">
+                            <span><strong>電話 </strong></span>
+                        </td>
+                        <td style="text-align: center; vertical-align:middle; width:20%">
+                            <span id="ctl00_head2_Case_Phone">尚未建立開案資料</span>
+                        </td>
+                </tr>
+                    </tbody></table>
+        <table class="table table-bordered table-striped">
+            <tbody>
+                <tr style="text-align: center; vertical-align:middle;">
+                    <td><strong>受訪者教育程度</strong></td>
+                    <td>
+                        <select id="DropService" name="DropService">
+                            <option value="">請選擇教育程度</option>
+                            <option value="小學">小學</option>
+                            <option value="國中">國中</option>
+                            <option value="高中">高中</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="text-align: center; width: 70%;">
+                        <strong>問題</strong>
+                    </th>
+                    <th style="text-align: center; width:30%; color:red">
+                        <strong>答錯請勾選</strong>
+                    </th>
+
+                </tr>
+
+
+
+                <tr id="ctl00_head2_tr_sysid">
+	<td style="text-align: center; vertical-align:middle; color: #008800;">
+                        <strong>1. 今天是&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;日？<br>（年月日都對才算正確）</strong>
+                    </td>
+	<td style="text-align: center; vertical-align:middle;">
+                        <input type="checkbox" id="Q1" name="Q1" value="Wrong" onclick="QuestionCheckedCount('Q1')">
+                    </td>
+</tr>
+
+                <tr>
+                    <td style="text-align: center; vertical-align:middle;">
+                        <strong>2. 今天是星期幾？</strong>
+                    </td>
+                    <td style="text-align: center; vertical-align:middle;">
+                        <input type="checkbox" id="Q2" name="Q2" value="Wrong" onclick="QuestionCheckedCount('Q2')">
+                    </td>
+
+                </tr>
+
+
+
+                <tr>
+                    <td style="text-align: center; vertical-align:middle; color: #008800;">
+                        <strong>3. 這是什麼地方？<br>（對所在地的任何描述都算正確；說「我家」或正確說出城鎮等都可接受。）</strong>
+                    </td>
+                    <td style="text-align: center; vertical-align:middle;">
+                        <input type="checkbox" id="Q3" name="Q3" value="Right" onclick="QuestionCheckedCount('Q3')">
+                    </td>
+
+                </tr>
+
+
+
+                <tr>
+                    <td style="text-align: center; vertical-align:middle;">
+                        <strong>4. 請告訴我你的地址？<br>(說出所在地的縣市、鄉鎮、街道中任一項即算對）</strong>
+                    </td>
+                    <td style="text-align: center; vertical-align:middle;">
+                        <input type="checkbox" id="Q4" name="Q4" value="Right" onclick="QuestionCheckedCount('Q4')">
+                    </td>
+
+                </tr>
+
+
+
+                <tr>
+                    <td style="text-align: center; vertical-align:middle; color: #008800;">
+                        <strong>5. 你今年幾歲？<br>（年齡與出生年月日符合才算正確）</strong>
+                    </td>
+                    <td style="text-align: center; vertical-align:middle;">
+                        <input type="checkbox" id="Q5" name="Q5" value="Right" onclick="QuestionCheckedCount('Q5')">
+                    </td>
+
+                </tr>
+                <tr>
+                   <td style="text-align: center; vertical-align:middle;">
+                        <strong>6. 你什麼時候出生？&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;日<br>(年月日都對才算正確）</strong>
+                    </td>
+                    <td style="text-align: center; vertical-align:middle;">
+                        <input type="checkbox" id="Q6" name="Q6" value="Right" onclick="QuestionCheckedCount('Q6')">
+                    </td>
+
+
+                </tr>
+
+
+
+                <tr>
+                    <td style="text-align: center; vertical-align:middle; color: #008800;">
+                        <strong>7. 現任總統是誰？<br>（不知名但會認就算對）</strong>
+                    </td>
+                    <td style="text-align: center; vertical-align:middle;">
+                        <input type="checkbox" id="Q7" name="Q7" value="Right" onclick="QuestionCheckedCount('Q7')">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td style="text-align: center; vertical-align:middle;">
+                        <strong>8. 前任總統是誰？<br>（不知名但會認就算對）</strong>
+                    </td>
+                    <td style="text-align: center; vertical-align:middle;">
+                        <input type="checkbox" id="Q8" name="Q8" value="Right" onclick="QuestionCheckedCount('Q8')">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td style="text-align: center; vertical-align:middle; color: #008800;">
+                        <strong>9. 你媽媽姓什麼？<br>(當受訪者很肯定達出就算對）</strong>
+                    </td>
+                    <td style="text-align: center; vertical-align:middle;">
+                        <input type="checkbox" id="Q9" name="Q9" value="Right" onclick="QuestionCheckedCount('Q9')">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; vertical-align:middle;">
+                        <strong>10. 連續減3的心算<br>（期間出現任何錯誤或無法繼續進行即算錯誤）</strong>
+                    </td>
+                    <td style="text-align: center; vertical-align:middle;">
+                        <input type="checkbox" id="Q10" name="Q10" value="Right" onclick="QuestionCheckedCount('Q10')">
+                    </td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr style="background-color:#FFBB73">
+                    <td style="text-align: center ;">
+                        <strong>答錯題數</strong>
+                    </td>
+                    <td style="text-align: center; vertical-align:middle;">
+                        <label id="TotChk"></label>
+                    </td>
+                </tr>
+                </tbody></table><table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th style="text-align: center" colspan="5">
+                        <span style="font-size:20px"><strong>請依照錯誤題數及個案教育程度，於上表勾選心智功能程度</strong></span>
+                    </th>
+                </tr>
+            </thead>
+                <tbody><tr>
+                            <th></th>
+                            <td>
+                            <input type="radio" name="degree" value="心智功能完好" onclick="radio_degree('0', 'degree')">心智功能完好<label id="degree"></label>
+                            </td>
+                            <td>
+                            <input type="radio" name="degree" value="輕度智力缺損" onclick="radio_degree('1', 'degree')">輕度智力缺損
+                            </td>
+                            <td>
+                            <input type="radio" name="degree" value="中度智力缺損" onclick="radio_degree('2', 'degree')">中度智力缺損
+                            </td>
+                            <td>
+                            <input type="radio" name="degree" value="嚴重智力缺損" onclick="radio_degree('3', 'degree')">嚴重智力缺損
+                            </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center ;">
+                        <strong>小學</strong>
+                    </td>
+                    <td style="text-align: center ;">
+                        <strong>0-3題錯誤</strong>
+                    </td>
+                    <td style="text-align: center ;">
+                        <strong>4-5題錯誤</strong>
+                    </td>
+                    <td style="text-align: center ;">
+                        <strong>6-8題錯誤</strong>
+                    </td>
+                    <td style="text-align: center ;">
+                        <strong>9-10題錯誤</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center ;">
+                        <strong>國中</strong>
+                    </td>
+                    <td style="text-align: center ;">
+                        <strong>0-2題錯誤</strong>
+                    </td>
+                    <td style="text-align: center ;">
+                        <strong>3-4題錯誤</strong>
+                    </td>
+                    <td style="text-align: center ;">
+                        <strong>5-7題錯誤</strong>
+                    </td>
+                    <td style="text-align: center ;">
+                        <strong>8-10題錯誤</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center ;">
+                        <strong>高中</strong>
+                    </td>
+                    <td style="text-align: center ;">
+                        <strong>0-1題錯誤</strong>
+                    </td>
+                    <td style="text-align: center ;">
+                        <strong>2-3題錯誤</strong>
+                    </td>
+                    <td style="text-align: center ;">
+                        <strong>4-6題錯誤</strong>
+                    </td>
+                    <td style="text-align: center ;">
+                        <strong>7-10題錯誤</strong>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <td style="text-align: center ; vertical-align:middle; height:80px; width:25%">
+                        <strong>督導員簽名</strong>
+                    </td>
+                    <td style="text-align: center ; height:80px; width:25%"></td>
+                    <td style=" height:80px; width:25%; text-align:center; vertical-align:middle"><strong>填表日期</strong></td>
+                    <td id="div_date" style="text-align: center ; vertical-align:middle; height:80px; width:25%; font-size: 20px">2018/11/17</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+
+        <table class="table table-bordered table-striped">
+
+            <tbody>
+
+
+                <tr>
+                    <td colspan="4" style="text-align: center">
+                        <input id="hid_PostCode" name="hid_PostCode" type="hidden">
+                        <button id="Btn_New" type="button" onclick="Btn_New_Click('0');" class="btn btn-success btn-lg " style="width:200px; height: 100px; font-size: 45px;"><span class="glyphicon glyphicon-ok"></span>送出</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--===================================================-->
+        <script>
+            $.datetimepicker.setLocale('ch');
+            $('#datetimepicker01').datetimepicker({
+                allowTimes: [
+                    '00:00', '00:30', '01:00', '01:30', '02:00', '02:30', '03:00', '03:30', '04:00', '04:30', '05:00', '05:30',
+                    '06:00', '06:30', '07:00', '07:30', '08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30',
+                    '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30',
+                    '18:00', '18:30', '19:00', '19:30', '20:00', '20:30', '21:00', '21:30', '22:00', '22:30', '23:00', '23:30'
+                ]
+            });
+
+            $('#datetimepicker02').datetimepicker({
+                allowTimes: [
+                    '00:00', '00:30', '01:00', '01:30', '02:00', '02:30', '03:00', '03:30', '04:00', '04:30', '05:00', '05:30',
+                    '06:00', '06:30', '07:00', '07:30', '08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30',
+                    '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30',
+                    '18:00', '18:30', '19:00', '19:30', '20:00', '20:30', '21:00', '21:30', '22:00', '22:30', '23:00', '23:30'
+                ]
+            });
+
+            $(function () {
+                $('.chosen-select').chosen();
+                $('.chosen-select-deselect').chosen({ allow_single_deselect: true });
+                $('.chosen-single').css({ 'background-color': '#ffffbb' });
+            });
+        </script>
+    </div>
+
+
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'aspnetForm', ['tctl00$UpdatePanel1',''], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+        <div id="ctl00_UpdatePanel1">
+
+                <span id="ctl00_Timer1" style="visibility:hidden;display:none;"></span>
+
+</div>
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Sys.UI._Timer, {"enabled":true,"interval":30000,"uniqueID":"ctl00$Timer1"}, null, null, $get("ctl00_Timer1"));
+});
+//]]>
+</script>
+</form>
+
+
+</body></html>

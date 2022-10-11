@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
+
+</title>
+
+<!--<link href="http://210.68.75.96:9000/DataTables/jquery.dataTables.min.css" rel="stylesheet" />-->
+<link href="./css/bootstrap.min.css" rel="stylesheet" />
+<link href="./css/bootstrap-theme.min.css" rel="stylesheet" />
+<link href="./css/bootstrap-responsive.min.css" rel="stylesheet" />
+<!--<link href="http://210.68.75.96:9000/bootstrap-chosen-master/bootstrap-chosen.css" rel="stylesheet" />-->
+<link href="./css/JackyStyle.css" rel="stylesheet" />
+<!--    <script src="http://210.68.75.96:9000/js/jquery.min.js"></script>
+    <script src="http://210.68.75.96:9000/js/bootstrap.min.js"></script>
+    <script src="http://210.68.75.96:9000/chosen/chosen.jquery.js"></script>
+    <script src="http://210.68.75.96:9000/DataTables/jquery.dataTables.min.js"></script>
+
+
+
+    <!--
+    <script src="../fullcalendar-2.8.0/lib/moment.min.js"></script>
+    <script src="../fullcalendar-2.8.0/fullcalendar.min.js"></script>
+    <script src="../fullcalendar-2.8.0/lang-all.js"></script>--%>
+    <link href="../css/jquery.datetimepicker.min.css" rel="stylesheet" />
+    <script src="js/jquery.datetimepicker.full.min.js"></script>
+
+
+    <link href="../Timeline/css/style.css" rel="stylesheet" />
+
+    <script src="Timeline/js/jq.schedule.js"></script>
+
+-->
+
+</head>
+<body>
+    <form name="aspnetForm" method="post" action="./0200010000.aspx?seqno=0" id="aspnetForm">
+
+
+
+
+
+
+    <!--DIVFIRST===================================================-->
+    <div style="width: 1080px; margin:0px auto;">
+            <h2 class="style1"><strong>天主教聖功醫療財團法人附設居家護理所</strong></h2>
+            <h2 class="style1"><strong>巴氏量表及科氏量表</strong></h2>
+
+                    <table class="table table-bordered table-striped">
+                        <tbody><tr>
+                            <td style="text-align: center; background-color:#CCDDFF; vertical-align:middle; width:20%">
+                                <span><strong>個案姓名 </strong></span>
+                            </td>
+                            <td style="text-align: center; vertical-align:middle; width:20%">
+                                <span id="ctl00_head2_Case_Name">尚未建立開案資料</span>
+                            </td>
+                    </tr>
+                        </tbody></table>
+            <table class="table table-bordered table-striped">
+                <tbody>
+                    <tr>
+                        <th style="text-align: center; width: 15%;">
+                            <strong>項目</strong>
+                        </th>
+                        <th style="text-align: center; width:75%">
+                            <strong>內容</strong></th>
+                        <td style="text-align:center; width:10%">
+                            <strong>該選項得分</strong>
+                        </td>
+                    </tr>
+
+
+
+                    <tr id="ctl00_head2_tr_sysid">
+    	<td style="text-align: center; vertical-align:middle; color: #008800; ">
+                            <strong>1. 進食</strong>
+                        </td>
+    	<td>
+                            <input type="radio" name="Eating" value="10" onclick="ShowRadioScore('1','flag1')">自己在合理的時間內(約十秒鐘吃一口)可用筷子取食眼前的食物。若需進食輔具時，應會自行穿脫。(10分)<br>
+                            <input type="radio" name="Eating" value="5" onclick="ShowRadioScore('2', 'flag1')">需別人幫忙穿脫輔具或只會用湯匙進食。(5分)<br>
+                            <input type="radio" name="Eating" value="0" onclick="ShowRadioScore('3', 'flag1')">無法自行取食或耗費時間過長。(0分)
+                        </td>
+    	<td style="text-align: center ; vertical-align:middle;">
+                            <label id="flag1"></label>
+                        </td>
+    </tr>
+
+                    <tr>
+                        <td style="text-align: center; vertical-align:middle;">
+                            <strong>2. 輪椅於床位間的移位</strong></td>
+                        <td>
+                            <input type="radio" name="Moving" value="15" onclick="ShowRadioScore('0','flag2')">可獨立完成，包括輪椅的煞車及移開腳踏板。(15分)<br>
+                            <input type="radio" name="Moving" value="10" onclick="ShowRadioScore('1', 'flag2')">需要稍微的協助(例如:予以輕扶以保持平衡)或需要口頭指導。(10分)<br>
+                            <input type="radio" name="Moving" value="5" onclick="ShowRadioScore('2', 'flag2')">可自行從床上坐起來，但移位時仍需別人幫忙。(5分)<br>
+                            <input type="radio" name="Moving" value="0" onclick="ShowRadioScore('3', 'flag2')">需別人幫忙方可坐起來或移位。(0分)
+                        </td>
+                        <td style="text-align: center ; vertical-align:middle;">
+                            <label id="flag2"></label>
+                        </td>
+                    </tr>
+
+
+
+                    <tr>
+                        <td style="text-align: center; vertical-align:middle; color: #008800;">
+                            <strong>3. 個人衛生</strong>
+                        </td>
+                        <td>
+                            <input type="radio" name="Cleaning" value="5" onclick="ShowRadioScore('2', 'flag3')">可獨立完成洗臉、洗手、刷牙及梳頭髮。(5分)<br>
+                            <input type="radio" name="Cleaning" value="0" onclick="ShowRadioScore('3', 'flag3')">需要別人幫忙。(0分)<br>
+                        </td>
+                        <td style="text-align: center ; vertical-align:middle;">
+                            <label id="flag3"></label>
+                        </td>
+                    </tr>
+
+
+
+                    <tr>
+                        <td style="text-align: center; vertical-align:middle;">
+                            <strong>4. 如廁</strong>
+                        </td>
+                        <td>
+                            <input type="radio" name="Toileting" value="10" onclick="ShowRadioScore('1', 'flag4')">可自行進出廁所，不會弄髒衣物，並能穿好衣服。使用便盆者，可自行清理便盆。(10分)<br>
+                            <input type="radio" name="Toileting" value="5" onclick="ShowRadioScore('2', 'flag4')">需幫忙保持姿勢的平衡，整理衣物或使用衛生紙。使用便盆者，可自行取放便盆，但須仰賴他人清理。(5分)<br>
+                            <input type="radio" name="Toileting" value="0" onclick="ShowRadioScore('3', 'flag4')">需他人幫忙。(0分)
+                        </td>
+                        <td style="text-align: center ; vertical-align:middle;">
+                            <label id="flag4"></label>
+                        </td>
+                    </tr>
+
+
+
+                    <tr>
+                        <td style="text-align: center; vertical-align:middle; color: #008800;">
+                            <strong>5. 沐浴</strong>
+                        </td>
+                        <td>
+
+                            <input type="radio" name="Bathing" value="5" onclick="ShowRadioScore('2', 'flag5')">可獨立完成(不論是盆浴或沐浴)。(5分)<br>
+                            <input type="radio" name="Bathing" value="0" onclick="ShowRadioScore('3', 'flag5')">需要別人幫忙。(0分)
+                        </td>
+                        <td style="text-align: center ; vertical-align:middle;">
+                            <label id="flag5"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                       <td style="text-align: center; vertical-align:middle;">
+                            <strong>6. 行走於平地上</strong>
+                        </td>
+                        <td>
+                            <input type="radio" name="Walking" value="15" onclick="ShowRadioScore('0', 'flag6')">使用或不使用輔具皆可獨立行走50公尺以上。(15分)<br>
+                            <input type="radio" name="Walking" value="10" onclick="ShowRadioScore('1', 'flag6')">需要稍微的扶持或口頭指導方可行走50公尺以上。(10分)<br>
+                            <input type="radio" name="Walking" value="5" onclick="ShowRadioScore('2', 'flag6')">雖無法行走，但可獨立操縱輪椅(包括轉彎、進門、及接近桌子、床沿)並可推行輪椅50公尺以上。(5分)<br>
+                            <input type="radio" name="Walking" value="0" onclick="ShowRadioScore('3', 'flag6')">需別人幫忙推輪椅。(0分)
+                        </td>
+                        <td style="text-align: center ; vertical-align:middle;">
+                            <label id="flag6"></label>
+                        </td>
+
+                    </tr>
+
+
+
+                    <tr>
+                        <td style="text-align: center; vertical-align:middle; color: #008800;">
+                            <strong>7. 上下樓梯</strong>
+                        </td>
+                        <td>
+                            <input type="radio" name="Stairing" value="10" onclick="ShowRadioScore('1', 'flag7')">可自行上下樓梯(允許抓扶手、用拐杖)。(10分)<br>
+                            <input type="radio" name="Stairing" value="5" onclick="ShowRadioScore('2', 'flag7')">需要稍微幫忙或口頭指導。(5分)<br>
+                            <input type="radio" name="Stairing" value="0" onclick="ShowRadioScore('3', 'flag7')">無法上下樓梯。(0分)
+                        </td>
+                        <td style="text-align: center ; vertical-align:middle;">
+                            <label id="flag7"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; vertical-align:middle;">
+                            <strong>8. 穿脫衣服</strong>
+                        </td>
+                        <td>
+                            <input type="radio" name="Clothing" value="10" onclick="ShowRadioScore('1', 'flag8')">可自行穿脫衣服、鞋子及輔具。(10分)<br>
+                            <input type="radio" name="Clothing" value="5" onclick="ShowRadioScore('2', 'flag8')">在別人幫忙下，可自行完成一半以上的動作。(5分)<br>
+                            <input type="radio" name="Clothing" value="0" onclick="ShowRadioScore('3', 'flag8')">需別人幫忙。(0分)
+                        </td>
+                        <td style="text-align: center ; vertical-align:middle;">
+                            <label id="flag8"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; vertical-align:middle; color: #008800;">
+                            <strong>9. 大便控制</strong>
+                        </td>
+                        <td>
+                            <input type="radio" name="Defecating" value="10" onclick="ShowRadioScore('1', 'flag9')">不會失禁，並可自行使用塞劑。(10分)<br>
+                            <input type="radio" name="Defecating" value="5" onclick="ShowRadioScore('2', 'flag9')">偶爾會失禁(每週不超過一次)或使用塞劑時需人幫助。(5分)<br>
+                            <input type="radio" name="Defecating" value="0" onclick="ShowRadioScore('3', 'flag9')">需別人處理。(0分)
+                        </td>
+                        <td style="text-align: center ; vertical-align:middle;">
+                            <label id="flag9"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; vertical-align:middle;">
+                            <strong>10. 小便控制</strong>
+                        </td>
+                        <td>
+                            <input type="radio" name="Peeing" value="10" onclick="ShowRadioScore('1', 'flag10')">日夜皆不會尿失禁，或可自行使用並清理尿套。(10分)<br>
+                            <input type="radio" name="Peeing" value="5" onclick="ShowRadioScore('2', 'flag10')">偶爾會尿失禁(每週不超過一次)或尿急(無法等待便盆或無法即時趕到廁所)或需別人幫忙處理尿套。(5分)<br>
+                            <input type="radio" name="Peeing" value="0" onclick="ShowRadioScore('3', 'flag10')">需別人處理。(0分)
+                        </td>
+                        <td style="text-align: center ; vertical-align:middle;">
+                            <label id="flag10"></label>
+                        </td>
+                    </tr>
+
+                </tbody>
+                <tbody>
+                    <tr style="background-color:#FFBB73">
+                        <td style="text-align: center ;">
+                            <strong>總分</strong>
+                        </td>
+                        <td>Karnofsky scale: <span lang="EN-US">&nbsp;&nbsp;</span><span id="ctl00_head2_Label1">Label</span>
+                            <span>&nbsp;&nbsp; 級<span lang="EN-US"><o:p></o:p></span></span><span lang="EN-US"><span>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <br>
+                            </span>0<span>&nbsp; </span></span><span>完全活動，能維持所右之活動，不受任何限制<span lang="EN-US"><o:p></o:p></span></span><span lang="EN-US"><span>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <br>
+                            </span>1<span>&nbsp; </span></span><span>能夠步行及維持輕度工作，如：簡單之家務，辦公室之工作，但受限於體力消耗量之活動<span lang="EN-US"><o:p></o:p></span></span><span lang="EN-US"><span>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <br>
+                            </span>2<span>&nbsp; </span></span><span>能夠步行及維持自我照顧，但無法進行辦工或家務，<span lang="EN-US">50%</span>以上之清醒時間，可以起床活動不必限制在床上或&nbsp; 椅子上<span lang="EN-US"><o:p></o:p></span></span><span lang="EN-US"><span>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <br>
+                            </span>3<span>&nbsp; </span></span><span>只能維持有限之自我照顧，超過<span lang="EN-US">50%</span>以上之清醒時間，活動限制在床上或椅子上<span lang="EN-US"><o:p></o:p></span></span><span lang="EN-US"><span>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <br>
+                            </span>4<span>&nbsp; </span></span><span>完全無法活動，不能進行任何自我照顧且完全限制在床上或椅子上</span></td>
+                        <td style="text-align: center ; vertical-align:middle;">
+                            <label id="TotAns"></label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="text-align: center ; vertical-align:middle; height:80px; width:25%">
+                            <strong>督導員簽名</strong>
+                        </td>
+                        <td style="text-align: center ; height:80px; width:25%"></td>
+                        <td style=" height:80px; width:25%; text-align:center; vertical-align:middle"><strong>填表日期</strong></td>
+                        <td id="div_date" style="text-align: center ; vertical-align:middle; height:80px; width:25%; font-size: 20px">2018/8/4</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: center">
+                            <button id="Btn_New" type="button" onclick="Btn_New_Click('0');" class="btn btn-success btn-lg ">
+                                <span class="glyphicon glyphicon-ok"></span>&nbsp;&nbsp;送出</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <script>
+                $.datetimepicker.setLocale('ch');
+                $('#datetimepicker01').datetimepicker({
+                    allowTimes: [
+                        '00:00', '00:30', '01:00', '01:30', '02:00', '02:30', '03:00', '03:30', '04:00', '04:30', '05:00', '05:30',
+                        '06:00', '06:30', '07:00', '07:30', '08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30',
+                        '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30',
+                        '18:00', '18:30', '19:00', '19:30', '20:00', '20:30', '21:00', '21:30', '22:00', '22:30', '23:00', '23:30'
+                    ]
+                });
+
+                $('#datetimepicker02').datetimepicker({
+                    allowTimes: [
+                        '00:00', '00:30', '01:00', '01:30', '02:00', '02:30', '03:00', '03:30', '04:00', '04:30', '05:00', '05:30',
+                        '06:00', '06:30', '07:00', '07:30', '08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30',
+                        '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30',
+                        '18:00', '18:30', '19:00', '19:30', '20:00', '20:30', '21:00', '21:30', '22:00', '22:30', '23:00', '23:30'
+                    ]
+                });
+
+                $(function () {
+                    $('.chosen-select').chosen();
+                    $('.chosen-select-deselect').chosen({ allow_single_deselect: true });
+                    $('.chosen-single').css({ 'background-color': '#ffffbb' });
+                });
+            </script>
+        </div>
+
+
+
+
+    </form>
+</body>
+</html>

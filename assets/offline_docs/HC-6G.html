@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
+
+</title>
+
+<!--<link href="http://210.68.75.96:9000/DataTables/jquery.dataTables.min.css" rel="stylesheet" />-->
+<link href="./css/bootstrap.min.css" rel="stylesheet" />
+<link href="./css/bootstrap-theme.min.css" rel="stylesheet" />
+<link href="./css/bootstrap-responsive.min.css" rel="stylesheet" />
+<!--<link href="http://210.68.75.96:9000/bootstrap-chosen-master/bootstrap-chosen.css" rel="stylesheet" />-->
+<link href="./css/JackyStyle.css" rel="stylesheet" />
+<!--    <script src="http://210.68.75.96:9000/js/jquery.min.js"></script>
+<script src="http://210.68.75.96:9000/js/bootstrap.min.js"></script>
+<script src="http://210.68.75.96:9000/chosen/chosen.jquery.js"></script>
+<script src="http://210.68.75.96:9000/DataTables/jquery.dataTables.min.js"></script>
+
+
+
+<!--
+<script src="../fullcalendar-2.8.0/lib/moment.min.js"></script>
+<script src="../fullcalendar-2.8.0/fullcalendar.min.js"></script>
+<script src="../fullcalendar-2.8.0/lang-all.js"></script>--%>
+<link href="../css/jquery.datetimepicker.min.css" rel="stylesheet" />
+<script src="js/jquery.datetimepicker.full.min.js"></script>
+
+
+<link href="../Timeline/css/style.css" rel="stylesheet" />
+
+<script src="Timeline/js/jq.schedule.js"></script>
+
+-->
+
+</head>
+<body>
+  <form name="aspnetForm" method="post" action="./0200010000.aspx?seqno=0" id="aspnetForm">
+
+
+
+
+
+
+    <!--DIVFIRST===================================================-->
+    <div style="width: 1280px; margin:0px auto;">
+      <h2><strong>護理計畫表(呼吸道清除功能失)（新增）</strong></h2>
+      <table class="table table-bordered table-striped">
+        <tbody><tr>
+          <th style="text-align: center; vertical-align:middle; width: 15%">
+            <strong>姓名:</strong>
+          </th>
+          <th style="text-align: center; vertical-align:middle; width: 15%">
+            <input id="Text2" class="form-control" placeholder="姓名" maxlength="10" onkeyup="cs(this);">
+          </th>
+          <th style="text-align: center; vertical-align:middle; width: 15%">
+            <strong>病歷號:</strong>
+          </th>
+          <th style="text-align: center; vertical-align:middle; width: 15%">
+            <input id="Text3" class="form-control" placeholder="病歷號" maxlength="10" onkeyup="cs(this);">
+          </th>
+          <th style="text-align: center; vertical-align:middle; width: 15%">
+            <strong>家字號:</strong>
+          </th>
+          <th style="text-align: center; vertical-align:middle; width: 15%">
+            <input id="Text4" class="form-control" placeholder="家字號" maxlength="10" onkeyup="cs(this);">
+          </th>
+        </tr>
+        <tr>
+          <th colspan="6" style="text-align: center; vertical-align:middle; width: 15%">
+            <strong>護理問題:呼吸道清除功能失Ineffective Airway Clearance </strong>
+          </th>
+        </tr>
+        <tr>
+          <th style="text-align: center; vertical-align:middle; width: 15%">
+            <strong>護理目標:</strong>
+          </th>
+          <th colspan="5" style="text-align: left; vertical-align:middle; width: 15%">
+            <strong>近程：◎意識清醒者之個案，能於三個月內正確執行深呼吸及有效的咳嗽方法，以利痰液的排除 </strong><br>
+            <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;◎意識喪失者，照顧者能於三個月內正確執行痰液排出的方法 </strong><br>
+            <strong>遠程：於居家照護期間，能維持個案的呼吸道通暢，預防並降低吸入的危險</strong>
+          </th>
+        </tr>
+      </tbody></table>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th style="text-align: center" colspan="7">
+              <span style="font-size: 20px"><strong>天主教聖功醫療財團法人聖功醫院居家護理護理計畫表</strong></span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <th rowspan="2" style="text-align: center; vertical-align:middle; width: 15%">
+              <strong>開始日期</strong>
+            </th>
+            <th rowspan="2" style="text-align: center; vertical-align:middle; width: 30%">
+              <strong>護理活動</strong>
+            </th>
+            <th colspan="5" style="text-align: center; vertical-align:middle; width: 15%">
+              <strong>評值</strong>
+            </th>
+          </tr>
+          <tr>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <strong>日期</strong>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <strong>結果</strong>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <strong>知識/技能</strong>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <strong>執行</strong>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <strong>簽名</strong>
+            </th>
+          </tr>
+
+          <tr>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <input type="text" class="form-control" id="datetimepicker01" name="datetimepicker01" maxlength="10" placeholder="時間">
+            </th>
+            <th style="text-align: left; vertical-align:middle; width: 10%">
+              <input type="checkbox" id="Checkbox1" name="check01" value="1"> 1.教導一般的居家照護原則(含意識清醒及意識不清者)：<br>
+              <strong>＊盡量避免與患者有上呼吸道感染或傳染的人接觸，以減少被感染。家屬照顧或訪客探視時，應配戴口罩</strong><br>
+              <strong>＊應依醫師的指示服用藥物，並注意其副作用</strong><br>
+              <strong>＊盡量減少環境中易引起呼吸道過敏的物質，例如：灰塵、花粉等，且避免過度潮濕(心血管疾病、腎臟病者除外)或過度乾燥的環境</strong><br>
+              <strong>＊每天至少需2500-3000CC的水分，包含飲食中的水分</strong><br>
+              <strong>＊教導觀察及記錄肺部、支氣管感染或呼吸道阻塞的徵象，如：發紺、發燒、呼吸困難，痰的顏色、量或性質的改變，必要時，需送醫處理並通知居家護理師</strong><br>
+              <strong>＊每天應至少執行四次的胸腔物理治療，包含姿位引流、叩擊、震顫等</strong><br>
+              <strong>＊胸腔物理治療後，應執行口腔護理，以增加舒適</strong><br>
+              <strong>＊患有氣喘的個案，應視情況自備氧氣，以備不時之需</strong><br>
+              <strong>＊應隨時注意呼吸道是否通暢</strong><br>
+              <input type="checkbox" id="Checkbox2" name="check01" value="1"> 2.教導意識清醒者之家屬，維持呼吸道通暢的方法：<br>
+              <strong>＊若可下床行動，應鼓勵逐漸增加活動量，以改善呼吸功能</strong><br>
+              <strong>＊教導每日至少執行三次、每次五分鐘的深呼吸及有效咳嗽，以利肺部的痰排出</strong><br>
+              <input type="checkbox" id="Checkbox3" name="check01" value="1"> 3.教導意識不清者之家屬，維持呼吸道通暢之方法：<br>
+              <strong>＊留置氣切造口器者，應每天執行皮膚清潔及內管消毒</strong><br>
+              <strong>＊餵食後，插置鼻胃管餵食或造廔者，應採右側臥，以預防胃內容物逆流或吸入</strong><br>
+              <strong>＊應經常檢查是否有阻塞物在個案的口中或喉嚨</strong><br>
+              <strong>＊視需要給予抽痰</strong><br>
+              <strong>＊維持床頭抬高三十度的姿勢，應減少平躺或直立坐臥</strong><br>
+              <strong>＊應每一至二小時改變姿勢，視需要紀錄翻身記錄表</strong><br>
+              <strong>＊視需要給予口腔護理，以增加舒適</strong><br>
+              <input type="checkbox" id="Checkbox4" name="check01" value="1"> 4.示教及回示教正確的氣切造口器護理<br>
+              <input type="checkbox" id="Checkbox5" name="check01" value="1"> 5.示教及回示教正確的抽痰技術<br>
+              <input type="checkbox" id="Checkbox6" name="check01" value="1"> 6.示教及回示教胸腔物理治療的方法，如：姿位引流、叩擊或震顫等<br>
+              <input type="checkbox" id="Checkbox7" name="check01" value="1"> 7.必要時，給予蒸氣吸入或依醫囑給予化痰藥物，以利痰液的排出<br>
+              <input type="checkbox" id="Checkbox8" name="check01" value="1"> 8.需要時，可依醫囑給予化痰劑、支氣管擴張劑或抗生素等，且注意副作用並評值其療效<br>
+              <input type="checkbox" id="Checkbox9" name="check01" value="1"> 9.若有呼吸困難、呼吸暫停或發紺時，緊急處理的方法，如：抽吸、給氧(Ambu)、送醫或心肺復甦術(CPR)等<br>
+              <input type="checkbox" id="Checkbox10" name="check01" value="1"> 10.家訪時，監測並紀錄生命徵象、痰液性狀、顏色及量<br>
+              <input type="checkbox" id="Checkbox11" name="check01" value="1"> 11.家訪時，執行身體評估，如：視診(氣切造口的情形)、聽診、觸診及叩診，以確定痰的部位<br>
+              <input type="checkbox" id="Checkbox12" name="check01" value="1"> 12.視情況執行實驗室檢驗<br>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <textarea id="Date" name="Date" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);" style="resize: none" ;="" placeholder="日期"></textarea>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <select id="select01" name="select01" class="chosen-select">
+                <option value="">結果</option>
+                <option value="6">良好(6)</option>
+                <option value="5">尚可(5)</option>
+                <option value="4">惡化(4)</option>
+              </select>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <select id="select2" name="select02" class="chosen-select">
+                <option value="">知識/技能</option>
+                <option value="6">純熟(6)</option>
+                <option value="5">尚可(5)</option>
+                <option value="4">生疏(4)</option>
+                <option value="3">完全不會(3)</option>
+              </select>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <select id="select3" name="select02" class="chosen-select">
+                <option value="">執行</option>
+                <option value="6">確實執行(6)</option>
+                <option value="5">部分執行(5)</option>
+                <option value="4">偶而執行(4)</option>
+                <option value="3">不完全執行(3)</option>
+                <option value="2">執行部分錯誤(2)</option>
+                <option value="1">執行嚴重錯誤(1)</option>
+              </select>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+            </th>
+          </tr>
+        </tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+    </form>
+  </body>
+  </html>

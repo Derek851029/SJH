@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
+
+</title>
+
+<!--<link href="http://210.68.75.96:9000/DataTables/jquery.dataTables.min.css" rel="stylesheet" />-->
+<link href="./css/bootstrap.min.css" rel="stylesheet" />
+<link href="./css/bootstrap-theme.min.css" rel="stylesheet" />
+<link href="./css/bootstrap-responsive.min.css" rel="stylesheet" />
+<!--<link href="http://210.68.75.96:9000/bootstrap-chosen-master/bootstrap-chosen.css" rel="stylesheet" />-->
+<link href="./css/JackyStyle.css" rel="stylesheet" />
+<!--    <script src="http://210.68.75.96:9000/js/jquery.min.js"></script>
+<script src="http://210.68.75.96:9000/js/bootstrap.min.js"></script>
+<script src="http://210.68.75.96:9000/chosen/chosen.jquery.js"></script>
+<script src="http://210.68.75.96:9000/DataTables/jquery.dataTables.min.js"></script>
+
+
+
+<!--
+<script src="../fullcalendar-2.8.0/lib/moment.min.js"></script>
+<script src="../fullcalendar-2.8.0/fullcalendar.min.js"></script>
+<script src="../fullcalendar-2.8.0/lang-all.js"></script>--%>
+<link href="../css/jquery.datetimepicker.min.css" rel="stylesheet" />
+<script src="js/jquery.datetimepicker.full.min.js"></script>
+
+
+<link href="../Timeline/css/style.css" rel="stylesheet" />
+
+<script src="Timeline/js/jq.schedule.js"></script>
+
+-->
+
+</head>
+<body>
+  <form name="aspnetForm" method="post" action="./0200010000.aspx?seqno=0" id="aspnetForm">
+
+
+
+
+
+
+    <!--DIVFIRST===================================================-->
+    <div style="width: 1280px; margin:0px auto;">
+      <h2><strong>護理計畫表(現存皮膚完整性受損/胃造廔口)（新增）</strong></h2>
+      <table class="table table-bordered table-striped">
+        <tbody><tr>
+          <th style="text-align: center; vertical-align:middle; width: 15%">
+            <strong>姓名:</strong>
+          </th>
+          <th style="text-align: center; vertical-align:middle; width: 15%">
+            <input id="Text2" class="form-control" placeholder="姓名" maxlength="10" onkeyup="cs(this);">
+          </th>
+          <th style="text-align: center; vertical-align:middle; width: 15%">
+            <strong>病歷號:</strong>
+          </th>
+          <th style="text-align: center; vertical-align:middle; width: 15%">
+            <input id="Text3" class="form-control" placeholder="病歷號" maxlength="10" onkeyup="cs(this);">
+          </th>
+          <th style="text-align: center; vertical-align:middle; width: 15%">
+            <strong>家字號:</strong>
+          </th>
+          <th style="text-align: center; vertical-align:middle; width: 15%">
+            <input id="Text4" class="form-control" placeholder="家字號" maxlength="10" onkeyup="cs(this);">
+          </th>
+        </tr>
+        <tr>
+          <th colspan="6" style="text-align: center; vertical-align:middle; width: 15%">
+            <strong>護理問題:現存皮膚完整性受損 /胃造廔口</strong>
+          </th>
+        </tr>
+        <tr>
+          <th style="text-align: center; vertical-align:middle; width: 15%">
+            <strong>護理目標:</strong>
+          </th>
+          <th colspan="5" style="text-align: left; vertical-align:middle; width: 15%">
+            <strong>近程：個案及主要照顧者能於三次訪視內，理解並應用預防傷口惡化及照護的方法</strong><br>
+            <strong>遠程：於居家照護期間，提升個案舒適及生活品質</strong>
+          </th>
+        </tr>
+      </tbody></table>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th style="text-align: center" colspan="7">
+              <span style="font-size: 20px"><strong>天主教聖功醫療財團法人聖功醫院居家護理護理計畫表</strong></span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <th rowspan="2" style="text-align: center; vertical-align:middle; width: 15%">
+              <strong>開始日期</strong>
+            </th>
+            <th rowspan="2" style="text-align: center; vertical-align:middle; width: 30%">
+              <strong>護理活動</strong>
+            </th>
+            <th colspan="5" style="text-align: center; vertical-align:middle; width: 15%">
+              <strong>評值</strong>
+            </th>
+          </tr>
+          <tr>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <strong>日期</strong>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <strong>結果</strong>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <strong>知識/技能</strong>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <strong>執行</strong>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <strong>簽名</strong>
+            </th>
+          </tr>
+
+          <tr>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <input type="text" class="form-control" id="datetimepicker01" name="datetimepicker01" maxlength="10" placeholder="時間">
+            </th>
+            <th style="text-align: left; vertical-align:middle; width: 10%">
+              <input type="checkbox" id="Checkbox1" name="check01" value="1"> 1.教導個案及照顧者執行造廔口護理方法：<br>
+              <strong>＊每天至少一次或視情況，執行造廔口的護理。</strong><br>
+              <input type="checkbox" id="Checkbox2" name="check01" value="1"> 2.造廔口周圍皮膚應是完整乾燥的，如有紅、腫、癢、破損情形或造口用品有滲漏問題，應尋求護理師協助。<br>
+              <input type="checkbox" id="Checkbox3" name="check01" value="1"> 3.日常生活注意事項：<br>
+              <strong>＊於餵食後一小時內，應抬高床頭30-45度</strong><br>
+              <strong>＊教導執行口腔護理並保持良好的口腔衛生</strong><br>
+              <strong>＊避免引起嘔吐反射的動作，如：飯後抽吸或搬動等</strong><br>
+              <strong>＊保持室內通風及環應整潔，以避免惡臭或不良氣味</strong><br>
+              <strong>＊嘔吐時，應採右側臥並維持床頭抬高</strong><br>
+              <strong>＊評估食物消化的情形，包括胃內殘留物及腹圍，並觀察胃部排空及腸子蠕動情形，是否產生脹氣、噁心、嘔吐、腹瀉或便秘等</strong><br>
+              <strong>＊保持適當運動。</strong><br>
+              <strong>＊穿著寬鬆舒適的衣物，勿讓壓迫造口。</strong><br>
+              <strong>＊洗澡時避免泡澡。</strong><br>
+              <strong>＊下列情形請立即返診：如造廔口旁四週皮膚有發紅、疼痛、破皮等，造廔口持續流血。</strong><br>
+              <input type="checkbox" id="Checkbox4" name="check01" value="1"> 4.回示教正確造廔口護理方法。
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <textarea id="Date" name="Date" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);" style="resize: none" ;="" placeholder="日期"></textarea>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <select id="select01" name="select01" class="chosen-select">
+                <option value="">結果</option>
+                <option value="6">良好(6)</option>
+                <option value="5">尚可(5)</option>
+                <option value="4">惡化(4)</option>
+              </select>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <select id="select2" name="select02" class="chosen-select">
+                <option value="">知識/技能</option>
+                <option value="6">純熟(6)</option>
+                <option value="5">尚可(5)</option>
+                <option value="4">生疏(4)</option>
+                <option value="3">完全不會(3)</option>
+              </select>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <select id="select3" name="select02" class="chosen-select">
+                <option value="">執行</option>
+                <option value="6">確實執行(6)</option>
+                <option value="5">部分執行(5)</option>
+                <option value="4">偶而執行(4)</option>
+                <option value="3">不完全執行(3)</option>
+                <option value="2">執行部分錯誤(2)</option>
+                <option value="1">執行嚴重錯誤(1)</option>
+              </select>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+            </th>
+          </tr>
+        </tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+    </form>
+  </body>
+  </html>

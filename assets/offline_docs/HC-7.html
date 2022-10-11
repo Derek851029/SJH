@@ -1,0 +1,387 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
+
+</title>
+
+<!--<link href="http://210.68.75.96:9000/DataTables/jquery.dataTables.min.css" rel="stylesheet" />-->
+<link href="./css/bootstrap.min.css" rel="stylesheet" />
+<link href="./css/bootstrap-theme.min.css" rel="stylesheet" />
+<link href="./css/bootstrap-responsive.min.css" rel="stylesheet" />
+<!--<link href="http://210.68.75.96:9000/bootstrap-chosen-master/bootstrap-chosen.css" rel="stylesheet" />-->
+<link href="./css/JackyStyle.css" rel="stylesheet" />
+<!--    <script src="http://210.68.75.96:9000/js/jquery.min.js"></script>
+<script src="http://210.68.75.96:9000/js/bootstrap.min.js"></script>
+<script src="http://210.68.75.96:9000/chosen/chosen.jquery.js"></script>
+<script src="http://210.68.75.96:9000/DataTables/jquery.dataTables.min.js"></script>
+
+
+
+<!--
+<script src="../fullcalendar-2.8.0/lib/moment.min.js"></script>
+<script src="../fullcalendar-2.8.0/fullcalendar.min.js"></script>
+<script src="../fullcalendar-2.8.0/lang-all.js"></script>--%>
+<link href="../css/jquery.datetimepicker.min.css" rel="stylesheet" />
+<script src="js/jquery.datetimepicker.full.min.js"></script>
+
+
+<link href="../Timeline/css/style.css" rel="stylesheet" />
+
+<script src="Timeline/js/jq.schedule.js"></script>
+
+-->
+
+</head>
+<body>
+  <form name="aspnetForm" method="post" action="./0200010000.aspx?seqno=0" id="aspnetForm">
+
+
+
+
+
+
+    <!--DIVFIRST===================================================-->
+    <div style="width: 1280px; margin:0px auto;">
+      <h2><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        天主教聖功醫療財團法人附設聖功居家護理所</strong></h2>
+        <h2><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 傷口護理紀錄單</strong></h2>
+        <table class="table table-bordered table-striped">
+          <tbody><tr>
+            <th style="text-align: center; vertical-align:middle; width: 15%">
+              <strong>姓名:</strong>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 15%">
+              <input id="Text2" class="form-control" placeholder="姓名" maxlength="10" onkeyup="cs(this);">
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 15%">
+              <strong>病歷號:</strong>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 15%">
+              <input id="Text3" class="form-control" placeholder="病歷號" maxlength="10" onkeyup="cs(this);">
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 15%">
+              <strong>家字號:</strong>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 15%">
+              <input id="Text4" class="form-control" placeholder="家字號" maxlength="10" onkeyup="cs(this);">
+            </th>
+          </tr>
+        </tbody></table>
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th style="text-align: center" colspan="9">
+                傷口護理紀錄單</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr>
+                <th rowspan="2" style="text-align: center; vertical-align:middle; " class="style5">
+                  <strong>日期</strong>
+                </th>
+                <th rowspan="2" style="text-align: center; vertical-align:middle; " class="style9">
+                  <strong>部位</strong></th>
+                  <th rowspan="2" style="text-align: center; vertical-align:middle; " class="style4">
+                    潛行深度公分</th>
+                    <th rowspan="2" style="text-align: center; vertical-align:middle; " class="style7">
+                      壓瘡期數</th>
+                      <th rowspan="2" style="text-align: center; vertical-align:middle; width: 30%">
+                        壓瘡傷口癒合評估表(PUSH)</th>
+                      </tr>
+                      <tr>
+                        <th style="text-align: center; vertical-align:middle; width: 10%">
+                          <strong>傷口顏色</strong></th>
+                          <th style="text-align: center; vertical-align:middle; width: 10%">
+                            滲出物型式</th>
+                            <th style="text-align: center; vertical-align:middle; width: 10%">
+                              敷料/藥膏</th>
+                              <th style="text-align: center; vertical-align:middle; width: 10%">
+                                評值</th>
+                              </tr>
+
+                              <tr>
+                                <th style="text-align: center; vertical-align:middle; " class="style5">
+                                  &nbsp;<input name="ctl00$head2$TextBox2" type="text" id="ctl00_head2_TextBox2" style="width:55px;">
+                                </th>
+                                <th style="vertical-align:middle; " class="style9">
+                                  <input id="ctl00_head2_RadioButton1" type="radio" name="ctl00$head2$RadioButton1" value="RadioButton1"><label for="ctl00_head2_RadioButton1">頭頸</label>
+                                  <br>
+                                  <input id="ctl00_head2_RadioButton2" type="radio" name="ctl00$head2$RadioButton2" value="RadioButton2"><label for="ctl00_head2_RadioButton2">軀幹</label>
+                                  <br>
+                                  <input id="ctl00_head2_RadioButton3" type="radio" name="ctl00$head2$RadioButton3" value="RadioButton3"><label for="ctl00_head2_RadioButton3">右上肢</label>
+                                  <br>
+                                  <input id="ctl00_head2_RadioButton4" type="radio" name="ctl00$head2$RadioButton4" value="RadioButton4"><label for="ctl00_head2_RadioButton4">左上肢</label>
+                                  <br>
+                                  <input id="ctl00_head2_RadioButton5" type="radio" name="ctl00$head2$RadioButton5" value="RadioButton5"><label for="ctl00_head2_RadioButton5">右下肢</label>
+                                  <br>
+                                  <input id="ctl00_head2_RadioButton6" type="radio" name="ctl00$head2$RadioButton6" value="RadioButton6"><label for="ctl00_head2_RadioButton6">左下肢</label>
+                                  <br>
+                                  <input id="ctl00_head2_RadioButton7" type="radio" name="ctl00$head2$RadioButton7" value="RadioButton7"><label for="ctl00_head2_RadioButton7">尾底骨</label>
+                                  <br>
+                                  <input id="ctl00_head2_RadioButton8" type="radio" name="ctl00$head2$RadioButton8" value="RadioButton8"><label for="ctl00_head2_RadioButton8">其他</label>
+                                  <input name="ctl00$head2$TextBox1" type="text" id="ctl00_head2_TextBox1" style="width:71px;">
+                                </th>
+                                <th style="vertical-align:middle; " class="style3">
+                                  <span lang="EN-US"><v:shapetype id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+                                    <v:stroke joinstyle="miter" xmlns:v="urn:schemas-microsoft-com:vml">
+                                    <v:formulas>
+                                    <v:f eqn="if lineDrawn pixelLineWidth 0" xmlns:v="urn:schemas-microsoft-com:vml">
+                                    <v:f eqn="sum @0 1 0" xmlns:v="urn:schemas-microsoft-com:vml">
+                                    <v:f eqn="sum 0 0 @1" xmlns:v="urn:schemas-microsoft-com:vml">
+                                    <v:f eqn="prod @2 1 2" xmlns:v="urn:schemas-microsoft-com:vml">
+                                    <v:f eqn="prod @3 21600 pixelWidth" xmlns:v="urn:schemas-microsoft-com:vml">
+                                    <v:f eqn="prod @3 21600 pixelHeight" xmlns:v="urn:schemas-microsoft-com:vml">
+                                    <v:f eqn="sum @0 0 1" xmlns:v="urn:schemas-microsoft-com:vml">
+                                    <v:f eqn="prod @6 1 2" xmlns:v="urn:schemas-microsoft-com:vml">
+                                    <v:f eqn="prod @7 21600 pixelWidth" xmlns:v="urn:schemas-microsoft-com:vml">
+                                    <v:f eqn="sum @8 21600 0" xmlns:v="urn:schemas-microsoft-com:vml">
+                                    <v:f eqn="prod @7 21600 pixelHeight" xmlns:v="urn:schemas-microsoft-com:vml">
+                                    <v:f eqn="sum @10 21600 0" xmlns:v="urn:schemas-microsoft-com:vml">
+                                  </v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:formulas>
+                                  <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect" xmlns:v="urn:schemas-microsoft-com:vml">
+                                  <o:lock v:ext="edit" aspectratio="t" xmlns:o="urn:schemas-microsoft-com:office:office">
+                                </o:lock></v:path></v:stroke></v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style="width:61.5pt;
+                                height:61.5pt" o:ole="">
+                                <v:imagedata src="file:///C:\Users\user\AppData\Local\Temp\msohtmlclip1\01\clip_image001.png" o:title="" xmlns:v="urn:schemas-microsoft-com:vml">
+                              </v:imagedata></v:shape><!--[if gte mso 9]><xml>
+                                <o:oleobject Type="Embed" ProgID="Paint.Picture" ShapeID="_x0000_i1025"
+                                DrawAspect="Content" ObjectID="_1589205542">
+                              </o:OLEObject>
+                            </xml><v:shapetype
+                            id="_x0000_t76" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+                            path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+                            <v:stroke joinstyle="miter" xmlns:v="urn:schemas-microsoft-com:vml"/>
+                            <v:formulas>
+                            <v:f eqn="if lineDrawn pixelLineWidth 0" xmlns:v="urn:schemas-microsoft-com:vml"/>
+                            <v:f eqn="sum @0 1 0" xmlns:v="urn:schemas-microsoft-com:vml"/>
+                            <v:f eqn="sum 0 0 @1" xmlns:v="urn:schemas-microsoft-com:vml"/>
+                            <v:f eqn="prod @2 1 2" xmlns:v="urn:schemas-microsoft-com:vml"/>
+                            <v:f eqn="prod @3 21600 pixelWidth" xmlns:v="urn:schemas-microsoft-com:vml"/>
+                            <v:f eqn="prod @3 21600 pixelHeight" xmlns:v="urn:schemas-microsoft-com:vml"/>
+                            <v:f eqn="sum @0 0 1" xmlns:v="urn:schemas-microsoft-com:vml"/>
+                            <v:f eqn="prod @6 1 2" xmlns:v="urn:schemas-microsoft-com:vml"/>
+                            <v:f eqn="prod @7 21600 pixelWidth" xmlns:v="urn:schemas-microsoft-com:vml"/>
+                            <v:f eqn="sum @8 21600 0" xmlns:v="urn:schemas-microsoft-com:vml"/>
+                            <v:f eqn="prod @7 21600 pixelHeight" xmlns:v="urn:schemas-microsoft-com:vml"/>
+                            <v:f eqn="sum @10 21600 0" xmlns:v="urn:schemas-microsoft-com:vml"/>
+                          </v:formulas>
+                          <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"
+                          xmlns:v="urn:schemas-microsoft-com:vml"/>
+                          <o:lock v:ext="edit" aspectratio="t" xmlns:o="urn:schemas-microsoft-com:office:office"/>
+                        </v:shapetype><v:shape id="_x0000_i1026" type="#_x0000_t75" style='width:61.5pt;
+                        height:61.5pt' o:ole="">
+                        <v:imagedata src="file:///C:\Users\user\AppData\Local\Temp\msohtmlclip1\01\clip_image001.png"
+                        o:title="" xmlns:v="urn:schemas-microsoft-com:vml"/>
+                      </v:shape><xml>
+                      <o:oleobject Type="Embed" ProgID="Paint.Picture" ShapeID="_x0000_i1025"
+                      DrawAspect="Content" ObjectID="_1589205551">
+                    </o:OLEObject>
+                  </xml><v:shapetype
+                  id="_x0000_t77" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+                  path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+                  <v:stroke joinstyle="miter" xmlns:v="urn:schemas-microsoft-com:vml"/>
+                  <v:formulas>
+                  <v:f eqn="if lineDrawn pixelLineWidth 0" xmlns:v="urn:schemas-microsoft-com:vml"/>
+                  <v:f eqn="sum @0 1 0" xmlns:v="urn:schemas-microsoft-com:vml"/>
+                  <v:f eqn="sum 0 0 @1" xmlns:v="urn:schemas-microsoft-com:vml"/>
+                  <v:f eqn="prod @2 1 2" xmlns:v="urn:schemas-microsoft-com:vml"/>
+                  <v:f eqn="prod @3 21600 pixelWidth" xmlns:v="urn:schemas-microsoft-com:vml"/>
+                  <v:f eqn="prod @3 21600 pixelHeight" xmlns:v="urn:schemas-microsoft-com:vml"/>
+                  <v:f eqn="sum @0 0 1" xmlns:v="urn:schemas-microsoft-com:vml"/>
+                  <v:f eqn="prod @6 1 2" xmlns:v="urn:schemas-microsoft-com:vml"/>
+                  <v:f eqn="prod @7 21600 pixelWidth" xmlns:v="urn:schemas-microsoft-com:vml"/>
+                  <v:f eqn="sum @8 21600 0" xmlns:v="urn:schemas-microsoft-com:vml"/>
+                  <v:f eqn="prod @7 21600 pixelHeight" xmlns:v="urn:schemas-microsoft-com:vml"/>
+                  <v:f eqn="sum @10 21600 0" xmlns:v="urn:schemas-microsoft-com:vml"/>
+                </v:formulas>
+                <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"
+                xmlns:v="urn:schemas-microsoft-com:vml"/>
+                <o:lock v:ext="edit" aspectratio="t" xmlns:o="urn:schemas-microsoft-com:office:office"/>
+              </v:shapetype><v:shape id="_x0000_i1027" type="#_x0000_t75" style='width:61.5pt;
+              height:61.5pt' o:ole="">
+              <v:imagedata src="file:///C:\Users\user\AppData\Local\Temp\msohtmlclip1\01\clip_image001.png"
+              o:title="" xmlns:v="urn:schemas-microsoft-com:vml"/>
+            </v:shape><xml>
+            <o:oleobject Type="Embed" ProgID="Paint.Picture" ShapeID="_x0000_i1025"
+            DrawAspect="Content" ObjectID="_1589205562">
+          </o:OLEObject>
+        </xml><![endif]--><v:shapetype id="_x0000_t78" coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+        <v:stroke joinstyle="miter" xmlns:v="urn:schemas-microsoft-com:vml">
+        <v:formulas>
+        <v:f eqn="if lineDrawn pixelLineWidth 0" xmlns:v="urn:schemas-microsoft-com:vml">
+        <v:f eqn="sum @0 1 0" xmlns:v="urn:schemas-microsoft-com:vml">
+        <v:f eqn="sum 0 0 @1" xmlns:v="urn:schemas-microsoft-com:vml">
+        <v:f eqn="prod @2 1 2" xmlns:v="urn:schemas-microsoft-com:vml">
+        <v:f eqn="prod @3 21600 pixelWidth" xmlns:v="urn:schemas-microsoft-com:vml">
+        <v:f eqn="prod @3 21600 pixelHeight" xmlns:v="urn:schemas-microsoft-com:vml">
+        <v:f eqn="sum @0 0 1" xmlns:v="urn:schemas-microsoft-com:vml">
+        <v:f eqn="prod @6 1 2" xmlns:v="urn:schemas-microsoft-com:vml">
+        <v:f eqn="prod @7 21600 pixelWidth" xmlns:v="urn:schemas-microsoft-com:vml">
+        <v:f eqn="sum @8 21600 0" xmlns:v="urn:schemas-microsoft-com:vml">
+        <v:f eqn="prod @7 21600 pixelHeight" xmlns:v="urn:schemas-microsoft-com:vml">
+        <v:f eqn="sum @10 21600 0" xmlns:v="urn:schemas-microsoft-com:vml">
+      </v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:formulas>
+      <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect" xmlns:v="urn:schemas-microsoft-com:vml">
+      <o:lock v:ext="edit" aspectratio="t" xmlns:o="urn:schemas-microsoft-com:office:office">
+    </o:lock></v:path></v:stroke></v:shapetype><v:shape id="_x0000_i1028" type="#_x0000_t75" style="width:61.5pt;
+    height:61.5pt" o:ole="">
+    <v:imagedata src="file:///C:\Users\user\AppData\Local\Temp\msohtmlclip1\01\clip_image001.png" o:title="" xmlns:v="urn:schemas-microsoft-com:vml">
+  </v:imagedata></v:shape><!--[if gte mso 9]><xml>
+    <o:oleobject Type="Embed" ProgID="Paint.Picture" ShapeID="_x0000_i1025"
+    DrawAspect="Content" ObjectID="_1589205569">
+  </o:OLEObject>
+</xml>
+<input id="ctl00_head2_RadioButton9" type="radio" name="ctl00$head2$RadioButton9" value="RadioButton9" /><label for="ctl00_head2_RadioButton9">1</label>
+<br />
+<input id="ctl00_head2_RadioButton10" type="radio" name="ctl00$head2$RadioButton10" value="RadioButton10" /><label for="ctl00_head2_RadioButton10">2</label>
+<br />
+<input id="ctl00_head2_RadioButton11" type="radio" name="ctl00$head2$RadioButton11" value="RadioButton11" /><label for="ctl00_head2_RadioButton11">3</label>
+<br />
+<input id="ctl00_head2_RadioButton12" type="radio" name="ctl00$head2$RadioButton12" value="RadioButton12" /><label for="ctl00_head2_RadioButton12">4</label>
+<br />
+<input id="ctl00_head2_RadioButton13" type="radio" name="ctl00$head2$RadioButton13" value="RadioButton13" /><label for="ctl00_head2_RadioButton13">5</label>
+<br />
+<input id="ctl00_head2_RadioButton14" type="radio" name="ctl00$head2$RadioButton14" value="RadioButton14" /><label for="ctl00_head2_RadioButton14">6</label>
+<br />
+<input id="ctl00_head2_RadioButton15" type="radio" name="ctl00$head2$RadioButton15" value="RadioButton15" /><label for="ctl00_head2_RadioButton15">7</label>
+<br />
+<input id="ctl00_head2_RadioButton16" type="radio" name="ctl00$head2$RadioButton16" value="RadioButton16" /><label for="ctl00_head2_RadioButton16">8</label>
+<br />
+<input id="ctl00_head2_RadioButton17" type="radio" name="ctl00$head2$RadioButton17" value="RadioButton17" /><label for="ctl00_head2_RadioButton17">9</label>
+<br />
+<input id="ctl00_head2_RadioButton18" type="radio" name="ctl00$head2$RadioButton18" value="RadioButton18" /><label for="ctl00_head2_RadioButton18">10</label>
+<br />
+<input id="ctl00_head2_RadioButton19" type="radio" name="ctl00$head2$RadioButton19" value="RadioButton19" /><label for="ctl00_head2_RadioButton19">11</label>
+<br />
+<input id="ctl00_head2_RadioButton20" type="radio" name="ctl00$head2$RadioButton20" value="RadioButton20" /><label for="ctl00_head2_RadioButton20">12</label>
+</span>，<span lang="EN-US"><br />
+<input name="ctl00$head2$TextBox3" type="text" id="ctl00_head2_TextBox3" style="width:51px;" />
+</span>公分<![endif]--></span></th>
+<th style="vertical-align:middle; " class="style8">
+  <span lang="EN-US"><b><span>
+    <input id="ctl00_head2_RadioButton38" type="radio" name="ctl00$head2$RadioButton38" value="RadioButton38"><label for="ctl00_head2_RadioButton38">I</label>
+    <br>
+    <input id="ctl00_head2_RadioButton39" type="radio" name="ctl00$head2$RadioButton39" value="RadioButton39"><label for="ctl00_head2_RadioButton39">II</label>
+    <br>
+    <input id="ctl00_head2_RadioButton40" type="radio" name="ctl00$head2$RadioButton40" value="RadioButton40"><label for="ctl00_head2_RadioButton40">III</label>
+    <br>
+    <input id="ctl00_head2_RadioButton41" type="radio" name="ctl00$head2$RadioButton41" value="RadioButton41"><label for="ctl00_head2_RadioButton41">IV</label>
+    <br>
+  </span></b></span>
+</th>
+<th style="text-align: left; vertical-align:middle; width: 10%">
+  <p class="MsoNormal">
+    <b><span lang="EN-US">1.</span><span>大小</span><span lang="EN-US">(</span><span>測量最大的範圍，長</span><span lang="EN-US">*</span><span>寬，以公分為單位</span><span lang="EN-US">)</span><span>：</span><span lang="EN-US"><o:p></o:p></span></b></p>
+    <p class="MsoNormal">
+      <span>長</span><span lang="EN-US"><input name="ctl00$head2$TextBox6" type="text" id="ctl00_head2_TextBox6" style="width:23px;">
+        cm *</span><span>寬</span><input name="ctl00$head2$TextBox7" type="text" id="ctl00_head2_TextBox7" style="width:27px;">
+        <span lang="EN-US">cm*(*</span><span>深<input name="ctl00$head2$TextBox8" type="text" id="ctl00_head2_TextBox8" style="width:27px;">
+        </span><span lang="EN-US">cm)=<input name="ctl00$head2$TextBox9" type="text" id="ctl00_head2_TextBox9" style="width:31px;">
+        </span><span>分</span><o:p></o:p></p>
+        <p class="MsoNormal">
+          <o:p></o:p>
+        </p>
+        <b><span lang="EN-US">2.</span><span>滲出物</span><span lang="EN-US">(</span><span>移除敷料後，評估其滲出物的量</span><span lang="EN-US">)</span><span>：<br>
+          <span lang="EN-US">
+            <input id="ctl00_head2_RadioButton29" type="radio" name="ctl00$head2$RadioButton29" value="RadioButton29"><label for="ctl00_head2_RadioButton29">無(0分)</label>
+            <br>
+            <input id="ctl00_head2_RadioButton30" type="radio" name="ctl00$head2$RadioButton30" value="RadioButton30"><label for="ctl00_head2_RadioButton30">輕度(1分)</label>
+            <br>
+            <input id="ctl00_head2_RadioButton31" type="radio" name="ctl00$head2$RadioButton31" value="RadioButton31"><label for="ctl00_head2_RadioButton31">中度(2分)</label>
+            <br>
+            <input id="ctl00_head2_RadioButton32" type="radio" name="ctl00$head2$RadioButton32" value="RadioButton32"><label for="ctl00_head2_RadioButton32">重度(3分)</label>
+          </span></span><span lang="EN-US"><o:p></o:p></span></b>
+          <br>
+          <br>
+          <b><span lang="EN-US">3.</span><span>組織型態</span><span lang="EN-US">(</span><span>評估是否有腐肉或壞死組織</span><span lang="EN-US">)</span><span>：<br>
+            <span lang="EN-US">
+              <input id="ctl00_head2_RadioButton33" type="radio" name="ctl00$head2$RadioButton33" value="RadioButton33"><label for="ctl00_head2_RadioButton33">癒合無破皮(0分)</label>
+              <br>
+              <input id="ctl00_head2_RadioButton34" type="radio" name="ctl00$head2$RadioButton34" value="RadioButton34"><label for="ctl00_head2_RadioButton34">表皮組織(1分)</label>
+              <br>
+              <input id="ctl00_head2_RadioButton35" type="radio" name="ctl00$head2$RadioButton35" value="RadioButton35"><label for="ctl00_head2_RadioButton35">肉芽組織(2分)</label>
+              <br>
+              <input id="ctl00_head2_RadioButton36" type="radio" name="ctl00$head2$RadioButton36" value="RadioButton36"><label for="ctl00_head2_RadioButton36">腐肉(3分)</label>
+              <br>
+              <input id="ctl00_head2_RadioButton37" type="radio" name="ctl00$head2$RadioButton37" value="RadioButton37"><label for="ctl00_head2_RadioButton37">壞死組織(4分)</label>
+              <br>
+            </span>
+            <p class="MsoNormal">
+              <span lang="EN-US">4.</span>總分：<input name="ctl00$head2$TextBox10" type="text" id="ctl00_head2_TextBox10" style="width:39px;">
+              分<span lang="EN-US"><o:p></o:p></span></p>
+              <p class="MsoNormal">
+                <span lang="EN-US">(1+2+3</span>項目之總和<span lang="EN-US">)<o:p></o:p></span></p>
+              </span></b>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <span lang="EN-US">
+                <input id="ctl00_head2_RadioButton21" type="radio" name="ctl00$head2$RadioButton21" value="RadioButton21"><label for="ctl00_head2_RadioButton21">紅色</label>
+                <br>
+                <input id="ctl00_head2_RadioButton22" type="radio" name="ctl00$head2$RadioButton22" value="RadioButton22"><label for="ctl00_head2_RadioButton22">黃色</label>
+                <br>
+                <input id="ctl00_head2_RadioButton23" type="radio" name="ctl00$head2$RadioButton23" value="RadioButton23"><label for="ctl00_head2_RadioButton23">黑色</label>
+                <br>
+                <input id="ctl00_head2_RadioButton24" type="radio" name="ctl00$head2$RadioButton24" value="RadioButton24"><label for="ctl00_head2_RadioButton24">白色</label>
+              </span>&nbsp;</th>
+              <th style="vertical-align:middle; width: 10%" class="style6">
+                &nbsp;<span lang="EN-US"><input id="ctl00_head2_RadioButton25" type="radio" name="ctl00$head2$RadioButton25" value="RadioButton25"><label for="ctl00_head2_RadioButton25">清水性</label>
+                  <br>
+                  <input id="ctl00_head2_RadioButton26" type="radio" name="ctl00$head2$RadioButton26" value="RadioButton26"><label for="ctl00_head2_RadioButton26">膿性</label>
+                  <br>
+                  <input id="ctl00_head2_RadioButton27" type="radio" name="ctl00$head2$RadioButton27" value="RadioButton27"><label for="ctl00_head2_RadioButton27">血液性</label>
+                  <br>
+                  <input id="ctl00_head2_RadioButton28" type="radio" name="ctl00$head2$RadioButton28" value="RadioButton28"><label for="ctl00_head2_RadioButton28">膿血性</label>
+                </span>&nbsp;</th>
+                <th style="vertical-align:middle; width: 10%" class="style6">
+                  &nbsp;<input id="ctl00_head2_CheckBox13" type="checkbox" name="ctl00$head2$CheckBox13"><label for="ctl00_head2_CheckBox13">D.D gel</label>
+                  <br>
+                  <input id="ctl00_head2_CheckBox14" type="checkbox" name="ctl00$head2$CheckBox14"><label for="ctl00_head2_CheckBox14">Ag Aqucel</label>
+                  <br>
+                  <input id="ctl00_head2_CheckBox15" type="checkbox" name="ctl00$head2$CheckBox15"><label for="ctl00_head2_CheckBox15">Aqucel</label>
+                  <br>
+                  <input id="ctl00_head2_CheckBox16" type="checkbox" name="ctl00$head2$CheckBox16"><label for="ctl00_head2_CheckBox16">薄人工皮</label>
+                  <br>
+                  <input id="ctl00_head2_CheckBox17" type="checkbox" name="ctl00$head2$CheckBox17"><label for="ctl00_head2_CheckBox17">厚人工皮</label>
+                  <br>
+                  <input id="ctl00_head2_CheckBox18" type="checkbox" name="ctl00$head2$CheckBox18"><label for="ctl00_head2_CheckBox18">其他</label>
+                  <input name="ctl00$head2$TextBox4" type="text" id="ctl00_head2_TextBox4" style="width:98px;">
+                </th>
+                <th style="vertical-align:middle; width: 10%" class="style6">
+                  &nbsp;<input id="ctl00_head2_CheckBox19" type="checkbox" name="ctl00$head2$CheckBox19"><label for="ctl00_head2_CheckBox19">無改善</label>
+                  <br>
+                  <input id="ctl00_head2_CheckBox20" type="checkbox" name="ctl00$head2$CheckBox20"><label for="ctl00_head2_CheckBox20">惡化</label>
+                  <br>
+                  <input id="ctl00_head2_CheckBox21" type="checkbox" name="ctl00$head2$CheckBox21"><label for="ctl00_head2_CheckBox21">改善</label>
+                  <br>
+                  <input id="ctl00_head2_CheckBox22" type="checkbox" name="ctl00$head2$CheckBox22"><label for="ctl00_head2_CheckBox22">癒合</label>
+                  <br>
+                  <input id="ctl00_head2_CheckBox24" type="checkbox" name="ctl00$head2$CheckBox24"><label for="ctl00_head2_CheckBox24">其他</label>
+                  <input name="ctl00$head2$TextBox5" type="text" id="ctl00_head2_TextBox5" style="width:106px;">
+                </th>
+              </tr>
+            </tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+        </form>
+      </body>
+      </html>

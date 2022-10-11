@@ -1,0 +1,948 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
+
+</title>
+
+<!--<link href="http://210.68.75.96:9000/DataTables/jquery.dataTables.min.css" rel="stylesheet" />-->
+<link href="./css/bootstrap.min.css" rel="stylesheet" />
+<link href="./css/bootstrap-theme.min.css" rel="stylesheet" />
+<link href="./css/bootstrap-responsive.min.css" rel="stylesheet" />
+<!--<link href="http://210.68.75.96:9000/bootstrap-chosen-master/bootstrap-chosen.css" rel="stylesheet" />-->
+<link href="./css/JackyStyle.css" rel="stylesheet" />
+<!--    <script src="http://210.68.75.96:9000/js/jquery.min.js"></script>
+    <script src="http://210.68.75.96:9000/js/bootstrap.min.js"></script>
+    <script src="http://210.68.75.96:9000/chosen/chosen.jquery.js"></script>
+    <script src="http://210.68.75.96:9000/DataTables/jquery.dataTables.min.js"></script>
+
+
+
+    <!--
+    <script src="../fullcalendar-2.8.0/lib/moment.min.js"></script>
+    <script src="../fullcalendar-2.8.0/fullcalendar.min.js"></script>
+    <script src="../fullcalendar-2.8.0/lang-all.js"></script>--%>
+    <link href="../css/jquery.datetimepicker.min.css" rel="stylesheet" />
+    <script src="js/jquery.datetimepicker.full.min.js"></script>
+
+
+    <link href="../Timeline/css/style.css" rel="stylesheet" />
+
+    <script src="Timeline/js/jq.schedule.js"></script>
+
+-->
+
+</head>
+<body>
+    <form name="aspnetForm" method="post" action="./0200010000.aspx?seqno=0" id="aspnetForm">
+
+
+
+
+
+
+    <!--===================================================-->
+     <div class="divFirst">
+        <h2><strong>居護醫療</strong></h2>
+        <h3><strong>訪視紀錄單-A（新增）</strong></h3>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="text-align: center; vertical-align:middle; width: 10%">
+                    <strong>個案姓名</strong>
+                </th>
+                <th style="text-align: center; width: 15%;">
+                    <input id="name" class="form-control" placeholder="姓名" maxlength="10" onkeyup="cs(this);" />
+                </th>
+            </tr><tr>
+                <th style="text-align: center; vertical-align:middle; width: 10%">
+                    <strong>病歷號</strong>
+                </th>
+                <th style="text-align: center; width: 15%;">
+                    <input id="Number" class="form-control" placeholder="病歷號" maxlength="10" onkeyup="cs(this);" />
+                </th>
+            </tr><tr>
+                <th style="text-align: center; vertical-align:middle; width: 10%">
+                    <strong>身分證字號</strong>
+                </th>
+                <td>
+                    <input id="idcard" class="form-control" placeholder="身分證字號" maxlength="10" onkeyup="cs(this);" />
+                </td>
+            </tr><tr>
+                <th style="text-align: center; vertical-align:middle; width: 10%">
+                    <strong>家字號</strong>
+                </th>
+                <th style="text-align: center; width: 15%;">
+                    <input id="HomeNumber" class="form-control" placeholder="家字號" maxlength="10" onkeyup="cs(this);" />
+                </th>
+            </tr>
+            <tr>
+                <td style="text-align: center; vertical-align:middle;width:10%">
+                        <strong>訪視日期</strong>
+                </td>
+                <td style="text-align: center ; vertical-align:middle;width:10%">
+                    <label id="div_date"></label>
+                </td>
+            </tr><tr>
+                <td style="text-align: center; vertical-align:middle;width:10%">
+                    <strong>訪視時間</strong>
+                </td>
+                <td style="text-align: center ; vertical-align:middle;width:10%">
+                    <label id="div_time"></label>
+                        <strong>~</strong>
+                    <label id="div_time2"></label>
+                </td>
+            </tr><tr>
+                <th style="text-align: center; vertical-align:middle; width: 10%">
+                    <strong>護理師</strong>
+                </th>
+                <th style="text-align: center; width: 15%;">
+                    <input id="Nurse" class="form-control" placeholder="護理師" maxlength="10" onkeyup="cs(this);" />
+                </th>
+            </tr><tr>
+                <th style="text-align: center; vertical-align:middle; width: 10%">
+                    <strong>給付方式</strong>
+                </th>
+                <th style="text-align: center; vertical-align:middle; width: 10%">
+                    <input type="radio" name="pay" value="自費" onclick="radio_pay('0', 'pay')"/> 自費
+                    <input type="radio" name="pay" value="健保" onclick="radio_pay('1', 'pay')"/> 健保<label id="pay"></label>
+                </th>
+            </tr>
+        </table>
+        <table class="table table-bordered table-striped">
+            <tbody>
+
+                <tr>
+                   <th colspan="1" rowspan="2" style="text-align: center; vertical-align:middle; width: 10%">
+                        <strong>護理處置</strong>
+                    </th>
+                    <th style="text-align: left; vertical-align:middle; width: 30%" colspan="5">
+                       <input type="checkbox" id="Checkbox1" name="check01" value="1"/>檢體收集：
+                       <input type="checkbox" id="Checkbox2" name="check01" value="1"/>尿液(Urine)
+                       <input type="checkbox" id="Checkbox3" name="check01" value="1"/>血液(Blood)
+                       <input type="checkbox" id="Checkbox4" name="check01" value="1"/>痰液(Sputum)
+                       <input type="checkbox" id="Checkbox5" name="check01" value="1"/>糞便(Stool)
+                    </th>
+                </tr>
+                <tr>
+                    <th style="text-align: left; width: 30%;">
+                       <input type="checkbox" id="Checkbox6" name="check01" value="1"/>測量血糖：
+                       <input type="checkbox" id="Checkbox7" name="check01" value="1"/>AC<textarea id="Textarea11" name="AC" class="form-control" cols="5" rows="1" maxlength="5" onkeyup="txt(this);"
+                            style="resize: none; background-color: #ffffbb"></textarea>mg/dl
+                       <input type="checkbox" id="Checkbox8" name="check01" value="1"/>PC<textarea id="Textarea12" name="PC"
+                           class="form-control" cols="5" rows="1" maxlength="5" onkeyup="txt(this);"
+                            style="resize: none; background-color: #ffffbb"></textarea>mg/dl
+                    </th>
+                </tr>
+                <tr>
+
+                    <th colspan="2" style="text-align: center; vertical-align:middle; width: 10%">
+                        <strong>訪視原因</strong>
+                    </th>
+                    <th style="text-align: left; vertical-align:middle; width: 20%">
+                        <input type="checkbox" id="Checkbox9" name="check01" value="1"/>管路到期<br/>
+                        <input type="checkbox" id="Checkbox10" name="check01" value="1"/>管路異常：
+                        <input type="checkbox" id="Checkbox11" name="check01" value="1"/>鼻胃管：
+                        <input type="checkbox" id="Checkbox12" name="check01" value="1"/>自拔
+                        <input type="checkbox" id="Checkbox13" name="check01" value="1"/>滑脫
+                        <input type="checkbox" id="Checkbox14" name="check01" value="1"/>阻塞<br/>
+                        <input type="checkbox" id="Checkbox15" name="check01" value="1"/>導尿管：
+                        <input type="checkbox" id="Checkbox16" name="check01" value="1"/>自拔
+                        <input type="checkbox" id="Checkbox17" name="check01" value="1"/>滑脫
+                        <input type="checkbox" id="Checkbox18" name="check01" value="1"/>阻塞<br/>
+                        <input type="checkbox" id="Checkbox19" name="check01" value="1"/>氣  切：
+                        <input type="checkbox" id="Checkbox20" name="check01" value="1"/>自拔
+                        <input type="checkbox" id="Checkbox21" name="check01" value="1"/>滑脫
+                        <input type="checkbox" id="Checkbox22" name="check01" value="1"/>阻塞<br/>
+                        <input type="checkbox" id="Checkbox23" name="check01" value="1"/>傷口/造廔口照護：
+                        <input type="checkbox" id="Checkbox24" name="check01" value="1"/>更換壓瘡傷口
+                        <input type="checkbox" id="Checkbox25" name="check01" value="1"/>更換胃造廔口<br>
+                        <input type="checkbox" id="Checkbox26" name="check01" value="1"/>更換腸造廔口<br/>
+                        <input type="checkbox" id="Checkbox27" name="check01" value="1"/>其他：<br>
+                        <textarea id="Other" name="Other" class="form-control" cols="10"
+                            rows="1" maxlength="5" onkeyup="txt(this);"
+                            style="resize: none; background-color: #ffffbb"></textarea>
+                    </th>
+                </tr>
+
+                <tr>
+                   <th colspan="2" rowspan="2" style="text-align: center; vertical-align:middle; width: 10%">
+                        <strong>訪視項目</strong>
+                    </th>
+                    <th style="text-align: left; vertical-align:middle; width: 10%">
+                       <input type="radio" name="visit_type" value="護理訪視" onclick="radio_pay('0', 'visit_type')"> 護理訪視
+                       <input type="radio" name="visit_type" value="醫師訪視" onclick="radio_pay('1', 'visit_type')"> 醫師訪視<label id="Label1"></label>
+                    </th>
+                 </tr>
+                <tr>
+                    <th style="text-align: left; vertical-align:middle; width: 20%">
+                       1.訪視醫師：
+                       <input type="radio" name="doctor" value="羅玉岱醫師" onclick="radio_pay('0', 'doctor')"/> 羅玉岱醫師
+                       <input type="radio" name="doctor" value="吳維純醫師" onclick="radio_pay('1', 'doctor')"/> 吳維純醫師<label id="Label2"></label><br/>
+                       2.訪視類別：
+                       <input type="radio" name="visit" value="居家醫療訪視" onclick="radio_pay('0', 'visit')"/> 居家醫療訪視：
+                       <input type="radio" name="visit1" value="醫師訪視" onclick="radio_pay('0', 'visit1')"/> 初訪
+                       <input type="radio" name="visit1" value="醫師訪視" onclick="radio_pay('1', 'visit1')"/> 複訪
+                       <input type="radio" name="visit1" value="醫師訪視" onclick="radio_pay('2', 'visit1')"/> 異常狀況醫師訪視<br/>
+                       &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="radio" name="visit" value="一般醫師訪視" onclick="radio_pay('1', 'pay')"/> 一般醫師訪視<label id="Label3"></label>
+                    </th>
+                </tr>
+
+                <tr>
+                    <th colspan="2" style="text-align: center; vertical-align:middle; width: 10%">
+                        <strong>生命微象</strong>
+                    </th>
+                    <th style="text-align: left; vertical-align:middle; width: 20%">
+                       體溫：<textarea id="Textarea4" name="AC" class="form-control" cols="5" rows="1" maxlength="5" onkeyup="txt(this);" style="resize: none; background-color: #ffffbb"></textarea>℃<br/>
+                       脈搏：<textarea id="Textarea3" name="AC" class="form-control" cols="5" rows="1" maxlength="5" onkeyup="txt(this);" style="resize: none; background-color: #ffffbb"></textarea>次/分<br/>
+                       呼吸：<textarea id="Textarea5" name="AC" class="form-control" cols="5" rows="1" maxlength="5" onkeyup="txt(this);" style="resize: none; background-color: #ffffbb"></textarea>次/分<br/>
+                       血壓：<textarea id="Textarea6" name="AC" class="form-control" cols="5" rows="1" maxlength="5" onkeyup="txt(this);" style="resize: none; background-color: #ffffbb"></textarea>mmHg
+                    </th>
+                </tr>
+
+                <tr>
+                <th colspan="2" style="text-align: center; vertical-align:middle; width: 10%">
+                        <strong>管路</strong>
+                    </th>
+                    <th style="text-align: left; vertical-align:middle; width: 20%">
+                       <input type="checkbox" id="Checkbox28" name="check01" value="1"/>鼻胃管
+                       <input type="checkbox" id="Checkbox29" name="check01" value="1"/>胃造廔
+                       <input type="checkbox" id="Checkbox30" name="check01" value="1"/>導尿管
+                       <input type="checkbox" id="Checkbox31" name="check01" value="1"/>腸造廔
+                       <input type="checkbox" id="Checkbox32" name="check01" value="1"/>氣  切
+                    </th>
+                </tr>
+
+                <tr>
+                <th rowspan="6" style="text-align: center; vertical-align:middle; width: 10%">
+                        <strong>呼吸道</strong>
+                    </th>
+                <th style="text-align: center; vertical-align:middle; width: 10%">
+                        <strong>呼吸型態</strong>
+                    </th>
+                    <th style="text-align: left; vertical-align:middle; width: 20%">
+                       <input type="checkbox" id="Checkbox33" name="check01" value="1"/>平穩
+                       <input type="checkbox" id="Checkbox34" name="check01" value="1"/>端坐呼吸
+                       <input type="checkbox" id="Checkbox35" name="check01" value="1"/>張口呼吸
+                       <input type="checkbox" id="Checkbox36" name="check01" value="1"/>氣切
+                       <input type="checkbox" id="Checkbox37" name="check01" value="1"/>氧氣輔助
+                    </th>
+                </tr>
+
+                <tr>
+                    <th style="text-align: center; vertical-align:middle; width: 10%">
+                        <strong>呼吸音</strong>
+                    </th>
+                    <th style="text-align: left; vertical-align:middle; width: 20%">
+                       左肺上葉：<input type="radio" name="left_up" value="正常" onclick="radio_pay('0', 'left_up')"> 正常
+                                 <input type="radio" name="left_up" value="囉音" onclick="radio_pay('1', 'left_up')"> 囉音
+                                 <input type="radio" name="left_up" value="濕囉音" onclick="radio_pay('2', 'left_up')"> 濕囉音
+                                 <input type="radio" name="left_up" value="哮鳴" onclick="radio_pay('3', 'left_up')"> 哮鳴<br/>
+                       左肺下葉：<input type="radio" name="left_down" value="正常" onclick="radio_pay('0', 'left_down')"> 正常
+                                 <input type="radio" name="left_down" value="囉音" onclick="radio_pay('1', 'left_down')"> 囉音
+                                 <input type="radio" name="left_down" value="濕囉音" onclick="radio_pay('2', 'left_down')"> 濕囉音
+                                 <input type="radio" name="left_down" value="哮鳴" onclick="radio_pay('3', 'left_down')"> 哮鳴<br/>
+                       右肺上葉：<input type="radio" name="right_up" value="正常" onclick="radio_pay('0', 'right_up')"> 正常
+                                 <input type="radio" name="right_up" value="囉音" onclick="radio_pay('1', 'right_up')"> 囉音
+                                 <input type="radio" name="right_up" value="濕囉音" onclick="radio_pay('2', 'right_up')"> 濕囉音
+                                 <input type="radio" name="right_up" value="哮鳴" onclick="radio_pay('3', 'right_up')"> 哮鳴<br/>
+                       右肺下葉：<input type="radio" name="right_down" value="正常" onclick="radio_pay('0', 'right_down')"> 正常
+                                 <input type="radio" name="right_down" value="囉音" onclick="radio_pay('1', 'right_down')"> 囉音
+                                 <input type="radio" name="right_down" value="濕囉音" onclick="radio_pay('2', 'right_down')"> 濕囉音
+                                 <input type="radio" name="right_down" value="哮鳴" onclick="radio_pay('3', 'right_down')"> 哮鳴<label id="Label4"></label><label id="Label5"></label><label id="Label6"></label>
+                    </th>
+                </tr>
+
+                <tr>
+                    <th rowspan="2" style="text-align: center; vertical-align:middle; width: 10%">
+                        <strong>痰液</strong>
+                    </th>
+                    <th style="text-align: left; vertical-align:middle; width: 20%">
+                        量：<input type="radio" name="left_up" value="無" onclick="radio_pay('0', 'left_up')"> 無
+                            <input type="radio" name="left_up" value="有" onclick="radio_pay('1', 'left_up')"> 有：
+                            <input type="radio" name="left_up" value="量多" onclick="radio_pay('2', 'left_up')"> 量多
+                            <input type="radio" name="left_up" value="量少" onclick="radio_pay('3', 'left_up')"> 量少<label id="Label7"></label>
+                    </th>
+                </tr>
+
+                <tr>
+                    <th style="text-align: left; vertical-align:middle; width: 20%">
+                    1.性質：<input type="radio" name="nature" value="稀水" onclick="radio_pay('0', 'nature')"> 稀水
+                            <input type="radio" name="nature" value="黏稠" onclick="radio_pay('1', 'nature')"> 黏稠<br>
+                      顏色：<input type="radio" name="color" value="清澈" onclick="radio_pay('0', 'color')"> 清澈
+                            <input type="radio" name="color" value="白" onclick="radio_pay('1', 'color')"> 白
+                            <input type="radio" name="color" value="黃" onclick="radio_pay('2', 'color')"> 黃
+                            <input type="radio" name="color" value="黃綠" onclick="radio_pay('3', 'color')"> 黃綠
+                            <input type="radio" name="color" value="黃褐" onclick="radio_pay('4', 'color')"> 黃褐
+                            <input type="radio" name="color" value="紅" onclick="radio_pay('5', 'color')"> 紅<br>
+                    2.護理活動：<input type="radio" name="care_act1" value="教導加強拍背及姿位引流" onclick="radio_pay('0', 'care_act')"> 教導加強拍背及姿位引流
+                                <input type="radio" name="care_act1" value="教導協助噴霧治療" onclick="radio_pay('1', 'care_act')"> 教導協助噴霧治療
+                                <input type="radio" name="care_act1" value="協助開立化痰藥物" onclick="radio_pay('2', 'care_act')"> 協助開立化痰藥物<label id="Label8"></label><label id="Label9"></label><label id="Label10"></label>
+                    </th>
+                </tr>
+
+                <tr>
+                    <th rowspan="2" style="text-align: center; vertical-align:middle; width: 10%">
+                        <strong>排痰型態</strong>
+                    </th>
+                    <th style="text-align: left; vertical-align:middle; width: 20%">
+                        痰液咳出：<input type="radio" name="sputum_out" value="易" onclick="radio_pay('0', 'sputum_out')"> 易
+                                  <input type="radio" name="sputum_out" value="不易" onclick="radio_pay('1', 'sputum_out')"> 不易
+                                  <input type="radio" name="sputum_out" value="氣切抽吸" onclick="radio_pay('2', 'sputum_out')"> 氣切抽吸<label id="Label11"></label>
+                    </th>
+                </tr>
+
+                <tr>
+                    <th style="text-align: left; vertical-align:middle; width: 20%">
+                    1.抽痰：<input type="radio" name="suck_sputum" value="無" onclick="radio_pay('0', 'suck_sputum')"> 無
+                            <input type="radio" name="suck_sputum" value="有" onclick="radio_pay('1', 'suck_sputum')"> 有<br>
+                    2.抽痰次數：每日10次<input type="radio" name="times" value="以上" onclick="radio_pay('0', 'times')"> 以上
+                                        <input type="radio" name="times" value="以下" onclick="radio_pay('1', 'times')"> 以下
+                    2.護理活動：<input type="radio" name="care_act2" value="教導確實每2小時拍背" onclick="radio_pay('0', 'care_act2')"> 教導確實每2小時拍背
+                                <input type="radio" name="care_act2" value="視需要協助抽痰" onclick="radio_pay('1', 'care_act2')"> 視需要協助抽痰<label id="Label12"></label><label id="Label13"></label><label id="Label14"></label>
+                    </th>
+                </tr>
+
+                <tr>
+                <th rowspan="2" style="text-align: center; vertical-align:middle; width: 10%">
+                        <strong>意識</strong>
+                    </th>
+                <th style="text-align: center; vertical-align:middle; width: 10%">
+                        <strong>意識狀態</strong>
+                    </th>
+                    <th style="text-align: left; vertical-align:middle; width: 20%">
+                       <input type="checkbox" id="Checkbox38" name="check01" value="1"/>清醒警覺
+                       <input type="checkbox" id="Checkbox39" name="check01" value="1"/>躁動
+                       <input type="checkbox" id="Checkbox40" name="check01" value="1"/>人時地混亂
+                       <input type="checkbox" id="Checkbox41" name="check01" value="1"/>瞻妄
+                       <input type="checkbox" id="Checkbox42" name="check01" value="1"/>木僵
+                       <input type="checkbox" id="Checkbox43" name="check01" value="1"/>植物人狀態
+                       <input type="checkbox" id="Checkbox44" name="check01" value="1"/>昏迷
+                       <input type="checkbox" id="Checkbox45" name="check01" value="1"/>其他
+                       <textarea id="Other2" name="Other2" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                                style="resize: none; background-color: #ffffbb"></textarea>
+                    </th>
+                </tr>
+
+               <tr>
+                   <th style="text-align: center; vertical-align:middle; width: 10%">
+                        <strong>昏迷指數(GCS)</strong>
+                    </th>
+                   <th style="text-align: left; vertical-align:middle; width: 20%">
+                        <strong>睜眼(Eye opening；E)：</strong><br>
+                      <input type="radio" name="Eye_opening" value="4" onclick="radio_pay('4', 'Eye_opening')"> 4分：會自動張開眼睛(spontaneous)<br>
+                      <input type="radio" name="Eye_opening" value="3" onclick="radio_pay('3', 'Eye_opening')"> 3分：有聲音時，會將眼睛張開(to speech)<br>
+                      <input type="radio" name="Eye_opening" value="2" onclick="radio_pay('2', 'Eye_opening')"> 2分：給予痛的刺激才有睜眼反應(to pain)<br>
+                      <input type="radio" name="Eye_opening" value="1" onclick="radio_pay('1', 'Eye_opening')"> 1分：給予痛的刺激仍無睜眼反應(none)<br>
+                       <strong>語言反應(Motor response；M)：</strong><br>
+                      <input type="radio" name="Motor_response" value="5" onclick="radio_pay('5', 'Motor_response')"> 5分：對人、時、地有清楚的定向感、說話有條理(alert)<br>
+                      <input type="radio" name="Motor_response" value="4" onclick="radio_pay('4', 'Motor_response')"> 4分：對人、時、地無定向感，有答非所問情形；混亂(confused)<br>
+                      <input type="radio" name="Motor_response" value="3" onclick="radio_pay('3', 'Motor_response')"> 3分：說一些毫無意義的字語，單字；嗜睡(drowsy)<br>
+                      <input type="radio" name="Motor_response" value="2" onclick="radio_pay('2', 'Motor_response')"> 2分：發出他人無法了解的聲音、喃喃自語(groans)<br>
+                      <input type="radio" name="Motor_response" value="1" onclick="radio_pay('1', 'Motor_response')"> 1分：無語言反應(none)<br>
+                      <input type="radio" name="Motor_response" value="E" onclick="radio_pay('E', 'Motor_response')"> E(Endotracheal)：氣管插管無法正常發聲<br>
+                      <input type="radio" name="Motor_response" value="T" onclick="radio_pay('T', 'Motor_response')"> T(tracheostomy)：氣管切開無法正常發聲<br>
+                      <input type="radio" name="Motor_response" value="A" onclick="radio_pay('A', 'Motor_response')"> A(aphasia)：失語症。<br>
+                       <strong>運動反應(Verbal response；V)：</strong><br>
+                      <input type="radio" name="Verbal_response" value="6" onclick="radio_pay('6', 'Verbal_response')"> 6分：可依指令動作(obey)<br>
+                      <input type="radio" name="Verbal_response" value="5" onclick="radio_pay('5', 'Verbal_response')"> 5分：施以刺激時，能除去痛覺刺激源(localize)<br>
+                      <input type="radio" name="Verbal_response" value="4" onclick="radio_pay('4', 'Verbal_response')"> 4分：疼痛刺激時，肢體會回縮(withdrawal)<br>
+                      <input type="radio" name="Verbal_response" value="3" onclick="radio_pay('3', 'Verbal_response')"> 3分：疼痛刺激時，肢體會彎曲(decorticated flexion)<br>
+                      <input type="radio" name="Verbal_response" value="2" onclick="radio_pay('2', 'Verbal_response')"> 2分：疼痛刺激時，肢體會伸直(decerebrate extension)<br>
+                      <input type="radio" name="Verbal_response" value="1" onclick="radio_pay('1', 'Verbal_response')"> 1分：對任何痛刺激肢體均無動作反應(none)<br>
+                       <strong>GCS總分：</strong>E<label id="Label15"></label>V<label id="Label16"></label>M<label id="Label17"></label>分
+                     </th>
+                </tr>
+
+                <tr>
+                <th rowspan="4" style="text-align: center; vertical-align:middle; width: 10%">
+                        <strong>營養攝取</strong>
+                    </th>
+                <th style="text-align: center; vertical-align:middle; width: 10%">
+                        <strong>身高體重</strong>
+                    </th>
+                    <th style="text-align: left; vertical-align:middle; width: 20%">
+                       <strong>身高：</strong><textarea id="tall" name="tall" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                                style="resize: none; background-color: #ffffbb"></textarea><strong>公分(cm)</strong><br>
+                      <input type="radio" name="sex1" value="0" onclick="radio_pay('0', 'sex1')"> 男性：85.1+(1.73╳膝長____公分)-(0.11╳____年齡)=______公分(cm)<br>
+                      <input type="radio" name="sex1" value="1" onclick="radio_pay('1', 'sex1')"> 女性：91.45+(1.53╳膝長____公分)-(0.16╳____年齡)=______公分(cm)<br><label id="Label18"></label>
+                        <strong>目前體重：</strong><textarea id="weight" name="weight" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                                style="resize: none; background-color: #ffffbb"></textarea><strong>公分(cm)</strong><br>
+                      <input type="radio" name="sex2" value="0" onclick="radio_pay('0', 'sex2')"> 男性：-33.420+0.793╳最大臀圍____公分+0.791╳上臂中圍____公分=______公斤(Kg)<br>
+                      <input type="radio" name="sex2" value="1" onclick="radio_pay('1', 'sex2')"> 女性：-37.187+0.745╳最大臀圍____公分+0.831╳上臂中圍____公分=______公斤(Kg)<br><label id="Label19"></label>
+                        <strong>理想體重：</strong><textarea id="best_weight" name="best_weight" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                                style="resize: none; background-color: #ffffbb"></textarea><strong>公分(cm)</strong><br>
+                      <input type="radio" name="sex2" value="0" onclick="radio_pay('0', 'sex2')"> 男性：(身高____ 公分─170)╳0.6+62=______公斤(Kg)<br>
+                      <input type="radio" name="sex2" value="1" onclick="radio_pay('1', 'sex2')"> 女性：(身高____ 公分─158)╳0.6+52=______公斤(Kg)<br><label id="Label20"></label>
+                    </th>
+                </tr>
+
+               <tr>
+                   <th style="text-align: center; vertical-align:middle; width: 10%">
+                        <strong>熱量</strong>
+                    </th>
+                   <th style="text-align: left; vertical-align:middle; width: 20%">
+                       <strong>建議熱量：</strong><br>
+                       理想體重<textarea id="Textarea1" name="tall" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                                style="resize: none; background-color: #ffffbb"></textarea><strong>公斤(Kg)<strong>╳</strong><br>
+                       每公斤理想體重所需熱量大卡/公斤
+                      <input type="radio" name="Eye_opening" value="4" onclick="radio_pay('4', 'Eye_opening')"> 臥床：20~25
+                      <input type="radio" name="Eye_opening" value="3" onclick="radio_pay('3', 'Eye_opening')"> 輕度活量：30
+                      <input type="radio" name="Eye_opening" value="2" onclick="radio_pay('2', 'Eye_opening')"> 中度活動量：35
+                      <input type="radio" name="Eye_opening" value="1" onclick="radio_pay('1', 'Eye_opening')"> 重度活動量：40<br>
+                    <strong>=</strong>
+                        建議熱量<textarea id="Textarea2" name="tall" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                                style="resize: none; background-color: #ffffbb"></textarea>大卡(Kcal)/天<br>
+                       <strong>攝取熱量：</strong>約<textarea id="Textarea7" name="tall" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                                style="resize: none; background-color: #ffffbb"></textarea>大卡(Kcal)/天
+                    </th>
+                </tr>
+
+                <tr>
+                   <th style="text-align: center; vertical-align:middle; width: 10%">
+                        <strong>營養狀態</strong>
+                    </th>
+                  <th style="text-align: left; vertical-align:middle; width: 20%">
+                    <strong>營養途徑：</strong>
+                    <input type="radio" name="nutrition_way" value="0" onclick="radio_pay('0', 'nutrition_way')"> 由口進食
+                    <input type="radio" name="nutrition_way" value="1" onclick="radio_pay('1', 'nutrition_way')"> 鼻胃管
+                    <input type="radio" name="nutrition_way" value="2" onclick="radio_pay('2', 'nutrition_way')"> 胃造口
+                    <input type="radio" name="nutrition_way" value="3" onclick="radio_pay('3', 'nutrition_way')"> 腸造口<br>
+                    <strong>吞嚥情形：</strong>
+                    <input type="radio" name="Swallowing" value="0" onclick="radio_pay('0', 'Swallowing')"> 吞嚥正常
+                    <input type="radio" name="Swallowing" value="1" onclick="radio_pay('1', 'Swallowing')"> 偶嗆
+                    <input type="radio" name="Swallowing" value="2" onclick="radio_pay('2', 'Swallowing')"> 易嗆
+                    <input type="radio" name="Swallowing" value="3" onclick="radio_pay('3', 'Swallowing')"> 無法吞嚥<br>
+                    <strong>進食內容：</strong>
+                    自製<textarea id="Textarea8" name="tall" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                                style="resize: none; background-color: #ffffbb"></textarea>、
+                    配方奶<textarea id="Textarea9" name="tall" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                                style="resize: none; background-color: #ffffbb"></textarea>、
+                    果汁<textarea id="Textarea10" name="tall" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                                style="resize: none; background-color: #ffffbb"></textarea><br>
+                    <strong>進食次數：</strong>
+                      正餐<textarea id="Textarea13" name="tall" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                                style="resize: none; background-color: #ffffbb"></textarea>次/天、<br>
+                    點心餐<textarea id="Textarea14" name="tall" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                                style="resize: none; background-color: #ffffbb"></textarea>次/天、<br>
+                    水果及果汁量：<textarea id="Textarea15" name="tall" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                                style="resize: none; background-color: #ffffbb"></textarea>cc/天、<br>
+                    其他<textarea id="Textarea16" name="tall" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                                style="resize: none; background-color: #ffffbb"></textarea>
+                    </th>
+                </tr>
+
+                <tr>
+                    <th style="text-align: center; vertical-align:middle; width: 10%">
+                        <strong>水分攝取</strong>
+                    </th>
+                  <th style="text-align: left; vertical-align:middle; width: 20%">
+                    <strong>飲水量：</strong><br>
+                      約<textarea id="Textarea17" name="tall" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                                style="resize: none; background-color: #ffffbb"></textarea>cc/天
+                    <strong>液體總量：</strong><br>
+                      約<textarea id="Textarea18" name="tall" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                                style="resize: none; background-color: #ffffbb"></textarea>cc/天
+                    </th>
+                </tr>
+
+                <tr>
+                <th rowspan="5" style="text-align: center; vertical-align:middle; width: 10%">
+                        <strong>皮膚</strong>
+                    </th>
+                <th style="text-align: center; vertical-align:middle; width: 10%">
+                        <strong>皮膚狀況</strong>
+                    </th>
+                    <th style="text-align: left; vertical-align:middle; width: 20%">
+                       <input type="checkbox" id="Checkbox46" name="check01" value="1"/>有彈性
+                       <input type="checkbox" id="Checkbox47" name="check01" value="1"/>黃疸
+                       <input type="checkbox" id="Checkbox48" name="check01" value="1"/>皮疹
+                       <input type="checkbox" id="Checkbox49" name="check01" value="1"/>脫水
+                       <input type="checkbox" id="Checkbox50" name="check01" value="1"/>水泡
+                       <input type="checkbox" id="Checkbox51" name="check01" value="1"/>其他
+                        <textarea id="Other3" name="Other3" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                         style="resize: none; background-color: #ffffbb"></textarea><br>
+                        <strong>完整性：</strong>
+                           <input type="radio" name="Integrity" value="0" onclick="radio_pay('0', 'Integrity')"> 完整
+                           <input type="radio" name="Integrity" value="1" onclick="radio_pay('1', 'Integrity')"> 破損
+                        <strong>異味：</strong>
+                           <input type="radio" name="Odor" value="0" onclick="radio_pay('0', 'Odor')"> 無
+                           <input type="radio" name="Odor" value="1" onclick="radio_pay('1', 'Odor')"> 有
+                        <strong>壓瘡：</strong>
+                           <input type="radio" name="Sore" value="0" onclick="radio_pay('0', 'Sore')"> 無
+                           <input type="radio" name="Sore" value="1" onclick="radio_pay('1', 'Sore')"> 有
+                        <strong>水腫：</strong>
+                           <input type="radio" name="Edema" value="0" onclick="radio_pay('0', 'Edema')"> 無
+                           <input type="radio" name="Edema" value="1" onclick="radio_pay('1', 'Edema')"> 有
+                    </th>
+                </tr>
+
+               <tr>
+                   <th rowspan="2"style="text-align: center; vertical-align:middle; width: 10%">
+                        <strong>水腫部位</strong>
+                    </th>
+                   <th style="text-align: left; vertical-align:middle; width: 20%">
+                       <input type="checkbox" id="Checkbox52" name="check01" value="1"/>左上肢：
+                       <input type="checkbox" id="Checkbox57" name="check01" value="1"/>正常
+                       <input type="checkbox" id="Checkbox58" name="check01" value="1"/>微量(Trace)±
+                       <input type="checkbox" id="Checkbox59" name="check01" value="1"/>水腫1+
+                       <input type="checkbox" id="Checkbox60" name="check01" value="1"/>水腫2+
+                       <input type="checkbox" id="Checkbox61" name="check01" value="1"/>水腫3+
+                       <input type="checkbox" id="Checkbox62" name="check01" value="1"/>水腫4+<br>
+
+                       <input type="checkbox" id="Checkbox53" name="check01" value="1"/>右上肢：
+                       <input type="checkbox" id="Checkbox63" name="check01" value="1"/>正常
+                       <input type="checkbox" id="Checkbox64" name="check01" value="1"/>微量(Trace)±
+                       <input type="checkbox" id="Checkbox65" name="check01" value="1"/>水腫1+
+                       <input type="checkbox" id="Checkbox66" name="check01" value="1"/>水腫2+
+                       <input type="checkbox" id="Checkbox67" name="check01" value="1"/>水腫3+
+                       <input type="checkbox" id="Checkbox68" name="check01" value="1"/>水腫4+<br>
+
+                       <input type="checkbox" id="Checkbox54" name="check01" value="1"/>左下肢：
+                       <input type="checkbox" id="Checkbox69" name="check01" value="1"/>正常
+                       <input type="checkbox" id="Checkbox70" name="check01" value="1"/>微量(Trace)±
+                       <input type="checkbox" id="Checkbox71" name="check01" value="1"/>水腫1+
+                       <input type="checkbox" id="Checkbox72" name="check01" value="1"/>水腫2+
+                       <input type="checkbox" id="Checkbox73" name="check01" value="1"/>水腫3+
+                       <input type="checkbox" id="Checkbox74" name="check01" value="1"/>水腫4+<br>
+
+                       <input type="checkbox" id="Checkbox55" name="check01" value="1"/>右下肢：
+                       <input type="checkbox" id="Checkbox75" name="check01" value="1"/>正常
+                       <input type="checkbox" id="Checkbox76" name="check01" value="1"/>微量(Trace)±
+                       <input type="checkbox" id="Checkbox77" name="check01" value="1"/>水腫1+
+                       <input type="checkbox" id="Checkbox78" name="check01" value="1"/>水腫2+
+                       <input type="checkbox" id="Checkbox79" name="check01" value="1"/>水腫3+
+                       <input type="checkbox" id="Checkbox80" name="check01" value="1"/>水腫4+<br>
+
+                       <input type="checkbox" id="Checkbox56" name="check01" value="1"/>其他：
+                       <textarea id="Other4" name="Other4" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                         style="resize: none; background-color: #ffffbb"></textarea>
+                       <input type="checkbox" id="Checkbox81" name="check01" value="1"/>正常
+                       <input type="checkbox" id="Checkbox82" name="check01" value="1"/>微量(Trace)±
+                       <input type="checkbox" id="Checkbox83" name="check01" value="1"/>水腫1+
+                       <input type="checkbox" id="Checkbox84" name="check01" value="1"/>水腫2+
+                       <input type="checkbox" id="Checkbox85" name="check01" value="1"/>水腫3+
+                       <input type="checkbox" id="Checkbox86" name="check01" value="1"/>水腫4+
+                    </th>
+                </tr>
+
+                 <tr>
+                   <th style="text-align: left; vertical-align:middle; width: 10%">
+                        <strong>護理活動：</strong>
+                       <input type="checkbox" id="Checkbox87" name="check01" value="1"/>教導抬高肢體15-30度(高於心臟)，以促進血流
+                       <input type="checkbox" id="Checkbox88" name="check01" value="1"/>教導注意皮膚完整性及血循狀況<br>
+                       <input type="checkbox" id="Checkbox89" name="check01" value="1"/>紀錄每日水份攝取量及尿量
+                    </th>
+                </tr>
+
+                 <tr>
+                   <th style="text-align: center; vertical-align:middle; width: 10%">
+                        <strong>傷口/壓瘡部位</strong>
+                    </th>
+                  <th style="text-align: left; vertical-align:middle; width: 20%">
+                       <input type="checkbox" id="Checkbox90" name="check01" value="1"/>傷口部位：
+                       <input type="checkbox" id="Checkbox92" name="check01" value="1"/>頭頸
+                       <input type="checkbox" id="Checkbox93" name="check01" value="1"/>軀幹
+                       <input type="checkbox" id="Checkbox94" name="check01" value="1"/>右上肢
+                       <input type="checkbox" id="Checkbox95" name="check01" value="1"/>左上肢
+                       <input type="checkbox" id="Checkbox96" name="check01" value="1"/>右下肢
+                       <input type="checkbox" id="Checkbox97" name="check01" value="1"/>左下肢
+                       <input type="checkbox" id="Checkbox98" name="check01" value="1"/>尾底骨<br>
+                       <input type="checkbox" id="Checkbox99" name="check01" value="1"/>其他
+                       <textarea id="Other5" name="Other5" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                         style="resize: none; background-color: #ffffbb"></textarea><br>
+
+                       <input type="checkbox" id="Checkbox91" name="check01" value="1"/>壓瘡部位：
+                       <input type="checkbox" id="Checkbox100" name="check01" value="1"/>頭頸
+                       <input type="checkbox" id="Checkbox101" name="check01" value="1"/>軀幹
+                       <input type="checkbox" id="Checkbox102" name="check01" value="1"/>右上肢
+                       <input type="checkbox" id="Checkbox103" name="check01" value="1"/>左上肢
+                       <input type="checkbox" id="Checkbox104" name="check01" value="1"/>右下肢
+                       <input type="checkbox" id="Checkbox105" name="check01" value="1"/>左下肢
+                       <input type="checkbox" id="Checkbox106" name="check01" value="1"/>尾底骨<br>
+                       <input type="checkbox" id="Checkbox107" name="check01" value="1"/>其他
+                       <textarea id="Other6" name="Other6" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                         style="resize: none; background-color: #ffffbb"></textarea>
+                </th>
+            </tr>
+
+               <tr>
+                   <th style="text-align: center; vertical-align:middle; width: 10%">
+                        <strong>傷口/壓瘡狀況</strong>
+                    </th>
+                   <th style="text-align: left; vertical-align:middle; width: 10%">
+                       <strong>潛行深度公分：</strong>
+                       <textarea id="depth" name="depth" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                         style="resize: none; background-color: #ffffbb"></textarea>公分<br>
+                       <strong>壓瘡期數：</strong>
+                       <input type="radio" name="Periods" value="0" onclick="radio_pay('0', 'Periods')"> I
+                       <input type="radio" name="Periods" value="1" onclick="radio_pay('1', 'Periods')"> II
+                       <input type="radio" name="Periods" value="2" onclick="radio_pay('2', 'Periods')"> III
+                       <input type="radio" name="Periods" value="3" onclick="radio_pay('3', 'Periods')"> IV<br>
+                       <strong>壓瘡傷口癒合評估(PUSH)：</strong><br>
+                       <strong>1.大小(測量最大的範圍，長*寬，以公分為單位)：</strong><br>
+                       長<textarea id="Textarea19" name="depth" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                         style="resize: none; background-color: #ffffbb"></textarea>cm *<br>
+                       寬<textarea id="Textarea20" name="depth" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                         style="resize: none; background-color: #ffffbb"></textarea>cm *<br>
+                       深<textarea id="Textarea21" name="depth" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                         style="resize: none; background-color: #ffffbb"></textarea>cm *<br>=
+                       <textarea id="Textarea22" name="depth" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                         style="resize: none; background-color: #ffffbb"></textarea>分<br>
+                       <strong>2.滲出物(移除敷料後，評估其滲出物的量)：</strong>
+                       <input type="radio" name="Quantity" value="0" onclick="radio_pay('0', 'Quantity')"> 無(0分)
+                       <input type="radio" name="Quantity" value="1" onclick="radio_pay('1', 'Quantity')"> 輕度(1分)
+                       <input type="radio" name="Quantity" value="2" onclick="radio_pay('2', 'Quantity')"> 中度(2分)
+                       <input type="radio" name="Quantity" value="3" onclick="radio_pay('3', 'Quantity')"> 重度(3分)<br>
+                       <strong>3.組織型態(評估是否有腐肉或壞死組織)：</strong>
+                       <input type="radio" name="Type" value="0" onclick="radio_pay('0', 'Type')"> 癒合無破皮(0分)
+                       <input type="radio" name="Type" value="1" onclick="radio_pay('1', 'Type')"> 表皮組織(1分)
+                       <input type="radio" name="Type" value="2" onclick="radio_pay('2', 'Type')"> 肉芽組織(2分)
+                       <input type="radio" name="Type" value="3" onclick="radio_pay('3', 'Type')"> 腐肉(3分)
+                       <input type="radio" name="Type" value="4" onclick="radio_pay('4', 'Type')"> 壞死組織(4分)<br>
+                       <strong>4.總分：</strong>
+                       <textarea id="Textarea23" name="depth" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                         style="resize: none; background-color: #ffffbb"></textarea>分<br>
+                       <strong>傷口顏色：</strong>
+                       <input type="radio" name="Wound" value="0" onclick="radio_pay('0', 'Wound')"> 紅色
+                       <input type="radio" name="Wound" value="1" onclick="radio_pay('1', 'Wound')"> 黃色
+                       <input type="radio" name="Wound" value="2" onclick="radio_pay('2', 'Wound')"> 黑色
+                       <input type="radio" name="Wound" value="3" onclick="radio_pay('3', 'Wound')"> 白色<br>
+                       <strong>滲出物型式：</strong>
+                       <input type="radio" name="Out_Type" value="0" onclick="radio_pay('0', 'Out_Type')"> 清水性
+                       <input type="radio" name="Out_Type" value="1" onclick="radio_pay('1', 'Out_Type')"> 膿性
+                       <input type="radio" name="Out_Type" value="2" onclick="radio_pay('2', 'Out_Type')"> 血液性
+                       <input type="radio" name="Out_Type" value="3" onclick="radio_pay('3', 'Out_Type')"> 膿血性<br>
+                       <strong>敷料/藥膏：</strong>
+                       <input type="checkbox" id="Checkbox108" name="check01" value="1"/>D.D gel
+                       <input type="checkbox" id="Checkbox109" name="check01" value="1"/>Ag Aqucel
+                       <input type="checkbox" id="Checkbox110" name="check01" value="1"/>Aqucel
+                       <input type="checkbox" id="Checkbox111" name="check01" value="1"/>薄人工皮
+                       <input type="checkbox" id="Checkbox112" name="check01" value="1"/>厚人工皮<br>
+                       <input type="checkbox" id="Checkbox113" name="check01" value="1"/>其他
+                       <textarea id="Textarea24" name="depth" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                         style="resize: none; background-color: #ffffbb"></textarea><br>
+                       <strong>評值：</strong>
+                       <input type="radio" name="Inference" value="0" onclick="radio_pay('0', 'Inference')"> 無改善
+                       <input type="radio" name="Inference" value="1" onclick="radio_pay('1', 'Inference')"> 惡化
+                       <input type="radio" name="Inference" value="2" onclick="radio_pay('2', 'Inference')"> 改善
+                       <input type="radio" name="Inference" value="3" onclick="radio_pay('3', 'Inference')"> 癒合<br>
+                       <input type="radio" name="Inference" value="4" onclick="radio_pay('4', 'Inference')"> 其他
+                       <textarea id="Textarea25" name="depth" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                         style="resize: none; background-color: #ffffbb"></textarea>
+                    </th>
+                </tr>
+
+                <tr>
+                <th rowspan="5" style="text-align: center; vertical-align:middle; width: 10%">
+                        <strong>排泄</strong>
+                    </th>
+                <th rowspan="3"style="text-align: center; vertical-align:middle; width: 10%">
+                        <strong>小便</strong>
+                    </th>
+                <th style="text-align: left; vertical-align:middle; width: 20%">
+                    <strong>小便處理：</strong>
+                       <input type="radio" name="Urinating" value="0" onclick="radio_pay('0', 'Urinating')"> 可自解
+                       <input type="radio" name="Urinating" value="1" onclick="radio_pay('1', 'Urinating')"> 使用尿布
+                       <input type="radio" name="Urinating" value="2" onclick="radio_pay('2', 'Urinating')"> 使用尿套<br>
+                       <input type="radio" name="Urinating" value="3" onclick="radio_pay('3', 'Urinating')"> 導尿管，尿量
+                       <textarea id="Textarea26" name="depth" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                         style="resize: none; background-color: #ffffbb"></textarea>cc/天<br>
+                       <input type="radio" name="Urinating" value="4" onclick="radio_pay('4', 'Urinating')"> 膀胱造瘻，尿量
+                       <textarea id="Textarea27" name="depth" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                         style="resize: none; background-color: #ffffbb"></textarea>cc/天<br>
+                       <input type="radio" name="Urinating" value="5" onclick="radio_pay('5', 'Urinating')"> 自行單導
+                       <input type="radio" name="Urinating" value="6" onclick="radio_pay('6', 'Urinating')"> 尿量未紀錄但有衛教
+                    </th>
+                </tr>
+
+                <tr>
+                    <th style="text-align: left; vertical-align:middle; width: 20%">
+                    <strong>尿液性狀：</strong>
+                       <input type="radio" name="Pee_Type" value="0" onclick="radio_pay('0', 'Pee_Type')"> 清澈
+                       <input type="radio" name="Pee_Type" value="1" onclick="radio_pay('1', 'Pee_Type')"> 混濁
+                       <input type="radio" name="Pee_Type" value="2" onclick="radio_pay('2', 'Pee_Type')"> 色深
+                       <input type="radio" name="Pee_Type" value="3" onclick="radio_pay('3', 'Pee_Type')"> 紫尿
+                    <strong>沉澱物：</strong>
+                       <input type="radio" name="Precipitate" value="0" onclick="radio_pay('0', 'Precipitate')"> 無
+                       <input type="radio" name="Precipitate" value="1" onclick="radio_pay('1', 'Precipitate')"> 有
+                    </th>
+                </tr>
+
+               <tr>
+                    <th style="text-align: left; vertical-align:middle; width: 20%">
+                    <strong>UTI徵兆：</strong>
+                       <input type="radio" name="UTI" value="0" onclick="radio_pay('0', 'UTI')"> 無<br>
+                       &emsp;&emsp;&emsp;&emsp;&emsp;<input type="radio" name="UTI" value="1" onclick="radio_pay('1', 'UTI')"> 有
+                       <input type="checkbox" id="Checkbox114" name="check01" value="1"/>下腹痛
+                       <input type="checkbox" id="Checkbox115" name="check01" value="1"/>發燒
+                       <input type="checkbox" id="Checkbox116" name="check01" value="1"/>發冷
+                       <input type="checkbox" id="Checkbox117" name="check01" value="1"/>血尿
+                       <input type="checkbox" id="Checkbox118" name="check01" value="1"/>混濁
+                       <input type="checkbox" id="Checkbox119" name="check01" value="1"/>膿尿
+                       <input type="checkbox" id="Checkbox120" name="check01" value="1"/>頻尿
+                       <input type="checkbox" id="Checkbox121" name="check01" value="1"/>排尿會痛
+                       <input type="checkbox" id="Checkbox122" name="check01" value="1"/>灼熱感
+                    </th>
+                </tr>
+
+                <tr>
+                <th rowspan="2"style="text-align: center; vertical-align:middle; width: 10%">
+                        <strong>大便</strong>
+                    </th>
+                <th style="text-align: left; vertical-align:middle; width: 20%">
+                    <strong>排便處理：</strong>
+                       <input type="radio" name="Defecation" value="0" onclick="radio_pay('0', 'Defecation')"> 自解
+                       <input type="radio" name="Defecation" value="1" onclick="radio_pay('1', 'Defecation')"> 灌腸
+                       <input type="radio" name="Defecation" value="2" onclick="radio_pay('2', 'Defecation')"> 挖便
+                       <input type="radio" name="Defecation" value="3" onclick="radio_pay('3', 'Defecation')"> 人工肛門
+                </th>
+                </tr>
+
+                <tr>
+                    <th style="text-align: left; vertical-align:middle; width: 20%">
+                    <strong>大便性狀：</strong>
+                       <input type="radio" name="Stool_Type" value="0" onclick="radio_pay('0', 'Stool_Type')"> 軟
+                       <input type="radio" name="Stool_Type" value="1" onclick="radio_pay('1', 'Stool_Type')"> 硬
+                       <input type="radio" name="Stool_Type" value="2" onclick="radio_pay('2', 'Stool_Type')"> 不成型
+                       <input type="radio" name="Stool_Type" value="3" onclick="radio_pay('3', 'Stool_Type')"> 稀
+                       <input type="radio" name="Stool_Type" value="4" onclick="radio_pay('4', 'Stool_Type')"> 微稀
+                       <input type="radio" name="Stool_Type" value="5" onclick="radio_pay('5', 'Stool_Type')"> 液狀
+                       <input type="radio" name="Stool_Type" value="6" onclick="radio_pay('6', 'Stool_Type')"> 前硬後軟<br>
+                       <input type="radio" name="Stool_Type" value="7" onclick="radio_pay('7', 'Stool_Type')"> 次數
+                         <textarea id="Textarea28" name="depth" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                         style="resize: none; background-color: #ffffbb"></textarea>次/<br>
+                         <textarea id="Textarea29" name="depth" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                         style="resize: none; background-color: #ffffbb"></textarea>天
+                </th>
+                </tr>
+
+                <tr>
+                    <th style="text-align: center; vertical-align:middle; width: 20%">
+                       <strong>腹部</strong>
+                    </th>
+                    <th style="text-align: center; vertical-align:middle; width: 20%">
+                       <strong>腸蠕動</strong>
+                    </th>
+                    <th style="text-align: left; vertical-align:middle; width: 20%">
+                       <strong>腸音：</strong>
+                        <textarea id="Textarea30" name="depth" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                         style="resize: none; background-color: #ffffbb"></textarea>次/分，
+                       <input type="radio" name="Bowel_sound" value="0" onclick="radio_pay('0', 'Bowel_sound')"> 正常
+                       <input type="radio" name="Bowel_sound" value="1" onclick="radio_pay('1', 'Bowel_sound')"> 過快
+                       <input type="radio" name="Bowel_sound" value="2" onclick="radio_pay('2', 'Bowel_sound')"> 過慢<br>
+                       <strong>腹脹：</strong>
+                       <input type="radio" name="Bloating" value="0" onclick="radio_pay('0', 'Bloating')"> 無
+                       <input type="radio" name="Bloating" value="1" onclick="radio_pay('1', 'Bloating')"> 有<br>
+                       <strong>硬塊：</strong>
+                       <input type="radio" name="Hard_block" value="0" onclick="radio_pay('0', 'Hard_block')"> 無
+                       <input type="radio" name="Hard_block" value="1" onclick="radio_pay('1', 'Hard_block')"> 有
+                    </th>
+                </tr>
+
+               <tr>
+                <th rowspan="3"style="text-align: center; vertical-align:middle; width: 10%">
+                        <strong>情緒行為</strong>
+                    </th>
+                <th style="text-align: center; vertical-align:middle; width: 20%">
+                       <strong>情緒狀態</strong>
+                    </th>
+                <th style="text-align: left; vertical-align:middle; width: 20%">
+                       <input type="radio" name="Mood" value="0" onclick="radio_pay('0', 'Mood')"> 平穩
+                       <input type="radio" name="Mood" value="1" onclick="radio_pay('1', 'Mood')"> 憂鬱
+                       <input type="radio" name="Mood" value="2" onclick="radio_pay('2', 'Mood')"> 焦慮
+                       <input type="radio" name="Mood" value="3" onclick="radio_pay('3', 'Mood')"> 冷淡
+                       <input type="radio" name="Mood" value="4" onclick="radio_pay('4', 'Mood')"> 無法評估
+                </th>
+                </tr>
+
+                <tr>
+                    <th style="text-align: center; vertical-align:middle; width: 20%">
+                       <strong>睡眠型態</strong>
+                    </th>
+                    <th style="text-align: left; vertical-align:middle; width: 20%">
+                       <input type="radio" name="Sleep" value="0" onclick="radio_pay('0', 'Sleep')"> 正常
+                       <input type="radio" name="Sleep" value="1" onclick="radio_pay('1', 'Sleep')"> 日夜顛倒
+                       <input type="radio" name="Sleep" value="2" onclick="radio_pay('2', 'Sleep')"> 斷續
+                       <input type="radio" name="Sleep" value="3" onclick="radio_pay('3', 'Sleep')"> 無法評估
+                    </th>
+                </tr>
+
+                <tr>
+                    <th style="text-align: center; vertical-align:middle; width: 20%">
+                       <strong>溝通方式</strong>
+                    </th>
+                    <th style="text-align: left; vertical-align:middle; width: 20%">
+                      <strong>能理解：</strong>
+                       <input type="radio" name="Sleep" value="0" onclick="radio_pay('0', 'Sleep')"> 是
+                       <input type="radio" name="Sleep" value="1" onclick="radio_pay('1', 'Sleep')"> 否
+                       <input type="radio" name="Sleep" value="2" onclick="radio_pay('2', 'Sleep')"> 部份<br>
+                      <strong>能表達：</strong>
+                       <input type="radio" name="Expression" value="0" onclick="radio_pay('0', 'Expression')"> 語言
+                       <input type="radio" name="Expression" value="1" onclick="radio_pay('1', 'Expression')"> 肢體表達
+                       <input type="radio" name="Expression" value="2" onclick="radio_pay('2', 'Expression')"> 溝通輔具
+                       <input type="radio" name="Expression" value="3" onclick="radio_pay('3', 'Expression')"> 無法表達
+                       <input type="radio" name="Expression" value="4" onclick="radio_pay('4', 'Expression')"> 無法評估
+                    </th>
+                </tr>
+
+                <tr>
+                <th rowspan="8" style="text-align: center; vertical-align:middle; width: 10%">
+                        <strong>疼痛評估</strong>
+                    </th>
+                <th rowspan="2" style="text-align: center; vertical-align:middle; width: 20%">
+                    <strong>疼痛</strong>
+                </th>
+                <th style="text-align: left; vertical-align:middle; width: 20%">
+                       <input type="radio" name="Pain" value="0" onclick="radio_pay('0', 'Pain')"> 無
+                       <input type="radio" name="Pain" value="1" onclick="radio_pay('1', 'Pain')"> 有
+                </th>
+                </tr>
+
+               <tr>
+                   <th style="text-align: left; vertical-align:middle; width: 20%">
+                       <strong>疼痛表達：</strong>
+                       <input type="radio" name="Pain_Expression" value="0" onclick="radio_pay('0', 'Pain_Expression')"> 無法表達
+                       <input type="radio" name="Pain_Expression" value="1" onclick="radio_pay('1', 'Pain_Expression')"> 可以表達<br>
+                       <strong>疼痛性質：</strong>
+                       <input type="radio" name="Pain_Type" value="0" onclick="radio_pay('0', 'Pain_Type')"> 刺痛
+                       <input type="radio" name="Pain_Type" value="1" onclick="radio_pay('1', 'Pain_Type')"> 鈍痛
+                       <input type="radio" name="Pain_Type" value="2" onclick="radio_pay('2', 'Pain_Type')"> 抽痛<br>
+                       <input type="radio" name="Pain_Type" value="3" onclick="radio_pay('3', 'Pain_Type')"> 其他
+                       <textarea id="Textarea31" name="depth" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                         style="resize: none; background-color: #ffffbb"></textarea>
+                       <strong>疼痛部位：</strong>
+                        <textarea id="Textarea32" name="depth" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                         style="resize: none; background-color: #ffffbb"></textarea>、
+                        <textarea id="Textarea33" name="depth" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                         style="resize: none; background-color: #ffffbb"></textarea>
+                    </th>
+                </tr>
+
+                <tr>
+                <th rowspan="2" style="text-align: center; vertical-align:middle; width: 20%">
+                    <strong>PAINAD疼痛評估量表</strong>
+                </th>
+                <th style="text-align: left; vertical-align:middle; width: 20%">
+                      <strong>前次評估時間：</strong>
+                    <label></label>
+                    <strong> PAINAD疼痛評估量表：</strong>
+                    <label></label>分
+                </th>
+                </tr>
+
+                <tr>
+                    <th style="text-align: left; vertical-align:middle; width: 20%">
+                      <strong>呼吸：</strong>
+                       <input type="radio" name="Pain" value="0" onclick="radio_pay('0', 'Pain')"> 正常呼吸(0分)  <br>
+                       &emsp;&emsp;&emsp;<input type="radio" name="Breath" value="1" onclick="radio_pay('1', 'Breath')"> 偶爾費力呼吸、短暫的過度換氣(1分)<br>
+                       &emsp;&emsp;&emsp;<input type="radio" name="Breath" value="0" onclick="radio_pay('2', 'Breath')"> 持續費力呼吸且呼吸音吵雜；長時間過度換氣；陳施氏呼吸(2分) <br>
+                        <strong>負向發聲：</strong>
+                       <input type="radio" name="Pain" value="0" onclick="radio_pay('0', 'Pain')"> 無 (0分)<br>
+                       &emsp;&emsp;&emsp;&emsp;&emsp;<input type="radio" name="Negative_Sound" value="1" onclick="radio_pay('1', 'Negative_Sound')"> 偶爾嗚咽∕呻吟、以負向或不雅的言詞說話(1分)<br>
+                       &emsp;&emsp;&emsp;&emsp;&emsp;<input type="radio" name="Negative_Sound" value="0" onclick="radio_pay('2', 'Negative_Sound')"> 反覆不安地大聲喊叫、大聲嗚咽或呻吟、哭泣 (2分)<br>
+                        <strong>面部表情：</strong>
+                       <input type="radio" name="Facial_Expressions" value="0" onclick="radio_pay('0', 'Facial_Expressions')"> 微笑或無表情(0分)<br>
+                       &emsp;&emsp;&emsp;&emsp;&emsp;<input type="radio" name="Facial_Expressions" value="1" onclick="radio_pay('1', 'Facial_Expressions')"> 傷心、害怕、皺眉(1分)<br>
+                       &emsp;&emsp;&emsp;&emsp;&emsp;<input type="radio" name="Facial_Expressions" value="0" onclick="radio_pay('2', 'Facial_Expressions')"> 臉部表情痛苦 (2分) <br>
+                        <strong>肢體語言：</strong>
+                       <input type="radio" name="Body_Language" value="0" onclick="radio_pay('0', 'Body_Language')"> 放鬆(0分)<br>
+                       &emsp;&emsp;&emsp;&emsp;&emsp;<input type="radio" name="Body_Language" value="1" onclick="radio_pay('1', 'Body_Language')"> 緊張、痛苦、踱步、坐立不安(1分)<br>
+                       &emsp;&emsp;&emsp;&emsp;&emsp;<input type="radio" name="Body_Language" value="0" onclick="radio_pay('2', 'Body_Language')"> 僵硬、雙拳緊握；膝蓋上屈；揮拳；把人拉開或推開(2分) <br>
+                        <strong>可安撫性：</strong>
+                       <input type="radio" name="Appease" value="0" onclick="radio_pay('0', 'Appease')"> 不需安撫(0分)<br>
+                       &emsp;&emsp;&emsp;&emsp;&emsp;<input type="radio" name="Appease" value="1" onclick="radio_pay('1', 'Appease')"> 聲音或碰觸可使其分散注意力(1分) <br>
+                       &emsp;&emsp;&emsp;&emsp;&emsp;<input type="radio" name="Appease" value="0" onclick="radio_pay('2', 'Appease')"> 無法被安撫、分散注意力，或使其放心(2分)  <br>
+                        <strong>總分：</strong>
+                         <label></label>分
+                    </th>
+                </tr>
+
+                <tr>
+                    <th style="text-align: center; vertical-align:middle; width: 20%">
+                    <strong>疼痛處置</strong>
+                </th>
+                    <th style="text-align: left; vertical-align:middle; width: 20%">
+                       <input type="checkbox" id="Checkbox123" name="check01" value="1"/>貼布
+                       <input type="checkbox" id="Checkbox124" name="check01" value="1"/>口服
+                       <input type="checkbox" id="Checkbox125" name="check01" value="1"/>熱敷
+                       <input type="checkbox" id="Checkbox126" name="check01" value="1"/>冷敷
+                       <input type="checkbox" id="Checkbox127" name="check01" value="1"/>按摩
+                       <input type="checkbox" id="Checkbox128" name="check01" value="1"/>聽音樂<br>
+                       <input type="checkbox" id="Checkbox129" name="check01" value="1"/>其他
+                        <textarea id="Textarea34" name="depth" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                         style="resize: none; background-color: #ffffbb"></textarea>
+                       <input type="checkbox" id="Checkbox130" name="check01" value="1"/>連續兩次疼痛>3分跳出提示，通知醫師看是否需調整或增加止痛用藥
+                    </th>
+                </tr>
+
+               <tr>
+                <th rowspan="2" style="text-align: center; vertical-align:middle; width: 20%">
+                    <strong>VRS口述疼痛量表</strong>
+                </th>
+                <th style="text-align: left; vertical-align:middle; width: 20%">
+                      <strong>前次評估時間：</strong>
+                    <label></label>
+                    <strong> VRS口述疼痛量表：</strong>
+                    <label></label>分
+                </th>
+                </tr>
+
+                <tr>
+                    <th style="text-align: left; vertical-align:middle; width: 20%">
+                      <strong>以口述方式向病人解是由 0 到 10 代表的意義，讓病人評分 (verbal rating)。</strong><br>
+                       <input type="radio" name="VRS" value="0" onclick="radio_pay('0', 'VRS')"> 0分沒有疼痛 <br>
+                       <input type="radio" name="VRS" value="1" onclick="radio_pay('1', 'VRS')"> 1分<br>
+                       <input type="radio" name="VRS" value="2" onclick="radio_pay('2', 'VRS')"> 2分稍微疼痛<br>
+                       <input type="radio" name="VRS" value="3" onclick="radio_pay('3', 'VRS')"> 3分<br>
+                       <input type="radio" name="VRS" value="4" onclick="radio_pay('4', 'VRS')"> 4分疼痛不舒服<br>
+                       <input type="radio" name="VRS" value="5" onclick="radio_pay('5', 'VRS')"> 5分<br>
+                       <input type="radio" name="VRS" value="6" onclick="radio_pay('6', 'VRS')"> 6分疼痛很困擾<br>
+                       <input type="radio" name="VRS" value="7" onclick="radio_pay('7', 'VRS')"> 7分<br>
+                       <input type="radio" name="VRS" value="8" onclick="radio_pay('8', 'VRS')"> 8分疼痛很嚴重<br>
+                       <input type="radio" name="VRS" value="9" onclick="radio_pay('9', 'VRS')"> 9分<br>
+                       <input type="radio" name="VRS" value="10" onclick="radio_pay('10', 'VRS')"> 10分無法忍受、最痛
+                    </th>
+                </tr>
+
+                <tr>
+                    <th style="text-align: center; vertical-align:middle; width: 20%">
+                    <strong>疼痛處置</strong>
+                </th>
+                    <th style="text-align: left; vertical-align:middle; width: 20%">
+                       <input type="checkbox" id="Checkbox131" name="check01" value="1"/>貼布
+                       <input type="checkbox" id="Checkbox132" name="check01" value="1"/>口服
+                       <input type="checkbox" id="Checkbox133" name="check01" value="1"/>熱敷
+                       <input type="checkbox" id="Checkbox134" name="check01" value="1"/>冷敷
+                       <input type="checkbox" id="Checkbox135" name="check01" value="1"/>按摩
+                       <input type="checkbox" id="Checkbox136" name="check01" value="1"/>聽音樂<br>
+                       <input type="checkbox" id="Checkbox137" name="check01" value="1"/>其他
+                        <textarea id="Textarea35" name="depth" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);"
+                         style="resize: none; background-color: #ffffbb"></textarea>
+                       <input type="checkbox" id="Checkbox138" name="check01" value="1"/>連續兩次疼痛>3分跳出提示，通知醫師看是否需調整或增加止痛用藥
+                    </tr>
+                </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+    </form>
+</body>
+</html>

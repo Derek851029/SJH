@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
+
+</title>
+
+<!--<link href="http://210.68.75.96:9000/DataTables/jquery.dataTables.min.css" rel="stylesheet" />-->
+<link href="./css/bootstrap.min.css" rel="stylesheet" />
+<link href="./css/bootstrap-theme.min.css" rel="stylesheet" />
+<link href="./css/bootstrap-responsive.min.css" rel="stylesheet" />
+<!--<link href="http://210.68.75.96:9000/bootstrap-chosen-master/bootstrap-chosen.css" rel="stylesheet" />-->
+<link href="./css/JackyStyle.css" rel="stylesheet" />
+<!--    <script src="http://210.68.75.96:9000/js/jquery.min.js"></script>
+<script src="http://210.68.75.96:9000/js/bootstrap.min.js"></script>
+<script src="http://210.68.75.96:9000/chosen/chosen.jquery.js"></script>
+<script src="http://210.68.75.96:9000/DataTables/jquery.dataTables.min.js"></script>
+
+
+
+<!--
+<script src="../fullcalendar-2.8.0/lib/moment.min.js"></script>
+<script src="../fullcalendar-2.8.0/fullcalendar.min.js"></script>
+<script src="../fullcalendar-2.8.0/lang-all.js"></script>--%>
+<link href="../css/jquery.datetimepicker.min.css" rel="stylesheet" />
+<script src="js/jquery.datetimepicker.full.min.js"></script>
+
+
+<link href="../Timeline/css/style.css" rel="stylesheet" />
+
+<script src="Timeline/js/jq.schedule.js"></script>
+
+-->
+
+</head>
+<body>
+  <form name="aspnetForm" method="post" action="./0200010000.aspx?seqno=0" id="aspnetForm">
+
+
+
+
+
+
+    <!--DIVFIRST===================================================-->
+    <div style="width: 1280px; margin:0px auto;">
+      <h2><strong>護理計畫表(潛在危險性肺炎)（新增）</strong></h2>
+      <table class="table table-bordered table-striped">
+        <tbody><tr>
+          <th style="text-align: center; vertical-align:middle; width: 15%">
+            <strong>姓名:</strong>
+          </th>
+          <th style="text-align: center; vertical-align:middle; width: 15%">
+            <input id="Text2" class="form-control" placeholder="姓名" maxlength="10" onkeyup="cs(this);">
+          </th>
+          <th style="text-align: center; vertical-align:middle; width: 15%">
+            <strong>病歷號:</strong>
+          </th>
+          <th style="text-align: center; vertical-align:middle; width: 15%">
+            <input id="Text3" class="form-control" placeholder="病歷號" maxlength="10" onkeyup="cs(this);">
+          </th>
+          <th style="text-align: center; vertical-align:middle; width: 15%">
+            <strong>家字號:</strong>
+          </th>
+          <th style="text-align: center; vertical-align:middle; width: 15%">
+            <input id="Text4" class="form-control" placeholder="家字號" maxlength="10" onkeyup="cs(this);">
+          </th>
+        </tr>
+        <tr>
+          <th colspan="6" style="text-align: center; vertical-align:middle; width: 15%">
+            <strong>護理問題:潛在危險性吸入 Risk for aspiration /on NG tube  </strong>
+          </th>
+        </tr>
+        <tr>
+          <th style="text-align: center; vertical-align:middle; width: 15%">
+            <strong>護理目標:</strong>
+          </th>
+          <th colspan="5" style="text-align: left; vertical-align:middle; width: 15%">
+            <strong>近程：個案及主要照顧者能於三次訪視內，理解並應用預防肺吸入的方法 </strong><br>
+            <strong>遠程：於居家照護期間，個案未發生肺吸入情形</strong>
+          </th>
+        </tr>
+      </tbody></table>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th style="text-align: center" colspan="7">
+              <span style="font-size: 20px"><strong>天主教聖功醫療財團法人聖功醫院居家護理護理計畫表</strong></span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <th rowspan="2" style="text-align: center; vertical-align:middle; width: 15%">
+              <strong>開始日期</strong>
+            </th>
+            <th rowspan="2" style="text-align: center; vertical-align:middle; width: 30%">
+              <strong>護理活動</strong>
+            </th>
+            <th colspan="5" style="text-align: center; vertical-align:middle; width: 15%">
+              <strong>評值</strong>
+            </th>
+          </tr>
+          <tr>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <strong>日期</strong>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <strong>結果</strong>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <strong>知識/技能</strong>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <strong>執行</strong>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <strong>簽名</strong>
+            </th>
+          </tr>
+
+          <tr>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <input type="text" class="form-control" id="datetimepicker01" name="datetimepicker01" maxlength="10" placeholder="時間">
+            </th>
+            <th style="text-align: left; vertical-align:middle; width: 10%">
+              <input type="checkbox" id="Checkbox1" name="check01" value="1"> 1.灌食前確認鼻胃管的位置是否在胃內。<br>
+              <input type="checkbox" id="Checkbox2" name="check01" value="1"> 2.每天須給予口、鼻清潔一次。清除鼻子上的油脂，並每日更換固定鼻胃管的膠帶，並將鼻胃管轉動1/4圈後，在固定之。可以使用茶葉水清潔口腔，以減少異味。<br>
+              <input type="checkbox" id="Checkbox3" name="check01" value="1"> 3.教導照護者評估視個案消化情況，適時給予流質量增減。<br>
+              <input type="checkbox" id="Checkbox4" name="check01" value="1"> 4.給予灌食時，應搖高床頭或採半坐臥，以防吸入性肺炎。<br>
+              <input type="checkbox" id="Checkbox5" name="check01" value="1"> 5.若個案有抽痰需要，需再灌食前抽痰、翻身、拍背，灌食後30~40分鐘勿翻身個案或有抽痰動作，以防個案嘔吐不適。<br>
+              <input type="checkbox" id="Checkbox6" name="check01" value="1"> 6.若管子有阻塞、拉出或個案出現嘔吐，持續不斷咳嗽，胃內容物為咖啡色、紅色，應立即通知護理師。<br>
+              <input type="checkbox" id="Checkbox7" name="check01" value="1"> 7.灌食完後，鼻胃管之開關確定是否關好，避免造成逆流或空氣進入等情形。<br>
+              <input type="checkbox" id="Checkbox8" name="check01" value="1"> 8.教導吸入性肺炎的徵象，包括發酣、呼吸困難、咳嗽、哮喘等應立即通知護理師，必須時需送醫處理。
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <textarea id="Date" name="Date" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);" style="resize: none" ;="" placeholder="日期"></textarea>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <select id="select01" name="select01" class="chosen-select">
+                <option value="">結果</option>
+                <option value="6">良好(6)</option>
+                <option value="5">尚可(5)</option>
+                <option value="4">惡化(4)</option>
+              </select>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <select id="select2" name="select02" class="chosen-select">
+                <option value="">知識/技能</option>
+                <option value="6">純熟(6)</option>
+                <option value="5">尚可(5)</option>
+                <option value="4">生疏(4)</option>
+                <option value="3">完全不會(3)</option>
+              </select>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <select id="select3" name="select02" class="chosen-select">
+                <option value="">執行</option>
+                <option value="6">確實執行(6)</option>
+                <option value="5">部分執行(5)</option>
+                <option value="4">偶而執行(4)</option>
+                <option value="3">不完全執行(3)</option>
+                <option value="2">執行部分錯誤(2)</option>
+                <option value="1">執行嚴重錯誤(1)</option>
+              </select>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+            </th>
+          </tr>
+        </tbody></table>
+      </div>
+
+
+
+
+    </form>
+  </body>
+  </html>

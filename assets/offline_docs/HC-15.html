@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
+
+</title>
+
+<!--<link href="http://210.68.75.96:9000/DataTables/jquery.dataTables.min.css" rel="stylesheet" />-->
+<link href="./css/bootstrap.min.css" rel="stylesheet" />
+<link href="./css/bootstrap-theme.min.css" rel="stylesheet" />
+<link href="./css/bootstrap-responsive.min.css" rel="stylesheet" />
+<!--<link href="http://210.68.75.96:9000/bootstrap-chosen-master/bootstrap-chosen.css" rel="stylesheet" />-->
+<link href="./css/JackyStyle.css" rel="stylesheet" />
+<!--    <script src="http://210.68.75.96:9000/js/jquery.min.js"></script>
+    <script src="http://210.68.75.96:9000/js/bootstrap.min.js"></script>
+    <script src="http://210.68.75.96:9000/chosen/chosen.jquery.js"></script>
+    <script src="http://210.68.75.96:9000/DataTables/jquery.dataTables.min.js"></script>
+
+
+
+    <!--
+    <script src="../fullcalendar-2.8.0/lib/moment.min.js"></script>
+    <script src="../fullcalendar-2.8.0/fullcalendar.min.js"></script>
+    <script src="../fullcalendar-2.8.0/lang-all.js"></script>--%>
+    <link href="../css/jquery.datetimepicker.min.css" rel="stylesheet" />
+    <script src="js/jquery.datetimepicker.full.min.js"></script>
+
+
+    <link href="../Timeline/css/style.css" rel="stylesheet" />
+
+    <script src="Timeline/js/jq.schedule.js"></script>
+
+-->
+
+</head>
+<body>
+    <form name="aspnetForm" method="post" action="./0200010000.aspx?seqno=0" id="aspnetForm">
+
+
+
+
+
+
+    <!--DIVFIRST===================================================-->
+    <div style="width: 1080px; margin:0px auto;">
+            <h2 class="style2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 天主教聖功醫寮財團法人附設居家護理所</h2>
+            <h2 class="style2">工作性日常生活活動量表<strong>（IADL）</strong></h2>
+
+
+                    <table class="table table-bordered table-striped">
+                        <tbody><tr>
+                            <td style="text-align: center; background-color:#CCDDFF; vertical-align:middle; width:20%">
+                                <span><strong>個案姓名 </strong></span>
+                            </td>
+                            <td style="text-align: center; vertical-align:middle; width:20%">
+                                <span id="ctl00_head2_Case_Name">尚未建立開案資料</span>
+                            </td>
+                    </tr>
+                        </tbody></table>
+            <table class="table table-bordered table-striped">
+                <tbody>
+                    <tr>
+                        <th style="text-align: center; width: 15%;">
+                            <strong>項目</strong>
+                        </th>
+                        <th style="text-align: center; width:75%">
+                            內容</th>
+                        <td style="text-align:center; width:10%">
+                            <strong>該選項得分</strong>
+                        </td>
+                    </tr>
+
+
+
+                    <tr id="ctl00_head2_tr_sysid">
+    	<td style="text-align: center; vertical-align:middle; color: #008800; " class="style3">
+                            一<strong>. 使用電話能力</strong>
+                        </td>
+    	<td class="style3">
+                            <input type="radio" name="Eating" value="10" onclick="ShowRadioScore('1','flag1')">
+                            <span>能自己操作控制</span>。(1分)<br>
+                            <input type="radio" name="Eating" value="5" onclick="ShowRadioScore('2', 'flag1')"><span>能撥少數已知電話號碼<span lang="EN-US"><o:p></o:p></span></span>。(2分)<br>
+                            <input type="radio" name="Eating" value="0" onclick="ShowRadioScore('3', 'flag1')"><span>能對講但無法撥電話<span lang="EN-US"><o:p></o:p></span></span>。(3分)
+                            <br>
+                            <input type="radio" name="Eating" value="01" onclick="ShowRadioScore('3', 'flag1')" checked="true"><span>無法使用電話<span lang="EN-US"><o:p></o:p></span></span>。(4分)
+                        </td>
+    	<td style="text-align: center ; vertical-align:middle;" class="style3">
+                            <label id="flag1"></label>
+                        </td>
+    </tr>
+
+                    <tr>
+                        <td style="text-align: center; vertical-align:middle;">
+                            <strong>二. 購物</strong></td>
+                        <td>
+                            <input type="radio" name="Moving" value="15" onclick="ShowRadioScore('0','flag2')"><span>能自行購物<span lang="EN-US"><o:p></o:p></span></span>。(1分)<br>
+                            <input type="radio" name="Moving" value="10" onclick="ShowRadioScore('1', 'flag2')"><span>對於少量消費，能自行購物<span lang="EN-US"><o:p></o:p></span></span>。(2分)<br>
+                            <input type="radio" name="Moving" value="5" onclick="ShowRadioScore('2', 'flag2')"><span>任何購物時，皆須陪伴<span lang="EN-US"><o:p></o:p></span></span>。(3分)<br>
+                            <input type="radio" name="Moving" value="0" onclick="ShowRadioScore('3', 'flag2')"><span>完全無法去購物<span lang="EN-US"><o:p></o:p></span></span>。(4分)
+                        </td>
+                        <td style="text-align: center ; vertical-align:middle;">
+                            <label id="flag2"></label>
+                        </td>
+                    </tr>
+
+
+
+                    <tr>
+                        <td style="text-align: center; vertical-align:middle; color: #008800;">
+                            三<strong>. 準備食物</strong></td>
+                        <td>
+                            <input type="radio" name="Cleaning" value="5" onclick="ShowRadioScore('2', 'flag3')"><span>能獨立自行計劃、準備、烹調適當餐點<span lang="EN-US"><o:p></o:p></span></span><span lang="EN-US">&nbsp;</span>。(1分)<br>
+                            <input type="radio" name="Cleaning" value="0" onclick="ShowRadioScore('3', 'flag3')"><span>若提供食物主要成分時，可準備適當餐點<span lang="EN-US"><o:p></o:p></span></span>。(2分)<br>
+                            <input type="radio" name="Cleaning" value="01" onclick="ShowRadioScore('3', 'flag3')" checked="true"><span>只能煮熱熟食或餐點<span lang="EN-US"><o:p></o:p></span></span>。(3分)<br>
+                            <input type="radio" name="Cleaning" value="02" onclick="ShowRadioScore('3', 'flag3')"><span>需由他人提供餐點</span>。(4分)<br>
+                        </td>
+                        <td style="text-align: center ; vertical-align:middle;">
+                            <label id="flag3"></label>
+                        </td>
+                    </tr>
+
+
+
+                    <tr>
+                        <td style="text-align: center; vertical-align:middle;">
+                            四<strong>. 家事維持</strong></td>
+                        <td>
+                            <input type="radio" name="Toileting" value="10" onclick="ShowRadioScore('1', 'flag4')"><span>能獨立維持家式或協助下可做粗重工作，如：拖地<span lang="EN-US"><o:p></o:p></span></span>。(1分)<br>
+                            <input type="radio" name="Toileting" value="5" onclick="ShowRadioScore('2', 'flag4')"><span>能執行輕鬆工作，如：洗碗<span lang="EN-US"><o:p></o:p></span></span>。(2分)<br>
+                            <input type="radio" name="Toileting" value="0" onclick="ShowRadioScore('3', 'flag4')"><span>能執行輕鬆工作但無法維持清潔<span lang="EN-US"><o:p></o:p></span></span>。(3分)
+                            <br>
+                            <input type="radio" name="Toileting" value="02" onclick="ShowRadioScore('3', 'flag4')"><span>需別人協助做所有家事<span lang="EN-US"><o:p></o:p></span></span>。(4分)<br>
+                            <input type="radio" name="Toileting" value="03" onclick="ShowRadioScore('3', 'flag4')"><span>完全不參加任何家事工作<span lang="EN-US"><o:p></o:p></span></span>。(5分)
+                        </td>
+                        <td style="text-align: center ; vertical-align:middle;">
+                            <label id="flag4"></label>
+                        </td>
+                    </tr>
+
+
+
+                    <tr>
+                        <td style="text-align: center; vertical-align:middle; color: #008800;">
+                            五<strong>. 清洗衣物</strong></td>
+                        <td>
+
+                            <input type="radio" name="Bathing" value="5" onclick="ShowRadioScore('2', 'flag5')"><span>能完成個人衣物清洗<span lang="EN-US"><o:p></o:p></span></span><span lang="EN-US">&nbsp;</span>。(1分)<br>
+                            <input type="radio" name="Bathing" value="0" onclick="ShowRadioScore('3', 'flag5')"><span>能清洗小件衣物，如襪子、手帕<span lang="EN-US"><o:p></o:p></span></span>。(2分)
+                            <br>
+                            <input type="radio" name="Bathing" value="02" onclick="ShowRadioScore('3', 'flag5')"><span>完全由他人執行衣物清洗<span lang="EN-US"><o:p></o:p></span></span>。(3分)
+                        </td>
+                        <td style="text-align: center ; vertical-align:middle;">
+                            <label id="flag5"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                       <td style="text-align: center; vertical-align:middle;">
+                            六<strong>. 使用交通方式</strong>
+                        </td>
+                        <td>
+                            <input type="radio" name="Walking" value="15" onclick="ShowRadioScore('0', 'flag6')"><span>能自行使用公共運輸或駕車外出<span lang="EN-US"><o:p></o:p></span></span>。(1分)<br>
+                            <input type="radio" name="Walking" value="10" onclick="ShowRadioScore('1', 'flag6')"><span>能藉由計程車安排外出，但無法使用公共運輸工具<span lang="EN-US"><o:p></o:p></span></span>。(2分)<br>
+                            <input type="radio" name="Walking" value="5" onclick="ShowRadioScore('2', 'flag6')"><span>由他人陪伴或協助公共運輸工具外出<span lang="EN-US"><o:p></o:p></span></span>。(3分)<br>
+                            <input type="radio" name="Walking" value="0" onclick="ShowRadioScore('3', 'flag6')"><span>由他人陪伴或協助使用計程車或駕車外出<span lang="EN-US"><o:p></o:p></span></span>。(4分)
+                            <br>
+                            <input type="radio" name="Walking" value="02" onclick="ShowRadioScore('3', 'flag6')"><span>完全無法外出旅遊<span lang="EN-US"><o:p></o:p></span></span>。(5分)
+                        </td>
+                        <td style="text-align: center ; vertical-align:middle;">
+                            <label id="flag6"></label>
+                        </td>
+
+                    </tr>
+
+
+
+                    <tr>
+                        <td style="text-align: center; vertical-align:middle; color: #008800;">
+                            七<strong>. 自行服藥能力</strong></td>
+                        <td>
+                            <input type="radio" name="Stairing" value="10" onclick="ShowRadioScore('1', 'flag7')"><span>能自行按時且劑量正確服藥<span lang="EN-US"><o:p></o:p></span></span>。(1分)<br>
+                            <input type="radio" name="Stairing" value="5" onclick="ShowRadioScore('2', 'flag7')"><span>由他人準備好藥物後，自行服藥<span lang="EN-US"><o:p></o:p></span></span>。(2分)<br>
+                            <input type="radio" name="Stairing" value="0" onclick="ShowRadioScore('3', 'flag7')"><span>無法自行服藥</span><span lang="EN-US"><o:p></o:p></span>。(3分)
+                        </td>
+                        <td style="text-align: center ; vertical-align:middle;">
+                            <label id="flag7"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; vertical-align:middle;">
+                            八<strong>. 處理財務能力</strong></td>
+                        <td>
+                            <input type="radio" name="Clothing" value="10" onclick="ShowRadioScore('1', 'flag8')">能獨立處理財務<span><span lang="EN-US">(</span>如預算、寫支票、至銀行付租金<span lang="EN-US">)</span>及收及維持<span lang="EN-US"><o:p></o:p></span>收入<span lang="EN-US"><o:p></o:p></span></span>。(1分)<br>
+                            <input type="radio" name="Clothing" value="5" onclick="ShowRadioScore('2', 'flag8')"><span>能處理每日消費，但銀行等主要財務處理須他人協助</span>。(2分)<br>
+                            <input type="radio" name="Clothing" value="0" onclick="ShowRadioScore('3', 'flag8')"><span>無法處理錢財<span lang="EN-US"><o:p></o:p></span></span>。(3分)
+                        </td>
+                        <td style="text-align: center ; vertical-align:middle;">
+                            <label id="flag8"></label>
+                        </td>
+                    </tr>
+
+                </tbody>
+                <tbody>
+                    <tr style="background-color:#FFBB73">
+                        <td style="text-align: center ;">
+                            <strong>總分</strong>
+                        </td>
+                        <td><span lang="EN-US">1987</span><span>：<span lang="EN-US">McDowell &amp; Newell&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <o:p>
+                            <br>
+                            </o:p></span>註：總分愈高，依賴性愈高<span lang="EN-US"><o:p></o:p></span><br>
+                            總分<span lang="EN-US"> :</span>男性：<span lang="EN-US">5-19</span>分<span lang="EN-US">(</span>不評<span lang="EN-US">3</span>、<span lang="EN-US">4</span>、<span lang="EN-US">5</span>項<span lang="EN-US">)&nbsp;&nbsp; </span>女性：<span lang="EN-US">8-31</span>分</span></td>
+                        <td style="text-align: center ; vertical-align:middle;">
+                            <label id="TotAns"></label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="text-align: center ; vertical-align:middle; height:80px; width:25%">
+                            <strong>督導員簽名</strong>
+                        </td>
+                        <td style="text-align: center ; height:80px; width:25%"></td>
+                        <td style=" height:80px; width:25%; text-align:center; vertical-align:middle"><strong>填表日期</strong></td>
+                        <td id="div_date" style="text-align: center ; vertical-align:middle; height:80px; width:25%; font-size: 20px">2018/8/4</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: center">
+                            <button id="Btn_New" type="button" onclick="Btn_New_Click('0');" class="btn btn-success btn-lg ">
+                                <span class="glyphicon glyphicon-ok"></span>&nbsp;&nbsp;送出</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <script>
+                $.datetimepicker.setLocale('ch');
+                $('#datetimepicker01').datetimepicker({
+                    allowTimes: [
+                        '00:00', '00:30', '01:00', '01:30', '02:00', '02:30', '03:00', '03:30', '04:00', '04:30', '05:00', '05:30',
+                        '06:00', '06:30', '07:00', '07:30', '08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30',
+                        '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30',
+                        '18:00', '18:30', '19:00', '19:30', '20:00', '20:30', '21:00', '21:30', '22:00', '22:30', '23:00', '23:30'
+                    ]
+                });
+
+                $('#datetimepicker02').datetimepicker({
+                    allowTimes: [
+                        '00:00', '00:30', '01:00', '01:30', '02:00', '02:30', '03:00', '03:30', '04:00', '04:30', '05:00', '05:30',
+                        '06:00', '06:30', '07:00', '07:30', '08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30',
+                        '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30',
+                        '18:00', '18:30', '19:00', '19:30', '20:00', '20:30', '21:00', '21:30', '22:00', '22:30', '23:00', '23:30'
+                    ]
+                });
+
+                $(function () {
+                    $('.chosen-select').chosen();
+                    $('.chosen-select-deselect').chosen({ allow_single_deselect: true });
+                    $('.chosen-single').css({ 'background-color': '#ffffbb' });
+                });
+            </script>
+        </div>
+
+
+
+
+    </form>
+</body>
+</html>

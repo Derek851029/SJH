@@ -1,0 +1,1305 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>
+
+</title><link href="../DataTables/jquery.dataTables.min.css" rel="stylesheet"><link href="../css/bootstrap.min.css" rel="stylesheet"><link href="../css/bootstrap-theme.min.css" rel="stylesheet"><link href="../css/bootstrap-responsive.min.css" rel="stylesheet"><link href="../bootstrap-chosen-master/bootstrap-chosen.css" rel="stylesheet">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../chosen/chosen.jquery.js"></script>
+    <script type="text/javascript">
+        window.document.addEventListener('message', function (e) {
+            const message = JSON.parse(e.data);
+            //alert(message);
+            document.getElementById("ctl00_head2_Case_Name").innerText = message.name;
+            document.getElementById("ctl00_head2_Case_Phone").innerText = message.phone;
+            document.getElementById("ctl00_head2_Case_Gender").innerText = message.gender;
+        })
+        function cs(form) {
+            re = /[\$&%<>\+,\/:\'\";=\?\\]/g;
+            if (re.test(form.value)) {
+                form.value = form.value.replace(re, '');
+            }
+        };
+
+        function txt(form) {
+            re = /[\$&%<>\\/\'\"]/g;
+            if (re.test(form.value)) {
+                form.value = form.value.replace(re, '');
+            }
+        };
+
+        function int(form) {
+            re = /[^\d]/g;
+            if (re.test(form.value)) {
+                form.value = form.value.replace(re, '');
+            }
+        };
+    </script>
+<script type="text/javascript">Sys.Application.add_init(function() {
+    $create(Sys.UI._Timer, {"enabled":true,"interval":30000,"uniqueID":"ctl00$Timer1"}, null, null, $get("ctl00_Timer1"));
+});
+</script></head>
+<body style="">
+    <form name="aspnetForm" method="post" action="./0090010001.aspx?seqno=0" id="aspnetForm">
+<div>
+
+
+
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=IKTeicrncPsH0Yo83ctI9oODYLew48MqqgKSIPRLZt56XB-ydyLCXULgbGiyB6S8OW6j7avLYXoesJnVsl4yLQBhv4Q-fKUPyIASDYnepUg1&amp;t=636284370552661246" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=15XUFqSYQvXxrVdmP-yD82g23xosfIUBt8rtFi1sgQAREydMZwA6HfX2E9anlUQBUC_EDda-B7_x0_FuOV5SjRbVyqCM60t_0-tWaQb49IGtj8y4eNicBwP8jmVTnq78BSydpJ1L_AvXPRFJQpr1_QkG1JhRy6YDvdC-vvFtf6sd9H4HeLVzigHx-8SNTs1p0&amp;t=ffffffffcce8aaf2" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax 用戶端架構無法載入。');
+//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=pk4yeVPr8k1xQXKfg_eVMLZg9toc5mbRkrn4iAbmCrIou_vbBYwY4AbXKtJ6dITdUgqb5I1hLa9rttxQLxEfsO1WXxH6zTPZRJpJR3LmhCVxKiD87-c8NmuAgqBTCYVbSXZvcbk3xghGpxfJIVvrilRvauS7ZrAkyP4kCzw6yXTmAfCX5zjNha6qF1p1JpsC0&amp;t=ffffffffcce8aaf2" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=ARXXMCV-gTBfYZTiqH7nnup_ShLzteeT7irFpcPssEMSO0ivM1W13kQERxRPJE0uc3igt94h27y39iMvw5gdYFmdjsmhkNY_P1sopsLRFVL4QWcguEKutKDJUC0a1ODzL68ceHBFshN64y_rCPBj9pyuo7eHB8YFOrug7yFTDR2wb8_FoSOoXdPGFjcQRARL0&amp;t=ffffffffcce8aaf2" type="text/javascript"></script>
+<div>
+
+
+</div>
+
+
+
+        <table style="width: 100%;">
+
+        </table>
+
+
+    <link href="../css/jquery.datetimepicker.min.css" rel="stylesheet">
+    <link href="../DataTables/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="../bootstrap-chosen-master/bootstrap-chosen.css" rel="stylesheet">
+
+    <script src="../js/jquery.datetimepicker.full.min.js"></script>
+    <script src="../chosen/chosen.jquery.js"></script>
+    <script src="../js/jquery.validate.min.js"></script>
+    <script src="../DataTables/jquery.dataTables.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(init);
+
+        function init() {
+
+            var now = new Date();
+
+            var str_NowDate = (now.getFullYear()) + "/" + (now.getMonth() + 1) + "/" + now.getDate();
+            $("#div_date").html(str_NowDate);
+
+        }
+    </script>
+    <script type="text/javascript">
+        var seqno = '0';
+        var new_mno = 'DALN181116185344585';
+        var Agent_Mail = '1';
+        var flag1, flag2, flag3, flag4, flag5, flag6, flag7, flag8, flag9, flag10, TotAns = 0;
+        //====================================================
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+            Load();
+            Service_List();  //帶入【服務分類 】資訊
+            Owner_List();   //帶入【廠商 】資訊
+            Hospital_List();  //帶入【醫療院所 】資訊
+            Cust_Table();  //顯示【客戶地址】名單
+            if (seqno != '0') {
+                Load_MNo();
+            } else {
+                bindTable();  //顯示【新增多筆資訊（瀏覽）】名單
+                Labor_Table();  //顯示【新增雇主及外勞】名單
+            }
+        });
+
+        //================ 讀取資訊 ===============
+        function Load() {
+            //document.getElementById('tab_Location').style.display = "none";  //隱藏地址
+            //document.getElementById('Hospital_Table_1').style.display = "none";  //隱藏醫療院所、就醫類型
+            if (seqno == '0') {
+                document.getElementById("form_ID").innerHTML = new_mno; //【創造母單編號】
+
+
+                document.getElementById('Btn_Update').style.display = "none";  //隱藏修改按鈕
+                document.getElementById('table_cancel').style.display = 'none';  //隱藏【取消需求單】
+                $.ajax({
+                    url: '0090010001.aspx/Load',
+                    type: 'POST',
+                    contentType: 'application/json; charset=UTF-8',
+                    dataType: "json",
+                    success: function (doc) {
+                        var obj = JSON.parse('{"data":' + doc.d + '}');
+                        document.getElementById("str_name").innerHTML = obj.data[0].Agent_Name.trim();
+                        document.getElementById("str_team").innerHTML = obj.data[0].Agent_Team.trim();
+                        document.getElementById("ContactName").value = obj.data[0].Agent_Name.trim();
+                        document.getElementById("Agent_Phone_2").value = obj.data[0].Agent_Phone_2;
+                        document.getElementById("Agent_Phone_3").value = obj.data[0].Agent_Phone_3;
+                        document.getElementById("Agent_Co_TEL").value = obj.data[0].Agent_Co_TEL;
+                    }
+                });
+            } else {
+                new_mno = seqno;
+                document.getElementById("form_ID").innerHTML = new_mno;
+                document.getElementById('table_modal').style.display = "none";  //隱藏【選擇雇主或外勞】
+                document.getElementById('Btn_New').style.display = "none";  //隱藏送出按鈕
+                document.getElementById('Add_Table_2').style.display = 'none';  //隱藏【新增多筆資訊】
+            }
+        }
+
+        //================ 帶入【服務分類 】資訊 ===============
+        function Service_List() {
+            $.ajax({
+                url: '0090010001.aspx/Service_List',
+                type: 'POST',
+                contentType: 'application/json; charset=UTF-8',
+                dataType: "json",
+                success: function (doc) {
+                    var json = JSON.parse(doc.d);
+                    var $select_elem = $("#DropService");
+                    $select_elem.chosen("destroy")
+                    $.each(json, function (idx, obj) {
+                        $select_elem.append("<option value='" + obj.Service + "'>" + obj.Service + "</option>");
+                    });
+                    $select_elem.chosen(
+                    {
+                        width: "100%",
+                        search_contains: true
+                    });
+                    $('.chosen-single').css({ 'background-color': '#ffffbb' });
+                }
+            });
+        }
+
+        function ServiceChanged() {
+            document.getElementById('tab_Location').style.display = "none";  //隱藏地址
+
+            var s = document.getElementById("DropService");
+            var str_value = s.options[s.selectedIndex].value;
+            $.ajax({
+                url: '0090010001.aspx/ServiceName_List',
+                type: 'POST',
+                data: JSON.stringify({ service: str_value }),
+                contentType: 'application/json; charset=UTF-8',
+                dataType: "json",
+                success: function (doc) {
+                    var json = JSON.parse(doc.d);
+                    var $select_elem = $("#DropServiceName");
+                    $select_elem.chosen("destroy");
+                    $select_elem.empty();
+                    $select_elem.append("<option value=''>" + "請選擇服務內容…" + "</option>");
+                    $.each(json, function (idx, obj) {
+                        $select_elem.append("<option value='" + obj.Service_ID + "'>" + obj.ServiceName + "</option>");
+                    });
+                    $select_elem.chosen({
+                        width: "100%",
+                        search_contains: true
+                    });
+                    $('.chosen-single').css({ 'background-color': '#ffffbb' });
+                }
+            });
+
+            if (str_value == "醫療") {
+                document.getElementById('Hospital_Table_1').style.display = "";  //顯示醫療院所、就醫類型
+                style("HospitalName", "");
+                style("HospitalClass", "");
+            }
+            else {
+                document.getElementById('Hospital_Table_1').style.display = "none";  //隱藏醫療院所、就醫類型
+            }
+        }
+
+        function ServiceNameChanged() {
+            document.getElementById('button_01').style.display = "none";  //客戶地址
+            document.getElementById('button_02').style.display = "none";  //單位地址
+            document.getElementById("txt_Location").innerHTML = "";
+            document.getElementById("hid_PostCode").value = "";
+            var str_index = document.getElementById("DropServiceName").selectedIndex;
+            var v = document.getElementById("DropServiceName").options[str_index].value;
+            $.ajax({
+                url: '0090010001.aspx/ServiceName_Flag',
+                type: 'POST',
+                data: JSON.stringify({ Service_ID: v }),
+                contentType: 'application/json; charset=UTF-8',
+                dataType: "json",
+                success: function (doc) {
+                    var json = JSON.parse(doc.d.toString());
+                    if (json.status == "A") {
+                        document.getElementById('button_02').style.display = "";  //單位地址
+                    } else if (json.status == "B") {
+                        v = "39";
+                        document.getElementById('button_02').style.display = "";  //單位地址
+                    } else if (json.status == "C") {
+                        document.getElementById('button_01').style.display = "";  //客戶地址
+                    }
+                    Location(v);
+                    document.getElementById('tab_Location').style.display = "";  //顯示地址
+                }
+            });
+        }
+
+        //================ 帶入【廠商】資訊 ===============
+        function Owner_List() {
+            $.ajax({
+                url: '0090010001.aspx/Owner_List',
+                type: 'POST',
+                contentType: 'application/json; charset=UTF-8',
+                dataType: "json",
+                success: function (doc) {
+                    var json = JSON.parse(doc.d);
+                    var $select_elem = $("#DropOwner");
+                    $select_elem.empty();
+                    $select_elem.append("<option value=''>" + "顯示全部廠商…" + "</option>");
+                    $.each(json, function (idx, obj) {
+                        $select_elem.append("<option value='" + obj.Cust_ID + "'>" + "（" + obj.Cust_ID + "）" + obj.Cust_FullName + "</option>");
+                    });
+                    $select_elem.chosen({
+                        width: "50%",
+                        search_contains: true
+                    });
+                }
+            });
+        }
+
+        //================ 帶入【客戶地址】資訊 ===============
+        function Cust_Table() {
+            $("#Cust_Table").dataTable({
+                "oLanguage": {
+                    "sLengthMenu": "顯示 _MENU_ 筆記錄",
+                    "sZeroRecords": "無符合資料",
+                    "sInfo": "顯示第 _START_ 至 _END_ 項結果，共 _TOTAL_ 項",
+                    "sInfoFiltered": "(從 _MAX_ 項結果過濾)",
+                    "sInfoPostFix": "",
+                    "sSearch": "搜索:",
+                    "sUrl": "",
+                    "oPaginate": {
+                        "sFirst": "首頁",
+                        "sPrevious": "上頁",
+                        "sNext": "下頁",
+                        "sLast": "尾頁"
+                    }
+                },
+                "aLengthMenu": [[10, 25, 50, 100], [10, 25, 50, 100]],
+                "iDisplayLength": 100,
+                "bSortClasses": false,
+                "bStateSave": false,
+                "bPaginate": true,
+                "bAutoWidth": false,
+                "bProcessing": true,
+                "bServerSide": true,
+                "bDestroy": true,
+                "sAjaxSource": "../WebService.asmx/Cust_System",
+                "sServerMethod": "POST",
+                "contentType": "application/json; charset=UTF-8",
+                "sPaginationType": "full_numbers",
+                "bDeferRender": true,
+                "fnServerParams": function (aoData) {
+                    aoData.push(
+                        { "name": "iParticipant", "value": $("#participant").val() },
+                        { "name": "Cust_ID", "value": "" }
+                        );
+                },
+                "fnServerData": function (sSource, aoData, fnCallback) {
+                    $.ajax({
+                        "dataType": 'json',
+                        "contentType": 'application/json; charset=UTF-8',
+                        "type": "GET",
+                        "url": sSource,
+                        "data": aoData,
+                        "success":
+                            function (msg) {
+                                var json = jQuery.parseJSON(msg.d);
+                                fnCallback(json);
+                                $("#Cust_System").show();
+                            }
+                    });
+                }
+            });
+        }
+
+        function DropOwnerChanged() {
+            Labor_Table();
+        }
+        //================ 帶入【醫療院所 】資訊 ===============
+        function Hospital_List() {
+            $.ajax({
+                url: '0090010001.aspx/Hospital_List',
+                type: 'POST',
+                contentType: 'application/json; charset=UTF-8',
+                dataType: "json",
+                success: function (doc) {
+                    var listItems = "";
+                    var obj = JSON.parse('{"data":' + doc.d + '}');
+                    for (var i = 0; i < obj.data.length; i++) {
+                        listItems += "<option value='" + obj.data[i].HospitalName + "'>" + obj.data[i].HospitalName + "</option>";
+                    }
+                    $('#HospitalName').append(listItems);
+                }
+            });
+        }
+
+        //============= 顯示【新增多筆資訊（瀏覽）】名單 =============
+        function bindTable() {
+            $("#Div_Loading").modal();
+            $.ajax({
+                url: '0090010001.aspx/GetCNoList',
+                type: 'POST',
+                contentType: 'application/json; charset=UTF-8',
+                dataType: "json",       //如果要回傳值，請設成 json
+                success: function (doc) {
+                    var table = $('#data').DataTable({
+                        destroy: true,
+                        data: eval(doc.d), "oLanguage": {
+                            "sLengthMenu": "顯示 _MENU_ 筆記錄",
+                            "sZeroRecords": "無符合資料",
+                            "sInfo": "顯示第 _START_ 至 _END_ 項結果，共 _TOTAL_ 項",
+                            "sInfoFiltered": "(從 _MAX_ 項結果過濾)",
+                            "sInfoPostFix": "",
+                            "sSearch": "搜索:",
+                            "sUrl": "",
+                            "oPaginate": {
+                                "sFirst": "首頁",
+                                "sPrevious": "上頁",
+                                "sNext": "下頁",
+                                "sLast": "尾頁"
+                            }
+                        },
+                        "columnDefs": [{
+                            "targets": -1,
+                            "data": null,
+                            "searchable": false,
+                            "paging": false,
+                            "ordering": false,
+                            "info": false
+                        }],
+                        columns: [
+                            { data: "Cust_FullName" },
+                            { data: "Labor_CName" },
+                            { data: "Labor_ID" },
+                            { data: "Labor_PID" },
+                            { data: "Labor_RID" },
+                            { data: "Labor_EID" },
+                            { data: "Labor_Phone" },
+                            { data: "Labor_Country" },
+                            { data: "Labor_Valid" },
+                            {
+                                data: "SYS_ID", render: function (data, type, row, meta) {
+                                    return "<button id='delete' type='button' class='btn btn-danger btn-lg' ><span class='glyphicon glyphicon-remove'></span>&nbsp;取消</button>"
+                                }
+                            }
+                        ]
+                    });
+                    //=========================================
+                    $('#data tbody').unbind('click').
+                    on('click', '#delete', function () {
+                        var table = $('#data').DataTable();
+                        var SYS_ID = table.row($(this).parents('tr')).data().SYS_ID;
+                        Labor_Delete(SYS_ID);
+                    });
+
+                    $("#Div_Loading").modal('hide');
+                }, error: function () {
+                    $("#Div_Loading").modal('hide');
+                }
+            });
+        }
+
+        //=============== 顯示【新增雇主及外勞】名單 ===============
+        function Labor_Table() {
+            $("#Labor_Table").dataTable({
+                "oLanguage": {
+                    "sLengthMenu": "顯示 _MENU_ 筆記錄",
+                    "sZeroRecords": "無符合資料",
+                    "sInfo": "顯示第 _START_ 至 _END_ 項結果，共 _TOTAL_ 項",
+                    "sInfoFiltered": "(從 _MAX_ 項結果過濾)",
+                    "sInfoPostFix": "",
+                    "sSearch": "搜索:",
+                    "sUrl": "",
+                    "oPaginate": {
+                        "sFirst": "首頁",
+                        "sPrevious": "上頁",
+                        "sNext": "下頁",
+                        "sLast": "尾頁"
+                    }
+                },
+                "aLengthMenu": [[10, 25, 50, 100], [10, 25, 50, 100]],
+                "iDisplayLength": 100,
+                "bSortClasses": false,
+                "bStateSave": false,
+                "bPaginate": true,
+                "bAutoWidth": false,
+                "bProcessing": true,
+                "bServerSide": true,
+                "bDestroy": true,
+                "sAjaxSource": "../WebService.asmx/Labor_System",
+                "sServerMethod": "POST",
+                "contentType": "application/json; charset=UTF-8",
+                "sPaginationType": "full_numbers",
+                "bDeferRender": true,
+                "fnServerParams": function (aoData) {
+                    aoData.push(
+                        { "name": "iParticipant", "value": $("#participant").val() },
+                        { "name": "Cust_ID", "value": document.getElementById("DropOwner").value },
+                        { "name": "Flag", "value": "A" }
+                        );
+                },
+                "fnServerData": function (sSource, aoData, fnCallback) {
+                    $.ajax({
+                        "dataType": 'json',
+                        "contentType": 'application/json; charset=UTF-8',
+                        "type": "GET",
+                        "url": sSource,
+                        "data": aoData,
+                        "success":
+                            function (msg) {
+                                //var json = JSON.parse(msg.d);
+                                var json = jQuery.parseJSON(msg.d);
+                                fnCallback(json);
+                                $("#Labor_Table").show();
+                            }
+                    });
+                }
+            });
+        }
+
+        //=============== 帶入【新增雇主及外勞】資訊 ===============
+        function Labor_add(SYSID, Flag) {
+            var MNo = new_mno;
+            $.ajax({
+                url: '0090010001.aspx/Labor_Value',
+                type: 'POST',
+                data: JSON.stringify({ SYSID: SYSID, Flag: Flag }),
+                contentType: 'application/json; charset=UTF-8',
+                dataType: "json",
+                success: function (doc) {
+                    var json = JSON.parse(doc.d.toString());
+                    if (json.status != "null") {
+                        var text = '{"data":' + doc.d + '}';
+                        var obj = JSON.parse(text);
+                        document.getElementById("txt_Cust_FullName").innerHTML = obj.data[0].Cust_FullName;
+                        document.getElementById("txt_Labor_Team").innerHTML = obj.data[0].Labor_Team;
+                        document.getElementById("txt_Labor_Name").innerHTML = obj.data[0].Labor_CName;
+                        document.getElementById("txt_Labor_Country").innerHTML = obj.data[0].Labor_Country;
+                        document.getElementById("txt_Labor_ID").innerHTML = obj.data[0].Labor_ID;
+                        document.getElementById("txt_Labor_PID").innerHTML = obj.data[0].Labor_PID;
+                        document.getElementById("txt_Labor_RID").innerHTML = obj.data[0].Labor_RID;
+                        document.getElementById("txt_Labor_EID").innerHTML = obj.data[0].Labor_EID;
+                        document.getElementById("txt_Labor_Phone").innerHTML = obj.data[0].Labor_Phone;
+                        document.getElementById("txt_Labor_Address").innerHTML = obj.data[0].Labor_Address;
+                        document.getElementById("Labor_Address2").innerHTML = obj.data[0].Labor_Address2;
+                        document.getElementById("txt_Labor_Valid").innerHTML = obj.data[0].Labor_Valid;
+                        document.getElementById("txt_Labor_Language").innerHTML = obj.data[0].Language;
+
+                        //=============== 帶入【已選擇的雇主或外勞（瀏覽）】資訊 ===============
+                        $.ajax({
+                            url: '0090010001.aspx/Btn_Add_Click',
+                            type: 'POST',
+                            data: JSON.stringify({ Cust_ID: obj.data[0].Cust_ID, Labor_ID: obj.data[0].Labor_ID }),
+                            contentType: 'application/json; charset=UTF-8',
+                            dataType: "json",
+                            success: function (doc) {
+                                var json = JSON.parse(doc.d.toString());
+                                alert(json.status);
+                            }
+                        });
+                        bindTable();
+                        //=============== 帶入【已選擇的雇主或外勞（瀏覽）】資訊 ===============
+                    }
+                }
+            });
+        }
+
+        //================ 刪除【新增多筆資訊 】資訊 ===============
+        function Labor_Delete(SYS_ID) {
+            $.ajax({
+                url: '0090010001.aspx/Labor_Delete',
+                type: 'POST',
+                data: JSON.stringify({ SYS_ID: SYS_ID }),
+                contentType: 'application/json; charset=UTF-8',
+                dataType: "json",       //如果要回傳值，請設成 json
+                success: function () {
+                }
+            });
+            bindTable();
+        }
+
+        //================ 【Flag = 0 新增需求單】 ===============
+        //================ 【Flag = 1 修改需求單】 ===============
+        function Btn_New_Click(Flag) {
+            document.getElementById("Btn_New").disabled = true;
+            $("#Div_Loading").modal();
+
+            var PostCode = $("#hid_PostCode").val();
+            //var Location = document.getElementById("txt_Location").innerHTML;  //地址
+            //var Service_ID = document.getElementById("DropServiceName").value;  //服務內容
+            //var time_01 = document.getElementById("datetimepicker01").value;    //預定起始時間
+            //var time_02 = document.getElementById("datetimepicker02").value;    //預定終止時間
+            //var LocationStart = document.getElementById("LocationStart").value;  //行程起點
+            //var LocationEnd = document.getElementById("LocationEnd").value;     //行程終點
+            //var CarSeat = document.getElementById("txt_CarSeat").value;                //搭車人數
+            //var ContactName = document.getElementById("ContactName").value;    //聯絡人
+            //var ContactPhone2 = document.getElementById("Agent_Phone_2").value;  //手機簡碼
+            //var ContactPhone3 = document.getElementById("Agent_Phone_3").value;  //手機號碼
+            //var Contact_Co_TEL = document.getElementById("Agent_Co_TEL").value; //公司電話
+            //var HospitalName = document.getElementById("HospitalName").value;   //醫療院所
+            //var HospitalClass = document.getElementById("HospitalClass").value;       //就醫類型
+            //var Question = document.getElementById("Question").value;                       //狀況說明
+
+            var form_ID = document.getElementById("form_ID").innerHTML;
+            var Case_ID = ''
+            var Question_01 = document.getElementById("flag1").innerHTML;
+            var Question_02 = document.getElementById("flag2").innerHTML;
+            var Question_03 = document.getElementById("flag3").innerHTML;
+            var Question_04 = document.getElementById("flag4").innerHTML;
+            var Question_05 = document.getElementById("flag5").innerHTML;
+            var Question_06 = document.getElementById("flag6").innerHTML;
+            var Question_07 = document.getElementById("flag7").innerHTML;
+            var Question_08 = document.getElementById("flag8").innerHTML;
+            var Question_09 = document.getElementById("flag9").innerHTML;
+            var Question_10 = document.getElementById("flag10").innerHTML;
+            var TotAns = document.getElementById("TotAns").innerHTML;
+            var Date = document.getElementById("div_date").innerHTML;
+
+            $.ajax({
+                url: '0090010001.aspx/Check_Form',
+                type: 'POST',
+                data: JSON.stringify({
+                    //Flag: Flag,
+                    //Service_ID: Service_ID,
+                    //Time_01: time_01,
+                    //Time_02: time_02,
+                    //PostCode: PostCode,
+                    //Location: Location,
+                    //LocationStart: LocationStart,
+                    //LocationEnd: LocationEnd,
+                    //CarSeat: CarSeat,
+                    //ContactName: ContactName,
+                    //ContactPhone2: ContactPhone2,
+                    //ContactPhone3: ContactPhone3,
+                    //Contact_Co_TEL: Contact_Co_TEL,
+                    //Hospital: HospitalName,
+                    //HospitalClass: HospitalClass,
+                    //Question: Question
+                    form_ID: form_ID,
+                    Case_ID: Case_ID,
+                    Question_01: Question_01,
+                    Question_02: Question_02,
+                    Question_03: Question_03,
+                    Question_04: Question_04,
+                    Question_05: Question_05,
+                    Question_06: Question_06,
+                    Question_07: Question_07,
+                    Question_08: Question_08,
+                    Question_09: Question_09,
+                    Question_10: Question_10,
+                    TotAns: TotAns,
+                    Date:Date
+
+                }),
+                contentType: 'application/json; charset=UTF-8',
+                dataType: "json",
+                success: function (doc) {
+                    var json = JSON.parse(doc.d.toString());
+                    if (json.status == "new") {
+                        alert('填單完成');
+                        window.location.href = "/0090010001/0090010001.aspx?seqno=0";
+                    }
+                    else if (json.status == "update") {
+                        alert('修改完成');
+                        window.location.href = "/0030010000/0030010002.aspx";
+                    }
+                    else {
+                        alert(json.status);
+                    }
+                    $("#Div_Loading").modal('hide');
+                    document.getElementById("Btn_New").disabled = false;
+                }
+            });
+        };
+
+        //=========================================
+        function Load_MNo() {
+            $("#Div_Loading").modal();
+            $.ajax({
+                url: '0090010001.aspx/Load_MNo',
+                type: 'POST',
+                data: JSON.stringify({ MNo: new_mno }),
+                contentType: 'application/json; charset=UTF-8',
+                dataType: "json",       //如果要回傳值，請設成 json
+                success: function (doc) {
+                    var text = '{"data":' + doc.d + '}';
+                    var obj = JSON.parse(text);
+                    if (obj.data[0].MNo == "NULL") {
+                        alert("查無【" + new_mno + "】母單編號");
+                        window.location.href = "/0030010000/0030010002.aspx";
+                        return;
+                    } else if (obj.data[0].MNo == "NO") {
+                        //================ 判斷是否為該部門的單 =======================
+                        alert('您沒有訪問此頁面的權限，此需求單非您部門的需求單。');
+                        window.location.href = "/0030010000/0030010002.aspx";
+                        return;
+                        //================ 判斷是否為該部門的單 =======================
+                    }
+                    document.getElementById("str_name").innerHTML = obj.data[0].Create_Name;
+                    document.getElementById("str_team").innerHTML = obj.data[0].Create_Team;
+                    style('DropService', obj.data[0].Service);
+                    ServiceChanged();
+                    document.getElementById("txt_Cust_FullName").innerHTML = obj.data[0].Cust_FullName;
+                    document.getElementById("txt_Labor_Team").innerHTML = obj.data[0].Labor_Team;
+                    document.getElementById("txt_Labor_Name").innerHTML = obj.data[0].Labor_CName;
+                    document.getElementById("txt_Labor_Country").innerHTML = obj.data[0].Labor_Country;
+                    document.getElementById("txt_Labor_Language").innerHTML = obj.data[0].Labor_Language;
+                    document.getElementById("txt_Labor_ID").innerHTML = obj.data[0].Labor_ID;
+                    document.getElementById("txt_Labor_PID").innerHTML = obj.data[0].Labor_PID;
+                    document.getElementById("txt_Labor_RID").innerHTML = obj.data[0].Labor_RID;
+                    document.getElementById("txt_Labor_EID").innerHTML = obj.data[0].Labor_EID;
+                    document.getElementById("txt_Labor_Phone").innerHTML = obj.data[0].Labor_Phone;
+                    document.getElementById("txt_Labor_Address").innerHTML = obj.data[0].Labor_Address;
+                    document.getElementById("txt_Labor_Valid").innerHTML = obj.data[0].Labor_Valid;
+                    document.getElementById("Labor_Address2").innerHTML = obj.data[0].Labor_Address2;
+                    //=====================================================
+
+                    document.getElementById("txt_Location").innerHTML = obj.data[0].Location;
+                    document.getElementById("LocationStart").value = obj.data[0].LocationStart;
+                    document.getElementById("LocationEnd").value = obj.data[0].LocationEnd;
+                    document.getElementById("ContactName").value = obj.data[0].ContactName;
+                    document.getElementById("Agent_Phone_2").value = obj.data[0].ContactPhone2;
+                    document.getElementById("Agent_Phone_3").value = obj.data[0].ContactPhone3;
+                    document.getElementById("Agent_Co_TEL").value = obj.data[0].Contact_Co_TEL;
+                    document.getElementById("HospitalClass").value = obj.data[0].HospitalClass;
+                    document.getElementById("txt_CarSeat").value = obj.data[0].CarSeat;
+                    document.getElementById("Question").value = obj.data[0].Question;
+                    document.getElementById("datetimepicker01").value = obj.data[0].Time_01.replace(/-/g, '/').substr(0, 10) + ' ' + obj.data[0].Time_01.substr(11, 5);
+                    document.getElementById("datetimepicker02").value = obj.data[0].Time_02.replace(/-/g, '/').substr(0, 10) + ' ' + obj.data[0].Time_02.substr(11, 5);
+                }
+            });
+            document.getElementById('button_01').style.display = "none";  //客戶地址
+            document.getElementById('button_02').style.display = "none";  //單位地址
+            document.getElementById('tab_Location').style.display = "";  //顯示地址
+            $("#Div_Loading").modal('hide');
+        }
+
+        //================ 【取消需求單】 ===============
+        function Btn_Cancel_Click() {
+            $("#Div_Loading").modal();
+            var txt_cancel = document.getElementById("txt_cancel").value;
+            $.ajax({
+                url: '0090010001.aspx/Btn_Cancel_Click',
+                type: 'POST',
+                data: JSON.stringify({ txt_cancel: txt_cancel }),
+                contentType: 'application/json; charset=UTF-8',
+                dataType: "json",       //如果要回傳值，請設成 json
+                success: function (doc) {
+                    var json = JSON.parse(doc.d.toString());
+                    if (json.status == "success") {
+                        alert('需求單【' + json.mno + '】已取消');
+                        window.location.href = "/0030010000/0030010002.aspx";
+                    }
+                    else {
+                        alert(json.status);
+                    }
+                }
+            });
+            $("#Div_Loading").modal('hide');
+        };
+
+        //================== 【返回】 =================
+        function Btn_Back_Click() {
+            window.location.href = "/0030010000/0030010002.aspx";
+        };
+
+        //============= 顯示【地址】名單 =============
+        function Location(Type) {
+            $.ajax({
+                url: '0090010001.aspx/Location_List',
+                type: 'POST',
+                data: JSON.stringify({ Type: Type }),
+                contentType: 'application/json; charset=UTF-8',
+                dataType: "json",       //如果要回傳值，請設成 json
+                success: function (doc) {
+                    var table = $('#Location_Table').DataTable({
+                        destroy: true,
+                        data: eval(doc.d), "oLanguage": {
+                            "sLengthMenu": "顯示 _MENU_ 筆記錄",
+                            "sZeroRecords": "無符合資料",
+                            "sInfo": "顯示第 _START_ 至 _END_ 項結果，共 _TOTAL_ 項",
+                            "sInfoFiltered": "(從 _MAX_ 項結果過濾)",
+                            "sInfoPostFix": "",
+                            "sSearch": "搜索:",
+                            "sUrl": "",
+                            "oPaginate": {
+                                "sFirst": "首頁",
+                                "sPrevious": "上頁",
+                                "sNext": "下頁",
+                                "sLast": "尾頁"
+                            }
+                        },
+                        "aLengthMenu": [[10, 25, 50, 100], [10, 25, 50, 100]],
+                        "iDisplayLength": 50,
+                        "columnDefs": [{
+                            "targets": -1,
+                            "data": null,
+                            "searchable": false,
+                            "paging": false,
+                            "ordering": false,
+                            "info": false
+                        }],
+                        columns: [
+                            { data: "Postcode" },
+                            { data: "Location" },
+                            { data: "Name" },
+                            { data: "Address" },
+                            { data: "TEL" },
+                            {
+                                data: "SYS_ID", render: function (data, type, row, meta) {
+                                    return "<button id='edit' type='button' class='btn btn-success btn-lg' data-dismiss='modal'>" +
+                                        "<span class='glyphicon glyphicon-ok'></span>&nbsp;&nbsp;選擇</button>"
+                                }
+                            }
+                        ]
+                    });
+                    //================================================
+                    $('#Location_Table tbody').unbind('click').
+                    on('click', '#edit', function () {
+                        var table = $('#Location_Table').DataTable();
+                        var SYS_ID = table.row($(this).parents('tr')).data().SYS_ID;
+                        Add_Location(SYS_ID, "0");
+                    });
+                }
+            });
+        }
+
+        function Add_Location(ID, Flag) {
+            $.ajax({
+                url: '0090010001.aspx/Add_Location',
+                type: 'POST',
+                data: JSON.stringify({ ID: ID, Flag: Flag }),
+                contentType: 'application/json; charset=UTF-8',
+                dataType: "json",       //如果要回傳值，請設成 json
+                success: function (doc) {
+                    var text = '{"data":' + doc.d + '}';
+                    var obj = JSON.parse(text);
+                    document.getElementById("txt_Location").innerHTML = "名稱：【" + obj.data[0].Name + " - " + obj.data[0].Location +
+                        "】地址：【" + obj.data[0].Postcode + "】【" + obj.data[0].Address + "】";
+                    document.getElementById("hid_PostCode").value = obj.data[0].Postcode;
+                }
+            });
+        }
+
+        //================【下拉選單】 CSS 修改 ================
+        function style(Name, value) {
+            var $select_elem = $("#" + Name);
+            $select_elem.chosen("destroy")
+            document.getElementById(Name).value = value;
+            $select_elem.chosen({
+                width: "100%",
+                search_contains: true
+            });
+            $('.chosen-single').css({ 'background-color': '#ffffbb' });
+        }
+
+        function bindTable2() {
+            var a = "申請書編號";
+            var b = "填單人員";
+            var c = "身分證字號";
+            var service_url = "Default_ANo";
+
+            $("#data2").dataTable({
+                "oLanguage": {
+                    "sLengthMenu": "顯示 _MENU_ 筆記錄",
+                    "sZeroRecords": "無符合資料",
+                    "sInfo": "顯示第 _START_ 至 _END_ 項結果，共 _TOTAL_ 項",
+                    "sInfoFiltered": "(從 _MAX_ 項結果過濾)",
+                    "sInfoPostFix": "",
+                    "sSearch": "搜索:",
+                    "sUrl": "",
+                    "oPaginate": {
+                        "sFirst": "首頁",
+                        "sPrevious": "上頁",
+                        "sNext": "下頁",
+                        "sLast": "尾頁"
+                    }
+                },
+                "columns": [
+                    null,
+                    { "title": a },
+                    null,
+                    { "title": b },
+                    null,
+                    null,
+                    { "title": c },
+                    null
+                ],
+                //"aLengthMenu": [[25, 50, 100, 150, 250, 500, -1], [25, 50, 100, 150, 250, 500, "All"]],
+                "aLengthMenu": [[10, 25, 50, 100], [10, 25, 50, 100]],
+                "iDisplayLength": 10,
+                "searching": false,
+                "bSortClasses": false,
+                "bStateSave": false,
+                "bPaginate": true,
+                "bAutoWidth": false,
+                "bProcessing": true,
+                "bServerSide": true,
+                "bDestroy": true,
+                "sAjaxSource": "../WebService.asmx/" + service_url,
+                "sServerMethod": "POST",
+                "contentType": "application/json; charset=UTF-8",
+                "sPaginationType": "full_numbers",
+                "bDeferRender": true,
+                "fnServerParams": function (aoData) {
+                    aoData.push(
+                        { "name": "iParticipant", "value": $("#participant").val() },
+                        //{ "name": "Flag", "value": Flag },
+
+                        { "name": "sSearch", "value": $("#txt_Search").val() }
+                        );
+                },
+                "fnServerData": function (sSource, aoData, fnCallback) {
+                    $("#btn_search").attr('class', 'btn btn-info btn-lg disabled');
+                    //$("#Div_Loading").modal();
+                    $.ajax({
+                        "dataType": 'json',
+                        "contentType": 'application/json; charset=UTF-8',
+                        "type": "GET",
+                        "url": sSource,
+                        "data": aoData,
+                        "success":
+                            function (msg) {
+                                var json = jQuery.parseJSON(msg.d);
+                                fnCallback(json);
+                                $("#data2").show();
+                          //      $("#Div_Loading").modal('hide');
+                          //      $("#btn_search").attr('class', 'btn btn-info btn-lg');
+                            },
+                        "error": function (msg) {
+                            alert("資料明細讀取發生錯誤，請重新嘗試或詢問管理人員謝謝。");
+                            $("#Div_Loading").modal('hide');
+                            $("#btn_search").attr('class', 'btn btn-info btn-lg');
+                        }
+                    });
+                }
+            });
+        }
+        function Btn_Search() {
+
+            document.getElementById("data2").style.display = '';
+            bindTable2();
+        }
+        function moreFields(str_mno_1, str_mno_2, Flag) {
+
+            var LV = "40";
+            var str_mno_1 = str_mno_1;
+            var str_mno_2 = str_mno_2;
+            var MNo = "";
+            var CNo = "";
+            str_mno_1 = String(str_mno_1);
+            str_mno_2 = String(str_mno_2);
+            MNo = str_mno_1;//+ str_mno_2.substr(1, str_mno_2.length);
+            CNo = str_mno_2;
+
+            $.ajax({
+                url: '0090010001.aspx/Page_Load',
+                type: 'POST',
+                data: JSON.stringify({
+
+                    name: str_mno_1,
+                    Case_ID: str_mno_2
+
+
+                }),
+                contentType: 'application/json; charset=UTF-8',
+                dataType: "json",
+                success: function (doc) {
+                    var json = JSON.parse(doc.d.toString());
+                    if (json.status == "success") {
+                        alert('需求單【' + json.mno + '】已取消');
+                        window.location.href = "/0030010000/0030010002.aspx";
+                    }
+                    else {
+                        alert(json.status);
+                    }
+                }
+            });
+
+        }
+
+        //================================================
+
+        function ShowRadioScore(button, Flag) {
+            if (button == 0) {
+                document.getElementById(Flag).innerHTML = "15";
+
+                CountTotAns();
+
+            }
+            if (button == 1) {
+                document.getElementById(Flag).innerHTML = "10";
+
+                CountTotAns();
+            }
+            if (button == 2) {
+                document.getElementById(Flag).innerHTML = "5";
+
+                CountTotAns();
+            }
+            if (button == 3) {
+                document.getElementById(Flag).innerHTML = "0";
+
+                CountTotAns();
+            }
+
+        }
+        function CountTotAns(){
+            var x = parseInt(document.getElementById("flag1").innerHTML) + parseInt(document.getElementById("flag2").innerHTML) + parseInt(document.getElementById("flag3").innerHTML) + parseInt(document.getElementById("flag4").innerHTML) + parseInt(document.getElementById("flag5").innerHTML) + parseInt(document.getElementById("flag6").innerHTML) + parseInt(document.getElementById("flag7").innerHTML) + parseInt(document.getElementById("flag8").innerHTML) + parseInt(document.getElementById("flag9").innerHTML) + parseInt(document.getElementById("flag10").innerHTML);
+            document.getElementById("TotAns").innerHTML = x;
+
+
+        }
+
+        //================================================
+    </script>
+    <style type="text/css">
+        body {
+            font-family: "Microsoft JhengHei",Helvetica,Arial,Verdana,sflag-serif;
+            font-size: 16px;
+        }
+
+        thead th {
+            background-color: #666666;
+            color: white;
+        }
+
+        tr td:first-child,
+        tr th:first-child {
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+        }
+
+        tr td:last-child,
+        tr th:last-child {
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        #Location_Table td:nth-child(6), #Location_Table td:nth-child(5), #Location_Table td:nth-child(4),
+        #Location_Table td:nth-child(3), #Location_Table td:nth-child(2), #Location_Table td:nth-child(1),
+        #Cust_Table td:nth-child(7), #Cust_Table td:nth-child(6), #Cust_Table td:nth-child(5),
+        #Cust_Table td:nth-child(4), #Cust_Table td:nth-child(3), #Cust_Table td:nth-child(2), #Cust_Table td:nth-child(1),
+        #Labor_Table td:nth-child(12), #Labor_Table td:nth-child(11), #Labor_Table td:nth-child(10), #Labor_Table td:nth-child(9),
+        #Labor_Table td:nth-child(8), #Labor_Table td:nth-child(7), #Labor_Table td:nth-child(6), #Labor_Table td:nth-child(5),
+        #Labor_Table td:nth-child(4), #Labor_Table td:nth-child(3), #Labor_Table td:nth-child(2), #Labor_Table td:nth-child(1),
+        #data td:nth-child(10), #data td:nth-child(9), #data td:nth-child(8), #data td:nth-child(7), #data td:nth-child(6), #data td:nth-child(5),
+        #data td:nth-child(4), #data td:nth-child(3), #data td:nth-child(2), #data td:nth-child(1), #data th:nth-child(5) {
+            text-align: center;
+        }
+
+        .auto-style1 {
+            width: 100% ;
+        }
+    </style>
+
+
+
+    <div style="width: 1080px; margin:0px auto;">
+        <h2><strong>個案日常生活評估量表</strong></h2>
+
+                <table class="table table-bordered table-striped">
+                    <tbody><tr>
+                        <td style="text-align: center; background-color:#CCDDFF;vertical-align:middle; width:20%">
+                            <span><strong>居服編號 </strong></span>
+                        </td>
+                        <td style="text-align: center; vertical-align:middle; width:20%">
+                            <span id="ctl00_head2_Case_ID">尚未建立開案資料</span>
+                        </td>
+                        <td style="text-align: center; background-color:#CCDDFF; vertical-align:middle; width:20%">
+                            <span><strong>個案姓名 </strong></span>
+                        </td>
+                        <td style="text-align: center; vertical-align:middle; width:20%">
+                            <span id="ctl00_head2_Case_Name">尚未建立開案資料</span>
+                        </td>
+                        <td style="text-align: center ; vertical-align:middle; background-color:#CCDDFF" width="20%">
+                            <strong>量表表號</strong>
+                        </td>
+                        <td style="text-align: center" width="30%">
+                            <label id="form_ID">DALN181116185344585</label>
+                        </td>
+                </tr>
+                    </tbody></table>
+                <table class="table table-bordered table-striped">
+                    <tbody><tr>
+                        <td style="text-align: center; background-color:#CCDDFF;vertical-align:middle; width:20%">
+                            <span><strong>性別 </strong></span>
+                        </td>
+                        <td style="text-align: center; vertical-align:middle; width:20%">
+                            <span id="ctl00_head2_Case_Gender">尚未建立開案資料</span>
+                        </td>
+                        <td style="text-align: center; background-color:#CCDDFF; vertical-align:middle; width:20%">
+                            <span><strong>電話 </strong></span>
+                        </td>
+                        <td style="text-align: center; vertical-align:middle; width:20%">
+                            <span id="ctl00_head2_Case_Phone">尚未建立開案資料</span>
+                        </td>
+                </tr>
+                    </tbody></table>
+        <table class="table table-bordered table-striped">
+            <tbody>
+                <tr>
+                    <th style="text-align: center; width: 15%;">
+                        <strong>項目</strong>
+                    </th>
+                    <th style="text-align: center; width:75%">
+                        <strong>自我照顧能力</strong>
+                    </th>
+                    <td style="text-align:center; width:10%">
+                        <strong>該選項得分</strong>
+                    </td>
+                </tr>
+
+
+
+                <tr id="ctl00_head2_tr_sysid">
+	<td style="text-align: center; vertical-align:middle; color: #008800; ">
+                        <strong>1. 進食</strong>
+                    </td>
+	<td>
+                        <input type="radio" name="Eating" value="10" onclick="ShowRadioScore('1','flag1')"> 自己在合理的時間內(約十秒鐘吃一口)可用筷子取食眼前的食物。若需進食輔具時，應會自行穿脫。(10分)<br>
+                        <input type="radio" name="Eating" value="5" onclick="ShowRadioScore('2', 'flag1')">需別人幫忙穿脫輔具或只會用湯匙進食。(5分)<br>
+                        <input type="radio" name="Eating" value="0" onclick="ShowRadioScore('3', 'flag1')">無法自行取食或耗費時間過長。(0分)
+                    </td>
+	<td style="text-align: center ; vertical-align:middle;">
+                        <label id="flag1"></label>
+                    </td>
+</tr>
+
+                <tr>
+                    <td style="text-align: center; vertical-align:middle;">
+                        <strong>2. 移動</strong>
+                    </td>
+                    <td>
+                        <input type="radio" name="Moving" value="15" onclick="ShowRadioScore('0','flag2')"> 可獨立完成，包括輪椅的煞車及移開腳踏板。(15分)<br>
+                        <input type="radio" name="Moving" value="10" onclick="ShowRadioScore('1', 'flag2')">需要稍微的協助(例如:予以輕扶以保持平衡)或需要口頭指導。(10分)<br>
+                        <input type="radio" name="Moving" value="5" onclick="ShowRadioScore('2', 'flag2')">可自行從床上坐起來，但移位時仍需別人幫忙。(5分)<br>
+                        <input type="radio" name="Moving" value="0" onclick="ShowRadioScore('3', 'flag2')">需別人幫忙方可坐起來或移位。(0分)
+                    </td>
+                    <td style="text-align: center ; vertical-align:middle;">
+                        <label id="flag2"></label>
+                    </td>
+                </tr>
+
+
+
+                <tr>
+                    <td style="text-align: center; vertical-align:middle; color: #008800;">
+                        <strong>3. 修飾</strong>
+                    </td>
+                    <td>
+                        <input type="radio" name="Cleaning" value="5" onclick="ShowRadioScore('2', 'flag3')"> 可獨立完成洗臉、洗手、刷牙及梳頭髮。(5分)<br>
+                        <input type="radio" name="Cleaning" value="0" onclick="ShowRadioScore('3', 'flag3')">需要別人幫忙。(0分)<br>
+                    </td>
+                    <td style="text-align: center ; vertical-align:middle;">
+                        <label id="flag3"></label>
+                    </td>
+                </tr>
+
+
+
+                <tr>
+                    <td style="text-align: center; vertical-align:middle;">
+                        <strong>4. 如廁</strong>
+                    </td>
+                    <td>
+                        <input type="radio" name="Toileting" value="10" onclick="ShowRadioScore('1', 'flag4')"> 可自行進出廁所，不會弄髒衣物，並能穿好衣服。使用便盆者，可自行清理便盆。(10分)<br>
+                        <input type="radio" name="Toileting" value="5" onclick="ShowRadioScore('2', 'flag4')">需幫忙保持姿勢的平衡，整理衣物或使用衛生紙。使用便盆者，可自行取放便盆，但須仰賴他人清理。(5分)<br>
+                        <input type="radio" name="Toileting" value="0" onclick="ShowRadioScore('3', 'flag4')">需他人幫忙。(0分)
+                    </td>
+                    <td style="text-align: center ; vertical-align:middle;">
+                        <label id="flag4"></label>
+                    </td>
+                </tr>
+
+
+
+                <tr>
+                    <td style="text-align: center; vertical-align:middle; color: #008800;">
+                        <strong>5. 沐浴</strong>
+                    </td>
+                    <td>
+
+                        <input type="radio" name="Bathing" value="5" onclick="ShowRadioScore('2', 'flag5')">可獨立完成(不論是盆浴或沐浴)。(5分)<br>
+                        <input type="radio" name="Bathing" value="0" onclick="ShowRadioScore('3', 'flag5')">需要別人幫忙。(0分)
+                    </td>
+                    <td style="text-align: center ; vertical-align:middle;">
+                        <label id="flag5"></label>
+                    </td>
+                </tr>
+                <tr>
+                   <td style="text-align: center; vertical-align:middle;">
+                        <strong>6. 步行</strong>
+                    </td>
+                    <td>
+                        <input type="radio" name="Walking" value="15" onclick="ShowRadioScore('0', 'flag6')">使用或不使用輔具皆可獨立行走50公尺以上。(15分)<br>
+                        <input type="radio" name="Walking" value="10" onclick="ShowRadioScore('1', 'flag6')">需要稍微的扶持或口頭指導方可行走50公尺以上。(10分)<br>
+                        <input type="radio" name="Walking" value="5" onclick="ShowRadioScore('2', 'flag6')">雖無法行走，但可獨立操縱輪椅(包括轉彎、進門、及接近桌子、床沿)並可推行輪椅50公尺以上。(5分)<br>
+                        <input type="radio" name="Walking" value="0" onclick="ShowRadioScore('3', 'flag6')">需別人幫忙推輪椅。(0分)
+                    </td>
+                    <td style="text-align: center ; vertical-align:middle;">
+                        <label id="flag6"></label>
+                    </td>
+
+                </tr>
+
+
+
+                <tr>
+                    <td style="text-align: center; vertical-align:middle; color: #008800;">
+                        <strong>7. 上下樓梯</strong>
+                    </td>
+                    <td>
+                        <input type="radio" name="Stairing" value="10" onclick="ShowRadioScore('1', 'flag7')">可自行上下樓梯(允許抓扶手、用拐杖)。(10分)<br>
+                        <input type="radio" name="Stairing" value="5" onclick="ShowRadioScore('2', 'flag7')">需要稍微幫忙或口頭指導。(5分)<br>
+                        <input type="radio" name="Stairing" value="0" onclick="ShowRadioScore('3', 'flag7')">無法上下樓梯。(0分)
+                    </td>
+                    <td style="text-align: center ; vertical-align:middle;">
+                        <label id="flag7"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; vertical-align:middle;">
+                        <strong>8. 穿脫衣服</strong>
+                    </td>
+                    <td>
+                        <input type="radio" name="Clothing" value="10" onclick="ShowRadioScore('1', 'flag8')">可自行穿脫衣服、鞋子及輔具。(10分)<br>
+                        <input type="radio" name="Clothing" value="5" onclick="ShowRadioScore('2', 'flag8')">在別人幫忙下，可自行完成一半以上的動作。(5分)<br>
+                        <input type="radio" name="Clothing" value="0" onclick="ShowRadioScore('3', 'flag8')">需別人幫忙。(0分)
+                    </td>
+                    <td style="text-align: center ; vertical-align:middle;">
+                        <label id="flag8"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; vertical-align:middle; color: #008800;">
+                        <strong>9. 大便控制</strong>
+                    </td>
+                    <td>
+                        <input type="radio" name="Defecating" value="10" onclick="ShowRadioScore('1', 'flag9')">不會失禁，並可自行使用塞劑。(10分)<br>
+                        <input type="radio" name="Defecating" value="5" onclick="ShowRadioScore('2', 'flag9')">偶爾會失禁(每週不超過一次)或使用塞劑時需人幫助。(5分)<br>
+                        <input type="radio" name="Defecating" value="0" onclick="ShowRadioScore('3', 'flag9')">需別人處理。(0分)
+                    </td>
+                    <td style="text-align: center ; vertical-align:middle;">
+                        <label id="flag9"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; vertical-align:middle;">
+                        <strong>10. 小便控制</strong>
+                    </td>
+                    <td>
+                        <input type="radio" name="Peeing" value="10" onclick="ShowRadioScore('1', 'flag10')">日夜皆不會尿失禁，或可自行使用並清理尿套。(10分)<br>
+                        <input type="radio" name="Peeing" value="5" onclick="ShowRadioScore('2', 'flag10')">偶爾會尿失禁(每週不超過一次)或尿急(無法等待便盆或無法即時趕到廁所)或需別人幫忙處理尿套。(5分)<br>
+                        <input type="radio" name="Peeing" value="0" onclick="ShowRadioScore('3', 'flag10')">需別人處理。(0分)
+                    </td>
+                    <td style="text-align: center ; vertical-align:middle;">
+                        <label id="flag10"></label>
+                    </td>
+                </tr>
+
+            </tbody>
+            <tbody>
+                <tr style="background-color:#FFBB73">
+                    <td style="text-align: center ;">
+                        <strong>總分</strong>
+                    </td>
+                    <td>0-20分: 完全依賴  &nbsp;&nbsp;21-60分: 嚴重依賴&nbsp;  &nbsp;61-90分: 中度依賴 &nbsp; &nbsp;91-99分: 輕度依賴  &nbsp;&nbsp;100分: 獨立</td>
+                    <td style="text-align: center ; vertical-align:middle;">
+                        <label id="TotAns"></label>
+                    </td>
+                </tr>
+                <tr></tr>
+            </tbody>
+        </table>
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <td style="text-align: center ; vertical-align:middle; height:80px; width:25%">
+                        <strong>督導員簽名</strong>
+                    </td>
+                    <td style="text-align: center ; height:80px; width:25%"></td>
+                    <td style=" height:80px; width:25%; text-align:center; vertical-align:middle"><strong>填表日期</strong></td>
+                    <td id="div_date" style="text-align: center ; vertical-align:middle; height:80px; width:25%; font-size: 20px">2018/11/16</td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="text-align: center">
+                        <button id="Btn_New" type="button" onclick="Btn_New_Click('0');" class="btn btn-success btn-lg " style="width:200px; height: 100px; font-size: 45px;">
+                            <span class="glyphicon glyphicon-ok"></span>送出</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <script>
+            $.datetimepicker.setLocale('ch');
+            $('#datetimepicker01').datetimepicker({
+                allowTimes: [
+                    '00:00', '00:30', '01:00', '01:30', '02:00', '02:30', '03:00', '03:30', '04:00', '04:30', '05:00', '05:30',
+                    '06:00', '06:30', '07:00', '07:30', '08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30',
+                    '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30',
+                    '18:00', '18:30', '19:00', '19:30', '20:00', '20:30', '21:00', '21:30', '22:00', '22:30', '23:00', '23:30'
+                ]
+            });
+
+            $('#datetimepicker02').datetimepicker({
+                allowTimes: [
+                    '00:00', '00:30', '01:00', '01:30', '02:00', '02:30', '03:00', '03:30', '04:00', '04:30', '05:00', '05:30',
+                    '06:00', '06:30', '07:00', '07:30', '08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30',
+                    '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30',
+                    '18:00', '18:30', '19:00', '19:30', '20:00', '20:30', '21:00', '21:30', '22:00', '22:30', '23:00', '23:30'
+                ]
+            });
+
+            $(function () {
+                $('.chosen-select').chosen();
+                $('.chosen-select-deselect').chosen({ allow_single_deselect: true });
+                $('.chosen-single').css({ 'background-color': '#ffffbb' });
+            });
+        </script>
+    </div>
+
+
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'aspnetForm', ['tctl00$UpdatePanel1',''], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+        <div id="ctl00_UpdatePanel1">
+                <span id="ctl00_Timer1" style="visibility:hidden;display:none;"></span>
+            </div>
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Sys.UI._Timer, {"enabled":true,"interval":30000,"uniqueID":"ctl00$Timer1"}, null, null, $get("ctl00_Timer1"));
+});
+//]]>
+</script>
+<span style="display: none !important;"><input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value=""></span><span style="display: none !important;"><input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value=""></span><span style="display: none !important;"><input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE4NTIxNjY2ODUPZBYCZg9kFgICBA9kFgQCAQ9kFgYCAQ8WAh4JaW5uZXJodG1sBcEoPHVsIGNsYXNzPSduYXYgbmF2YmFyLW5hdic+PGxpIGNsYXNzPSdkcm9wZG93bic+PGEgaWQ9JzAwMTAwMTAwMDAnIGNsYXNzPSdkcm9wZG93bi10b2dnbGUnIGRhdGEtdG9nZ2xlPSdkcm9wZG93bicgYXJpYS1oYXNwb3B1cD0ndHJ1ZScgcm9sZT0nYnV0dG9uJyBhcmlhLWV4cGFuZGVkPSdmYWxzZSc+PHNwYW4gY2xhc3M9J2dseXBoaWNvbiBnbHlwaGljb24tYm9vayc+PC9zcGFuPiZuYnNwO+eUs+iri+S9nOalrSZuYnNwOzxzcGFuIGNsYXNzPSdjYXJldCc+PC9zcGFuPjwvYT48dWwgY2xhc3M9J2Ryb3Bkb3duLW1lbnUnIHJvbGU9J21lbnUnIGFyaWEtbGFiZWxsZWRieT0nMDAxMDAxMDAwMCc+PGxpIHJvbGU9J3ByZXNlbnRhdGlvbic+PGEgcm9sZT0nbWVudWl0ZW0nIGhyZWY9Jy4uLzAxMDAwMTAwMDAvMDEwMDAxMDAwMC5hc3B4P3NlcW5vPTAnPumVt+acn+eFp+mhp+acjeWLmeeUs+iri+abuDwvYT48L2xpPjxsaSByb2xlPSdwcmVzZW50YXRpb24nPjxhIHJvbGU9J21lbnVpdGVtJyBocmVmPScuLi8wMTAwMDEwMDAwLzAxMDAwMTAwMDYuYXNweD9zZXFubz0wJz7plbfnhafmnI3li5npnIDmsYLovYnku4vllq48L2E+PC9saT48bGkgcm9sZT0ncHJlc2VudGF0aW9uJz48YSByb2xlPSdtZW51aXRlbScgaHJlZj0nLi4vMDA4MDAxMDAwMC8wMDgwMDEwMDA0LmFzcHg/c2Vxbm89MCc+5bGF5a6254Wn6aGn5pyN5YuZ57WQ5qGI6KGoPC9hPjwvbGk+PGxpIHJvbGU9J3ByZXNlbnRhdGlvbic+PGEgcm9sZT0nbWVudWl0ZW0nIGhyZWY9Jy4uLzAxMDAwMTAwMDAvMDEwMDAxMDAwMS5hc3B4P3NlcW5vPTAnPuWAi+ahiOizh+aWmeafpeipojwvYT48L2xpPjwvdWw+PC9saT48bGkgY2xhc3M9J2Ryb3Bkb3duJz48YSBpZD0nMDAyMDAxMDAwMCcgY2xhc3M9J2Ryb3Bkb3duLXRvZ2dsZScgZGF0YS10b2dnbGU9J2Ryb3Bkb3duJyBhcmlhLWhhc3BvcHVwPSd0cnVlJyByb2xlPSdidXR0b24nIGFyaWEtZXhwYW5kZWQ9J2ZhbHNlJz48c3BhbiBjbGFzcz0nZ2x5cGhpY29uIGdseXBoaWNvbi1jb21tZW50Jz48L3NwYW4+Jm5ic3A76KmV5Lyw6KGoJm5ic3A7PHNwYW4gY2xhc3M9J2NhcmV0Jz48L3NwYW4+PC9hPjx1bCBjbGFzcz0nZHJvcGRvd24tbWVudScgcm9sZT0nbWVudScgYXJpYS1sYWJlbGxlZGJ5PScwMDIwMDEwMDAwJz48bGkgcm9sZT0ncHJlc2VudGF0aW9uJz48YSByb2xlPSdtZW51aXRlbScgaHJlZj0nLi4vMDA5MDAxMDAwMS8wMDkwMDEwMDAxLmFzcHg/c2Vxbm89MCc+5YCL5qGI5pel5bi455Sf5rS76KmV5Lyw6YeP6KGo77yI5be05rCP6YeP6KGo77yJPC9hPjwvbGk+PGxpIHJvbGU9J3ByZXNlbnRhdGlvbic+PGEgcm9sZT0nbWVudWl0ZW0nIGhyZWY9Jy4uLzAwOTAwMTAwMDEvMDA5MDAxMDAwMi5hc3B4P3NlcW5vPTAnPuW3peWFt+aAp+aXpeW4uOeUn+a0u+mHj+ihqChJQURMKTwvYT48L2xpPjxsaSByb2xlPSdwcmVzZW50YXRpb24nPjxhIHJvbGU9J21lbnVpdGVtJyBocmVmPScuLi8wMDkwMDEwMDAxLzAwOTAwMTAwMDMuYXNweD9zZXFubz0wJz5TUE1TUeiqjeefpeWKn+iDvemHj+ihqDwvYT48L2xpPjxsaSByb2xlPSdwcmVzZW50YXRpb24nPjxhIHJvbGU9J21lbnVpdGVtJyBocmVmPScuLi8wMDkwMDEwMDAwLzAwOTAwMTAwMDQuYXNweD9zZXFubz0wJz7oqJjmhrblgaXmqqIoQUQtOCDmpbXml6nmnJ/lpLHmmbrnl4fnr6nmqqLph4/ooagp56+p5qqi6YeP6KGoPC9hPjwvbGk+PGxpIHJvbGU9J3ByZXNlbnRhdGlvbic+PGEgcm9sZT0nbWVudWl0ZW0nIGhyZWY9Jy4uLzAwOTAwMTAwMDAvMDA5MDAxMDAwNS5hc3B4P3NlcW5vPTAnPuahg+WckuW4guaUv+W6nOihm+eUn+WxgOiAgeS6uuW/g+eQhuWBpeW6t+ipleS8sOihqChHRFMtMTUpIDwvYT48L2xpPjxsaSByb2xlPSdwcmVzZW50YXRpb24nPjxhIHJvbGU9J21lbnVpdGVtJyBocmVmPScuLi8wMDkwMDEwMDAwLzAwOTAwMTAwMDYuYXNweD9zZXFubz0wJz7plbfnhafntpzlkIjoqZXkvLDph4/ooaggPC9hPjwvbGk+PGxpIHJvbGU9J3ByZXNlbnRhdGlvbic+PGEgcm9sZT0nbWVudWl0ZW0nIGhyZWY9Jy4uLzAwOTAwMTAwMDAvMDA5MDAxMDAwNy5hc3B4P3NlcW5vPTAnPuWumuacn+Wuti/pm7voqKroqJjpjITooag8L2E+PC9saT48L3VsPjwvbGk+PGxpIGNsYXNzPSdkcm9wZG93bic+PGEgaWQ9JzAwNzAwMTAwMDAnIGNsYXNzPSdkcm9wZG93bi10b2dnbGUnIGRhdGEtdG9nZ2xlPSdkcm9wZG93bicgYXJpYS1oYXNwb3B1cD0ndHJ1ZScgcm9sZT0nYnV0dG9uJyBhcmlhLWV4cGFuZGVkPSdmYWxzZSc+PHNwYW4gY2xhc3M9J2dseXBoaWNvbiBnbHlwaGljb24tUmVwb3J0Jz48L3NwYW4+Jm5ic3A75aCx6KGoJm5ic3A7PHNwYW4gY2xhc3M9J2NhcmV0Jz48L3NwYW4+PC9hPjx1bCBjbGFzcz0nZHJvcGRvd24tbWVudScgcm9sZT0nbWVudScgYXJpYS1sYWJlbGxlZGJ5PScwMDcwMDEwMDAwJz48bGkgcm9sZT0ncHJlc2VudGF0aW9uJz48YSByb2xlPSdtZW51aXRlbScgaHJlZj0nLi4vUmVwb3J0XzAwNC5hc3B4Jz7jgJDooZvnpo/pg6jjgJHmnI3li5nntIDpjITliJfooag8L2E+PC9saT48bGkgcm9sZT0ncHJlc2VudGF0aW9uJz48YSByb2xlPSdtZW51aXRlbScgaHJlZj0nLi4vMDA5MDAxMDAwMC8wMDkwMDEwMDA5LmFzcHg/c2Vxbm89MCc+57Wx6KiIPC9hPjwvbGk+PC91bD48L2xpPjxsaSBjbGFzcz0nZHJvcGRvd24nPjxhIGlkPScwMDgwMDEwMDAwJyBjbGFzcz0nZHJvcGRvd24tdG9nZ2xlJyBkYXRhLXRvZ2dsZT0nZHJvcGRvd24nIGFyaWEtaGFzcG9wdXA9J3RydWUnIHJvbGU9J2J1dHRvbicgYXJpYS1leHBhbmRlZD0nZmFsc2UnPjxzcGFuIGNsYXNzPSdnbHlwaGljb24gZ2x5cGhpY29uLWJvb2snPjwvc3Bhbj4mbmJzcDvooZvmlZnnrqHnkIYmbmJzcDs8c3BhbiBjbGFzcz0nY2FyZXQnPjwvc3Bhbj48L2E+PHVsIGNsYXNzPSdkcm9wZG93bi1tZW51JyByb2xlPSdtZW51JyBhcmlhLWxhYmVsbGVkYnk9JzAwODAwMTAwMDAnPjxsaSByb2xlPSdwcmVzZW50YXRpb24nPjxhIHJvbGU9J21lbnVpdGVtJyBocmVmPScuLi8wMDEwMDEwMDAxLmFzcHgnPuihm+aVmeafpeipojwvYT48L2xpPjxsaSByb2xlPSdwcmVzZW50YXRpb24nPjxhIHJvbGU9J21lbnVpdGVtJyBocmVmPScuLi8wMDEwMDEwMDAzLmFzcHgnPuitt+eQhuaMh+WwjjwvYT48L2xpPjxsaSByb2xlPSdwcmVzZW50YXRpb24nPjxhIHJvbGU9J21lbnVpdGVtJyBocmVmPScuLi8wMDEwMDEwMDA0LmFzcHgnPumGq+eZguaWsOefpTwvYT48L2xpPjxsaSByb2xlPSdwcmVzZW50YXRpb24nPjxhIHJvbGU9J21lbnVpdGVtJyBocmVmPScuLi8wMDEwMDEwMDA1LmFzcHgnPue3muS4iuirruipojwvYT48L2xpPjwvdWw+PC9saT48bGkgY2xhc3M9J2Ryb3Bkb3duJz48YSBpZD0nMDEwMDAxMDAwMCcgY2xhc3M9J2Ryb3Bkb3duLXRvZ2dsZScgZGF0YS10b2dnbGU9J2Ryb3Bkb3duJyBhcmlhLWhhc3BvcHVwPSd0cnVlJyByb2xlPSdidXR0b24nIGFyaWEtZXhwYW5kZWQ9J2ZhbHNlJz48c3BhbiBjbGFzcz0nZ2x5cGhpY29uIGdseXBoaWNvbi10ZWwnPjwvc3Bhbj4mbmJzcDvpgJroqIrpjITns7vntbEmbmJzcDs8c3BhbiBjbGFzcz0nY2FyZXQnPjwvc3Bhbj48L2E+PHVsIGNsYXNzPSdkcm9wZG93bi1tZW51JyByb2xlPSdtZW51JyBhcmlhLWxhYmVsbGVkYnk9JzAxMDAwMTAwMDAnPjxsaSByb2xlPSdwcmVzZW50YXRpb24nPjxhIHJvbGU9J21lbnVpdGVtJyBocmVmPScuLi8wMDIwMDEwMDAxLmFzcHgnPuS6uuWToemAmuioiumMhDwvYT48L2xpPjwvdWw+PC9saT48bGkgY2xhc3M9J2Ryb3Bkb3duJz48YSBpZD0nMDExMDAxMDAwMCcgY2xhc3M9J2Ryb3Bkb3duLXRvZ2dsZScgZGF0YS10b2dnbGU9J2Ryb3Bkb3duJyBhcmlhLWhhc3BvcHVwPSd0cnVlJyByb2xlPSdidXR0b24nIGFyaWEtZXhwYW5kZWQ9J2ZhbHNlJz48c3BhbiBjbGFzcz0nZ2x5cGhpY29uIGdseXBoaWNvbi1Vc2VyJz48L3NwYW4+Jm5ic3A757O757Wx5Y+D5pW457at6K23Jm5ic3A7PHNwYW4gY2xhc3M9J2NhcmV0Jz48L3NwYW4+PC9hPjx1bCBjbGFzcz0nZHJvcGRvd24tbWVudScgcm9sZT0nbWVudScgYXJpYS1sYWJlbGxlZGJ5PScwMTEwMDEwMDAwJz48bGkgcm9sZT0ncHJlc2VudGF0aW9uJz48YSByb2xlPSdtZW51aXRlbScgaHJlZj0nLi4vMDA2MDAxMDAwMS5hc3B4Jz7op5LoibLnrqHnkIY8L2E+PC9saT48bGkgcm9sZT0ncHJlc2VudGF0aW9uJz48YSByb2xlPSdtZW51aXRlbScgaHJlZj0nLi4vMDA2MDAxMDAwNC5hc3B4Jz7kurrlk6Hos4fmlpnnrqHnkIY8L2E+PC9saT48L3VsPjwvbGk+PGxpIGNsYXNzPSdkcm9wZG93bic+PGEgaWQ9JzAxMjAwMTAwMDAnIGNsYXNzPSdkcm9wZG93bi10b2dnbGUnIGRhdGEtdG9nZ2xlPSdkcm9wZG93bicgYXJpYS1oYXNwb3B1cD0ndHJ1ZScgcm9sZT0nYnV0dG9uJyBhcmlhLWV4cGFuZGVkPSdmYWxzZSc+PHNwYW4gY2xhc3M9J2dseXBoaWNvbiBnbHlwaGljb24tbGlzdC1hbHQnPjwvc3Bhbj4mbmJzcDvooajllq7ns7vntbHntq3orbcmbmJzcDs8c3BhbiBjbGFzcz0nY2FyZXQnPjwvc3Bhbj48L2E+PHVsIGNsYXNzPSdkcm9wZG93bi1tZW51JyByb2xlPSdtZW51JyBhcmlhLWxhYmVsbGVkYnk9JzAxMjAwMTAwMDAnPjxsaSByb2xlPSdwcmVzZW50YXRpb24nPjxhIHJvbGU9J21lbnVpdGVtJyBocmVmPScuLi8wMDUwMDEwMDAxLmFzcHgnPue3qOi8r+ihqOWWruWFp+WuuTwvYT48L2xpPjxsaSByb2xlPSdwcmVzZW50YXRpb24nPjxhIHJvbGU9J21lbnVpdGVtJyBocmVmPScuLi8wMDUwMDEwMDA0LmFzcHgnPuWhq+Wvq+ihqOWWrjwvYT48L2xpPjwvdWw+PC9saT48bGkgY2xhc3M9J2Ryb3Bkb3duJz48YSBpZD0nMDEzMDAxMDAwMCcgY2xhc3M9J2Ryb3Bkb3duLXRvZ2dsZScgZGF0YS10b2dnbGU9J2Ryb3Bkb3duJyBhcmlhLWhhc3BvcHVwPSd0cnVlJyByb2xlPSdidXR0b24nIGFyaWEtZXhwYW5kZWQ9J2ZhbHNlJz48c3BhbiBjbGFzcz0nZ2x5cGhpY29uIGdseXBoaWNvbi1jb21tZW50Jz48L3NwYW4+Jm5ic3A754Wn5pyD57O757WxJm5ic3A7PHNwYW4gY2xhc3M9J2NhcmV0Jz48L3NwYW4+PC9hPjx1bCBjbGFzcz0nZHJvcGRvd24tbWVudScgcm9sZT0nbWVudScgYXJpYS1sYWJlbGxlZGJ5PScwMTMwMDEwMDAwJz48bGkgcm9sZT0ncHJlc2VudGF0aW9uJz48YSByb2xlPSdtZW51aXRlbScgaHJlZj0nLi4vMDA2MDAxMDAzNS5hc3B4Jz7nhafmnIPkvZzmpa08L2E+PC9saT48L3VsPmQCAw8WAh8ABWg8c3BhbiBjbGFzcz0nZ2x5cGhpY29uIGdseXBoaWNvbi11c2VyJz48L3NwYW4+Jm5ic3A755m75YWl5Lq65ZOh77yaMTIzNCZuYnNwOzxzcGFuIGNsYXNzPSdjYXJldCc+PC9zcGFuPmQCBQ8WAh8ABakEPGxpIHJvbGU9J3ByZXNlbnRhdGlvbic+PGEgcm9sZT0nbWVudWl0ZW0nPiZuYnNwO+aJgOWxrOWFrOWPuO+8mjEyMzQmbmJzcDsmbmJzcDs8L2E+PC9saT48bGkgcm9sZT0ncHJlc2VudGF0aW9uJz48YSByb2xlPSdtZW51aXRlbSc+Jm5ic3A75omA5bGs6YOo6ZaA77yaMTIzNCZuYnNwOyZuYnNwOzwvYT48L2xpPjxsaSByb2xlPSdwcmVzZW50YXRpb24nPjxhIHJvbGU9J21lbnVpdGVtJz4mbmJzcDvkurrlk6Hnt6jomZ/vvJoxMjM0Jm5ic3A7Jm5ic3A7PC9hPjwvbGk+PGxpIHJvbGU9J3ByZXNlbnRhdGlvbic+PGEgcm9sZT0nbWVudWl0ZW0nPiZuYnNwO+S6uuWToeWnk+WQje+8mjEyMzQmbmJzcDsmbmJzcDs8L2E+PC9saT48bGkgcm9sZT0ncHJlc2VudGF0aW9uJz48YSByb2xlPSdtZW51aXRlbSc+Jm5ic3A75Lq65ZOh5qyK6ZmQ77ya54Wn566h5bCI5ZOhJm5ic3A7Jm5ic3A7PC9hPjwvbGk+PGxpIHJvbGU9J3ByZXNlbnRhdGlvbic+PGEgcm9sZT0nbWVudWl0ZW0nPiZuYnNwO+mbu+WtkOS/oeeuse+8muaciembu+WtkOS/oeeusSZuYnNwOyZuYnNwOzwvYT48L2xpPmQCBQ9kFgRmDw8WAh4EVGV4dAUY5bCa5pyq5bu656uL6ZaL5qGI6LOH5paZZGQCAQ8PFgIfAQUY5bCa5pyq5bu656uL6ZaL5qGI6LOH5paZZGRkXCfDvbEjZHUJm2nIPPzS8AOQvUGBafHVHwht6e0cO4Y="></span><span style="display: none !important;"><input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="3212CFF3"></span></form>
+
+
+</body></html>

@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
+
+</title>
+
+<!--<link href="http://210.68.75.96:9000/DataTables/jquery.dataTables.min.css" rel="stylesheet" />-->
+<link href="./css/bootstrap.min.css" rel="stylesheet" />
+<link href="./css/bootstrap-theme.min.css" rel="stylesheet" />
+<link href="./css/bootstrap-responsive.min.css" rel="stylesheet" />
+<!--<link href="http://210.68.75.96:9000/bootstrap-chosen-master/bootstrap-chosen.css" rel="stylesheet" />-->
+<link href="./css/JackyStyle.css" rel="stylesheet" />
+<!--    <script src="http://210.68.75.96:9000/js/jquery.min.js"></script>
+<script src="http://210.68.75.96:9000/js/bootstrap.min.js"></script>
+<script src="http://210.68.75.96:9000/chosen/chosen.jquery.js"></script>
+<script src="http://210.68.75.96:9000/DataTables/jquery.dataTables.min.js"></script>
+
+
+
+<!--
+<script src="../fullcalendar-2.8.0/lib/moment.min.js"></script>
+<script src="../fullcalendar-2.8.0/fullcalendar.min.js"></script>
+<script src="../fullcalendar-2.8.0/lang-all.js"></script>--%>
+<link href="../css/jquery.datetimepicker.min.css" rel="stylesheet" />
+<script src="js/jquery.datetimepicker.full.min.js"></script>
+
+
+<link href="../Timeline/css/style.css" rel="stylesheet" />
+
+<script src="Timeline/js/jq.schedule.js"></script>
+
+-->
+
+</head>
+<body>
+  <form name="aspnetForm" method="post" action="./0200010000.aspx?seqno=0" id="aspnetForm">
+
+
+
+
+
+
+    <!--DIVFIRST===================================================-->
+    <div style="width: 1280px; margin:0px auto;">
+      <h2><strong>居護醫療</strong></h2>
+      <h3><strong>護理計畫表(現存皮膚完整性受損/壓瘡)（新增）</strong></h3>
+      <table class="table table-bordered table-striped">
+        <tbody><tr>
+          <th style="text-align: center; vertical-align:middle; width: 15%">
+            <strong>姓名:</strong>
+          </th>
+          <th style="text-align: center; vertical-align:middle; width: 15%">
+            <input id="Text2" class="form-control" placeholder="姓名" maxlength="10" onkeyup="cs(this);">
+          </th>
+          <th style="text-align: center; vertical-align:middle; width: 15%">
+            <strong>病歷號:</strong>
+          </th>
+          <th style="text-align: center; vertical-align:middle; width: 15%">
+            <input id="Text3" class="form-control" placeholder="病歷號" maxlength="10" onkeyup="cs(this);">
+          </th>
+          <th style="text-align: center; vertical-align:middle; width: 15%">
+            <strong>家字號:</strong>
+          </th>
+          <th style="text-align: center; vertical-align:middle; width: 15%">
+            <input id="Text4" class="form-control" placeholder="家字號" maxlength="10" onkeyup="cs(this);">
+          </th>
+        </tr>
+        <tr>
+          <th colspan="6" style="text-align: center; vertical-align:middle; width: 15%">
+            <strong>護理問題:現存皮膚完整性受損/壓瘡</strong>
+          </th>
+        </tr>
+        <tr>
+          <th style="text-align: center; vertical-align:middle; width: 15%">
+            <strong>護理目標:</strong>
+          </th>
+          <th colspan="5" style="text-align: left; vertical-align:middle; width: 15%">
+            <strong>近程：主要照顧者能於三次訪視內，理解並應用預防傷口惡化及預防壓瘡的方法</strong><br>
+            <strong>遠程：於居家照護期間，個案壓瘡傷口改善癒合</strong>
+          </th>
+        </tr>
+      </tbody></table>
+      <table class="table table-bordered table-striped">
+
+        <tbody>
+
+          <tr>
+            <th rowspan="2" style="text-align: center; vertical-align:middle; width: 15%">
+              <strong>開始日期</strong>
+            </th>
+            <th rowspan="2" style="text-align: center; vertical-align:middle; width: 30%">
+              <strong>護理活動</strong>
+            </th>
+            <th colspan="5" style="text-align: center; vertical-align:middle; width: 15%">
+              <strong>評值</strong>
+            </th>
+          </tr>
+          <tr>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <strong>日期</strong>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <strong>結果</strong>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <strong>知識/技能</strong>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <strong>執行</strong>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <strong>簽名</strong>
+            </th>
+          </tr>
+
+          <tr>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <input type="text" class="form-control" id="datetimepicker01" name="datetimepicker01" maxlength="10" placeholder="時間">
+            </th>
+            <th style="text-align: left; vertical-align:middle; width: 10%">
+              <input type="checkbox" id="Checkbox1" name="check01" value="1"> 1.教導照顧者執行傷口護理技術：有關無菌的正確觀念。<br>
+              <input type="checkbox" id="Checkbox2" name="check01" value="1"> 2.教導照顧者執行翻身技術：<br>
+              <strong>a.每2小時翻身一次，並作記錄。</strong><br>
+              <strong>b.翻身姿勢包括左側臥、右側臥及平躺。</strong><br>
+              <strong>c.翻動個案時，應採抬起的方法，勿用拖拉的方式，以維護皮膚的完整性。</strong><br>
+              <input type="checkbox" id="Checkbox3" name="check01" value="1"> 3.維持個案床單的平整、清潔與乾爽。<br>
+              <input type="checkbox" id="Checkbox4" name="check01" value="1"> 4.每2小時執行被動關節運動，以促進受傷部位血液循環。<br>
+              <input type="checkbox" id="Checkbox5" name="check01" value="1"> 5.建議給予高蛋白飲食及多攝取維生素等均衡飲食，以利傷口癒合。<br>
+              <input type="checkbox" id="Checkbox6" name="check01" value="1"> 6.執行皮膚衛生清潔，採溫和中性肥皂；使用凡士林或滋潤用品保護皮膚增加韌性。<br>
+              <input type="checkbox" id="Checkbox7" name="check01" value="1"> 7.每天至少清洗ㄧ次會陰部；使用尿布或尿套者，應每2小時檢查，保持會陰清潔乾燥。<br>
+              <input type="checkbox" id="Checkbox8" name="check01" value="1"> 8.維持室內空氣流通及合宜的溫度(約攝氏26度)。<br>
+              <input type="checkbox" id="Checkbox9" name="check01" value="1"> 9.觀察傷口的大小、顏色、分泌物、味道及是否發燒、畏寒等異常情形，應通知護理師，必要時需送醫處理。<br>
+              <input type="checkbox" id="Checkbox10" name="check01" value="1"> 10.回示教正確傷口護理技術及敷料使用方法。<br>
+              <input type="checkbox" id="Checkbox11" name="check01" value="1"> 11.回示教正確的翻身技術。<br>
+              <input type="checkbox" id="Checkbox12" name="check01" value="1"> 12.回示教正確的被動關節運動技術。
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <textarea id="Date" name="Date" class="form-control" cols="10" rows="1" maxlength="5" onkeyup="txt(this);" style="resize: none" ;="" placeholder="日期"></textarea>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <select id="select01" name="select01" class="chosen-select">
+                <option value="">結果</option>
+                <option value="6">良好(6)</option>
+                <option value="5">尚可(5)</option>
+                <option value="4">惡化(4)</option>
+              </select>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <select id="select2" name="select02" class="chosen-select">
+                <option value="">知識/技能</option>
+                <option value="6">純熟(6)</option>
+                <option value="5">尚可(5)</option>
+                <option value="4">生疏(4)</option>
+                <option value="3">完全不會(3)</option>
+              </select>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+              <select id="select3" name="select02" class="chosen-select">
+                <option value="">執行</option>
+                <option value="6">確實執行(6)</option>
+                <option value="5">部分執行(5)</option>
+                <option value="4">偶而執行(4)</option>
+                <option value="3">不完全執行(3)</option>
+                <option value="2">執行部分錯誤(2)</option>
+                <option value="1">執行嚴重錯誤(1)</option>
+              </select>
+            </th>
+            <th style="text-align: center; vertical-align:middle; width: 10%">
+            </th>
+          </tr>
+        </tbody></table>
+      </div>
+
+
+
+
+    </form>
+  </body>
+  </html>
